@@ -17,20 +17,19 @@ jobs:
     runs-on: ubuntu-latest
     env:
       EXPO_PUBLIC_CONVEX_URL: https://resolute-hound-961.convex.cloud
-      NODE_ENV: production
       BARA_KEYSTORE_FILE: bara-release.jks
       BARA_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
       BARA_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
       BARA_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
           cache: npm
 
-      - uses: actions/setup-java@v4
+      - uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: 17
@@ -52,6 +51,8 @@ jobs:
 
       - name: Build APK
         working-directory: android
+        env:
+          NODE_ENV: production
         run: ./gradlew :app:assembleRelease
 
       - name: Prepare release files
