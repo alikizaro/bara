@@ -42,7 +42,6 @@ export interface DuelView {
   phase: 'duel_guessing' | 'results';
   secret: GuessChoice;
   opponent: RoomPlayer;
-  guessChoices: GuessChoice[];
   myGuessName: string | null;
   opponentHasGuessed: boolean;
   result: {
@@ -58,7 +57,7 @@ export interface RoomSnapshot {
   id: string;
   code: string;
   status: RoomStatus;
-  settings: RoomSettings;
+  settings: RoomSettings & { categorySelected: boolean };
   players: RoomPlayer[];
   hostPlayerId: string;
 }

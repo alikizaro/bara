@@ -90,7 +90,7 @@ export function QuestionStage({
               ? 'بانتظار اختيار اللاعب المجيب'
               : canSpeak
                 ? 'مايكك مفتوح لهذه المحادثة'
-                : 'مايكك مغلق، وأنت تستمع فقط'}
+                : 'أنت تستمع الآن؛ استخدم أزرار الصوت أسفل الشاشة'}
           </Text>
         </View>
         <Text style={styles.connectionText}>

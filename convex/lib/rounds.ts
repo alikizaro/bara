@@ -1,7 +1,7 @@
 import type { Doc, Id } from '../_generated/dataModel';
 import type { MutationCtx } from '../_generated/server';
 import { getPlayableItems } from '../data/starterItems';
-import { pickDistinctPair } from './roomPolicy';
+import { pickOrderedPair } from './roomPolicy';
 
 function pickDifferent<T>(
   values: T[],
@@ -33,7 +33,7 @@ export async function createRoundForRoom(
   if (!item || !outsider || orderedMemberships.length < 2) {
     throw new Error('لا توجد بيانات أو لاعبون كافون لبدء الجولة');
   }
-  const pair = pickDistinctPair(orderedMemberships);
+  const pair = pickOrderedPair(orderedMemberships, 0);
 
   return ctx.db.insert('rounds', {
     roomId: room._id,

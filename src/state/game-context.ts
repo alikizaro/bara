@@ -8,6 +8,7 @@ import type {
   RoomSettings,
   RoomSnapshot,
   VoiceAccess,
+  CategoryId,
 } from '../domain/game';
 
 export interface GameContextValue {
@@ -24,6 +25,7 @@ export interface GameContextValue {
   createRoom: (settings: RoomSettings) => Promise<void>;
   joinRoom: (code: string) => Promise<void>;
   setReady: (isReady: boolean) => Promise<void>;
+  setRoomCategory: (category: CategoryId, collection: string | null) => Promise<void>;
   startGame: () => Promise<void>;
   chooseFreeAnswerer: (answererPlayerId: string) => Promise<void>;
   advanceConversation: () => Promise<void>;

@@ -34,6 +34,7 @@ const roomSnapshotValidator = v.object({
   settings: v.object({
     mode: gameModeValidator,
     category: categoryValidator,
+    categorySelected: v.boolean(),
     collection: v.union(v.string(), v.null()),
     maxPlayers: v.number(),
     automaticQuestions: v.number(),
@@ -51,8 +52,6 @@ const roomResultValidator = v.object({
 export const create = mutation({
   args: {
     installationId: v.string(),
-    category: categoryValidator,
-    collection: v.union(v.string(), v.null()),
     maxPlayers: v.number(),
     automaticQuestions: v.number(),
     freeQuestionsPerPlayer: v.number(),
@@ -61,7 +60,12 @@ export const create = mutation({
   returns: roomResultValidator,
   handler: async (ctx, args) => {
     const mode = args.mode ?? 'classic';
-    validateRoomOptions({ ...args, mode });
+    validateRoomOptions({
+      ...args,
+      mode,
+      category: 'animals',
+      collection: null,
+    });
     const player = await requirePlayer(ctx, args.installationId);
     const currentMembership = await ctx.db
       .query('roomMembers')
@@ -102,8 +106,9 @@ export const create = mutation({
       hostPlayerId: player._id,
       status: 'waiting',
       mode,
-      category: args.category,
-      collection: args.collection,
+      category: 'animals',
+      categorySelected: false,
+      collection: null,
       maxPlayers: args.maxPlayers,
       automaticQuestions: args.automaticQuestions,
       freeQuestionsPerPlayer: args.freeQuestionsPerPlayer,
@@ -225,6 +230,7 @@ export const getLobby = query({
       settings: {
         mode: room.mode ?? 'classic',
         category: room.category,
+        categorySelected: room.categorySelected ?? false,
         collection: room.collection,
         maxPlayers: room.maxPlayers,
         automaticQuestions: room.automaticQuestions,
@@ -233,6 +239,37 @@ export const getLobby = query({
       players,
       hostPlayerId: room.hostPlayerId,
     };
+  },
+});
+
+export const setCategory = mutation({
+  args: {
+    installationId: v.string(),
+    roomId: v.id('rooms'),
+    category: categoryValidator,
+    collection: v.union(v.string(), v.null()),
+  },
+  returns: v.null(),
+  handler: async (ctx, args) => {
+    const player = await requirePlayer(ctx, args.installationId);
+    const room = await requireRoomHost(ctx, args.roomId, player._id);
+    if (room.status !== 'waiting') {
+      throw new Error('لا يمكن تغيير التصنيف بعد بدء المباراة');
+    }
+    validateRoomOptions({
+      mode: room.mode ?? 'classic',
+      category: args.category,
+      collection: args.collection,
+      maxPlayers: room.maxPlayers,
+      automaticQuestions: room.automaticQuestions,
+      freeQuestionsPerPlayer: room.freeQuestionsPerPlayer,
+    });
+    await ctx.db.patch(room._id, {
+      category: args.category,
+      categorySelected: true,
+      collection: args.collection,
+    });
+    return null;
   },
 });
 
@@ -281,6 +318,9 @@ export const start = mutation({
       )
       .take(room.maxPlayers);
     const mode = room.mode ?? 'classic';
+    if (!(room.categorySelected ?? false)) {
+      throw new Error('اختر التصنيف بعد اتفاق اللاعبين أولًا');
+    }
     const requiredPlayers = mode === 'duel' ? 2 : 3;
     if (memberships.length < requiredPlayers) {
       throw new Error(

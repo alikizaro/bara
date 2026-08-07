@@ -9,7 +9,7 @@ import {
   requirePlayer,
   requireRoomHost,
 } from './lib/identity';
-import { pickDistinctPair } from './lib/roomPolicy';
+import { nextFreeTurn, pickOrderedPair } from './lib/roomPolicy';
 import { loadActiveRoomPlayers } from './lib/roomView';
 import { createRoundForRoom } from './lib/rounds';
 import { roundPhaseValidator } from './validators';
@@ -270,7 +270,7 @@ export const advanceConversation = mutation({
     if (round.phase === 'automatic_questions') {
       const nextTurn = round.automaticTurnIndex + 1;
       if (nextTurn < room.automaticQuestions) {
-        const pair = pickDistinctPair(memberships);
+        const pair = pickOrderedPair(memberships, nextTurn);
         await ctx.db.patch(round._id, {
           automaticTurnIndex: nextTurn,
           currentQuestionerId: pair.questionerId,
@@ -300,33 +300,31 @@ export const advanceConversation = mutation({
       throw new Error('اختر لاعبًا للإجابة أولًا');
     }
 
-    const nextFreeQuestion = round.freeQuestionIndex + 1;
-    if (nextFreeQuestion < room.freeQuestionsPerPlayer) {
+    const nextTurn = nextFreeTurn({
+      playerIndex: round.freePlayerIndex,
+      questionIndex: round.freeQuestionIndex,
+      playerCount: memberships.length,
+      questionsPerPlayer: room.freeQuestionsPerPlayer,
+    });
+    if (!nextTurn) {
       await ctx.db.patch(round._id, {
-        freeQuestionIndex: nextFreeQuestion,
+        phase: 'voting',
+        currentQuestionerId: null,
         currentAnswererId: null,
       });
       return null;
     }
-
-    const nextPlayerIndex = round.freePlayerIndex + 1;
-    const nextQuestioner = memberships[nextPlayerIndex];
+    const nextQuestioner = memberships[nextTurn.playerIndex];
     if (nextQuestioner) {
       await ctx.db.patch(round._id, {
-        freePlayerIndex: nextPlayerIndex,
-        freeQuestionIndex: 0,
+        freePlayerIndex: nextTurn.playerIndex,
+        freeQuestionIndex: nextTurn.questionIndex,
         currentQuestionerId: nextQuestioner.playerId,
         currentAnswererId: null,
       });
       return null;
     }
-
-    await ctx.db.patch(round._id, {
-      phase: 'voting',
-      currentQuestionerId: null,
-      currentAnswererId: null,
-    });
-    return null;
+    throw new Error('تعذر تحديد اللاعب التالي');
   },
 });
 

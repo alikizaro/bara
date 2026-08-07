@@ -22,6 +22,7 @@ export default defineSchema({
     hostPlayerId: v.id('players'),
     status: roomStatusValidator,
     category: categoryValidator,
+    categorySelected: v.optional(v.boolean()),
     mode: v.optional(gameModeValidator),
     collection: v.union(v.string(), v.null()),
     maxPlayers: v.number(),

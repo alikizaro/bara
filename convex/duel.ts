@@ -1,9 +1,8 @@
 import { v } from 'convex/values';
 
-import type { Doc, Id } from './_generated/dataModel';
+import type { Id } from './_generated/dataModel';
 import type { MutationCtx } from './_generated/server';
 import { mutation, query } from './_generated/server';
-import { getPlayableItems } from './data/starterItems';
 import {
   requireActiveMembership,
   requirePlayer,
@@ -34,7 +33,6 @@ const duelViewValidator = v.object({
   phase: v.union(v.literal('duel_guessing'), v.literal('results')),
   secret: artworkValidator,
   opponent: roomPlayerValidator,
-  guessChoices: v.array(artworkValidator),
   myGuessName: v.union(v.string(), v.null()),
   opponentHasGuessed: v.boolean(),
   result: v.union(
@@ -48,28 +46,6 @@ const duelViewValidator = v.object({
   ),
   players: v.array(roomPlayerValidator),
 });
-
-type DuelAssignment = NonNullable<Doc<'rounds'>['duelAssignments']>[number];
-
-function makeDuelChoices(
-  room: Doc<'rooms'>,
-  round: Doc<'rounds'>,
-  target: DuelAssignment,
-) {
-  const alternatives = getPlayableItems(room.category, room.collection).filter(
-    (item) => item.name !== target.name,
-  );
-  const offset = alternatives.length === 0
-    ? 0
-    : (round.roundNumber * 11) % alternatives.length;
-  const rotated = alternatives.slice(offset).concat(alternatives.slice(0, offset));
-  const choices = [target, ...rotated.slice(0, 3)].map(({ name, imageUrl }) => ({
-    name,
-    imageUrl,
-  }));
-  const shift = round.roundNumber % choices.length;
-  return choices.slice(shift).concat(choices.slice(0, shift));
-}
 
 async function awardPoint(
   ctx: MutationCtx,
@@ -130,7 +106,6 @@ export const getMyView = query({
       phase: round.phase,
       secret: { name: mine.name, imageUrl: mine.imageUrl },
       opponent,
-      guessChoices: makeDuelChoices(room, round, theirs),
       myGuessName: myGuess?.guessedName ?? null,
       opponentHasGuessed: Boolean(opponentGuess),
       result: reveal
@@ -173,12 +148,11 @@ export const submitGuess = mutation({
     if (guesses.some((guess) => guess.playerId === player._id)) {
       throw new Error('تم إرسال تخمينك بالفعل');
     }
-    const guessedName = args.guessedName.trim().slice(0, 120);
-    const choices = makeDuelChoices(room, round, target);
-    if (!choices.some((choice) => choice.name === guessedName)) {
-      throw new Error('هذا الخيار غير صالح');
+    const guessedName = args.guessedName.replace(/\s+/g, ' ').trim().slice(0, 120);
+    if (!guessedName) {
+      throw new Error('اكتب اسم تخمينك أولًا');
     }
-    const correct = guessedName === target.name;
+    const correct = guessedName.toLocaleLowerCase() === target.name.toLocaleLowerCase();
     const nextGuesses = [...guesses, { playerId: player._id, guessedName, correct }];
     const complete = nextGuesses.length === 2;
     if (complete) {

@@ -3,6 +3,7 @@ import { useCallback, useEffect, useMemo, useState, type ReactNode } from 'react
 import type {
   DuelView,
   GameView,
+  CategoryId,
   PlayerProfile,
   RoomSettings,
   RoomSnapshot,
@@ -85,12 +86,6 @@ function buildDuel(room: RoomSnapshot, profile: PlayerProfile): DuelView {
     phase: 'duel_guessing',
     secret: { name: 'الثعلب', imageUrl: null },
     opponent,
-    guessChoices: [
-      { name: 'الأسد', imageUrl: null },
-      { name: 'الفيل', imageUrl: null },
-      { name: 'الذئب', imageUrl: null },
-      { name: 'النمر', imageUrl: null },
-    ],
     myGuessName: null,
     opponentHasGuessed: false,
     result: null,
@@ -165,7 +160,7 @@ export function DemoGameProvider({ children }: { children: ReactNode }) {
           id: 'demo-room',
           code: demoCode(),
           status: 'waiting',
-          settings,
+          settings: { ...settings, categorySelected: false },
           players: settings.mode === 'duel' ? [host, demoPlayers[0]!] : [host, ...demoPlayers],
           hostPlayerId: host.id,
         });
@@ -197,6 +192,7 @@ export function DemoGameProvider({ children }: { children: ReactNode }) {
             maxPlayers: 6,
             automaticQuestions: 3,
             freeQuestionsPerPlayer: 1,
+            categorySelected: false,
           },
           players: [
             { ...demoPlayers[0]!, isHost: true },
@@ -236,6 +232,25 @@ export function DemoGameProvider({ children }: { children: ReactNode }) {
       );
     },
     [profile],
+  );
+
+  const setRoomCategory = useCallback(
+    async (category: CategoryId, collection: string | null) => {
+      setRoom((current) =>
+        current
+          ? {
+              ...current,
+              settings: {
+                ...current.settings,
+                category,
+                collection,
+                categorySelected: true,
+              },
+            }
+          : current,
+      );
+    },
+    [],
   );
 
   const startGame = useCallback(async () => {
@@ -288,20 +303,15 @@ export function DemoGameProvider({ children }: { children: ReactNode }) {
       if (current.phase !== 'free_questions' || !current.currentAnswererId) {
         return current;
       }
-      const nextQuestion = current.freeQuestionIndex + 1;
+      const nextPlayer = (current.freePlayerIndex + 1) % current.players.length;
+      const nextQuestion = nextPlayer === 0
+        ? current.freeQuestionIndex + 1
+        : current.freeQuestionIndex;
       if (nextQuestion < current.freeQuestionCount) {
         return {
           ...current,
-          freeQuestionIndex: nextQuestion,
-          currentAnswererId: null,
-        };
-      }
-      const nextPlayer = current.freePlayerIndex + 1;
-      if (nextPlayer < current.players.length) {
-        return {
-          ...current,
           freePlayerIndex: nextPlayer,
-          freeQuestionIndex: 0,
+          freeQuestionIndex: nextQuestion,
           currentQuestionerId: current.players[nextPlayer]?.id ?? null,
           currentAnswererId: null,
         };
@@ -377,9 +387,9 @@ export function DemoGameProvider({ children }: { children: ReactNode }) {
             myGuessName: guessedName,
             opponentHasGuessed: true,
             result: {
-              opponentSecret: current.guessChoices[0]!,
+              opponentSecret: { name: 'الأسد', imageUrl: null },
               opponentGuessName: current.secret.name,
-              myGuessCorrect: guessedName === current.guessChoices[0]?.name,
+              myGuessCorrect: guessedName === 'الأسد',
               opponentGuessCorrect: true,
             },
           }
@@ -427,6 +437,7 @@ export function DemoGameProvider({ children }: { children: ReactNode }) {
       createRoom,
       joinRoom,
       setReady,
+      setRoomCategory,
       startGame,
       chooseFreeAnswerer,
       advanceConversation,
@@ -453,6 +464,7 @@ export function DemoGameProvider({ children }: { children: ReactNode }) {
       room,
       saveDisplayName,
       setReady,
+      setRoomCategory,
       skipOutsiderGuess,
       startGame,
       startNextRound,

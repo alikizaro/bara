@@ -1,19 +1,12 @@
 import { useState } from 'react';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
 import { ActionButton } from '../components/action-button';
 import { BackHeader } from '../components/back-header';
 import { ErrorBanner } from '../components/error-banner';
 import { ScreenShell } from '../components/screen-shell';
 import { Stepper } from '../components/stepper';
-import {
-  animeCollections,
-  categories,
-  defaultRoomSettings,
-  type CategoryId,
-  type GameMode,
-  type RoomSettings,
-} from '../domain/game';
+import { defaultRoomSettings, type GameMode, type RoomSettings } from '../domain/game';
 import { validateRoomSettings } from '../domain/game-policy';
 import { useGame } from '../state/game-context';
 import { colors, radii } from '../theme/tokens';
@@ -35,14 +28,6 @@ export function CreateRoomScreen({
   }));
   const [localError, setLocalError] = useState<string | null>(null);
 
-  const chooseCategory = (category: CategoryId) => {
-    setSettings((current) => ({
-      ...current,
-      category,
-      collection: category === 'anime' ? 'one-piece' : null,
-    }));
-  };
-
   const submit = () => {
     const validationError = validateRoomSettings(settings);
     if (validationError) {
@@ -60,77 +45,11 @@ export function CreateRoomScreen({
         title={settings.mode === 'duel' ? 'لاعب ضد لاعب' : 'إنشاء غرفة'}
       />
       <Text style={styles.heading}>
-        {settings.mode === 'duel' ? 'اختر تصنيف المواجهة' : 'اختر نوع السالفة'}
+        {settings.mode === 'duel' ? 'أنشئ مواجهة' : 'أنشئ غرفة'}
       </Text>
       <Text style={styles.subheading}>
-        {settings.mode === 'duel'
-          ? 'ستظهر لكل لاعب صورة مختلفة، والفائز من يخمّن صورة خصمه'
-          : 'يمكنك تغيير هذه الخيارات قبل بدء المباراة'}
+        اجمع اللاعبين أولًا، تحدثوا واتفقوا على التصنيف داخل الغرفة.
       </Text>
-
-      <View style={styles.categoryList}>
-        {categories.map((category) => {
-          const selected = category.id === settings.category;
-          return (
-            <Pressable
-              accessibilityRole="button"
-              accessibilityState={{ selected }}
-              key={category.id}
-              onPress={() => chooseCategory(category.id)}
-              style={({ pressed }) => [
-                styles.categoryCard,
-                selected && styles.categorySelected,
-                pressed && styles.pressed,
-              ]}
-            >
-              <View style={styles.categoryCopy}>
-                <Text style={styles.categoryLabel}>{category.label}</Text>
-                <Text style={styles.categoryDescription}>
-                  {category.description}
-                </Text>
-              </View>
-              <Text style={styles.categoryEmoji}>{category.emoji}</Text>
-            </Pressable>
-          );
-        })}
-      </View>
-
-      {settings.category === 'anime' ? (
-        <View style={styles.animeSection}>
-          <Text style={styles.sectionTitle}>اختر الأنمي</Text>
-          <View style={styles.chips}>
-            {animeCollections.map((collection) => {
-              const selected = settings.collection === collection.id;
-              return (
-                <Pressable
-                  accessibilityRole="button"
-                  accessibilityState={{ selected }}
-                  key={collection.id}
-                  onPress={() =>
-                    setSettings((current) => ({
-                      ...current,
-                      collection: collection.id,
-                    }))
-                  }
-                  style={[styles.chip, selected && styles.chipSelected]}
-                >
-                  <Text
-                    style={[
-                      styles.chipText,
-                      selected && styles.chipTextSelected,
-                    ]}
-                  >
-                    {collection.label}
-                  </Text>
-                </Pressable>
-              );
-            })}
-          </View>
-          <Text style={styles.narutoNote}>
-            ناروتو مستقل بالكامل ولا يحتوي شخصيات بوروتو
-          </Text>
-        </View>
-      ) : null}
 
       {settings.mode === 'classic' ? (
         <>
@@ -175,7 +94,7 @@ export function CreateRoomScreen({
         <View style={styles.duelNote}>
           <Text style={styles.duelNoteTitle}>🎙️ مواجهة صوتية مفتوحة</Text>
           <Text style={styles.duelNoteText}>
-            لاعبان فقط، المايك مفتوح لكليكما، ثم يختار كل لاعب تخمينه من الصور.
+            لاعبان فقط، لكل لاعب صورة واسم مختلفان، والتخمين مفتوح بلا خيارات محددة.
           </Text>
         </View>
       )}
@@ -212,44 +131,6 @@ const styles = StyleSheet.create({
     textAlign: 'right',
     marginTop: 6,
   },
-  categoryList: {
-    gap: 10,
-    marginTop: 20,
-  },
-  categoryCard: {
-    flexDirection: 'row-reverse',
-    alignItems: 'center',
-    borderWidth: 1,
-    borderColor: colors.border,
-    borderRadius: radii.md,
-    backgroundColor: colors.backgroundElevated,
-    padding: 15,
-  },
-  categorySelected: {
-    borderColor: colors.primaryLight,
-    backgroundColor: colors.surfaceBright,
-  },
-  categoryCopy: {
-    flex: 1,
-    alignItems: 'flex-end',
-    marginRight: 13,
-  },
-  categoryLabel: {
-    color: colors.text,
-    fontSize: 17,
-    fontWeight: '900',
-  },
-  categoryDescription: {
-    color: colors.textMuted,
-    fontSize: 12,
-    marginTop: 4,
-  },
-  categoryEmoji: {
-    fontSize: 34,
-  },
-  animeSection: {
-    marginTop: 22,
-  },
   sectionTitle: {
     color: colors.text,
     fontSize: 18,
@@ -258,45 +139,11 @@ const styles = StyleSheet.create({
     marginTop: 24,
     marginBottom: 12,
   },
-  chips: {
-    flexDirection: 'row-reverse',
-    flexWrap: 'wrap',
-    gap: 9,
-  },
-  chip: {
-    borderRadius: radii.pill,
-    borderWidth: 1,
-    borderColor: colors.border,
-    backgroundColor: colors.surface,
-    paddingVertical: 10,
-    paddingHorizontal: 16,
-  },
-  chipSelected: {
-    borderColor: colors.secondary,
-    backgroundColor: '#134A50',
-  },
-  chipText: {
-    color: colors.textMuted,
-    fontSize: 14,
-    fontWeight: '700',
-  },
-  chipTextSelected: {
-    color: colors.text,
-  },
-  narutoNote: {
-    color: colors.secondary,
-    fontSize: 11,
-    textAlign: 'right',
-    marginTop: 10,
-  },
   steppers: {
     gap: 10,
   },
   submit: {
     marginTop: 16,
-  },
-  pressed: {
-    opacity: 0.82,
   },
   duelNote: {
     borderRadius: radii.md,

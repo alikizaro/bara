@@ -7,6 +7,7 @@ import { ActionButton } from '../components/action-button';
 import { ErrorBanner } from '../components/error-banner';
 import { PlayerAvatar } from '../components/player-avatar';
 import { ScreenShell } from '../components/screen-shell';
+import { LiveAudioRoom } from '../features/voice/live-audio-room';
 import { animeCollections, categories } from '../domain/game';
 import { canHostStart } from '../domain/game-policy';
 import { useGame } from '../state/game-context';
@@ -16,14 +17,17 @@ export function LobbyScreen({ onLeave }: { onLeave: () => void }) {
   const {
     profile,
     room,
+    voiceAccess,
     isWorking,
     error,
     clearError,
     setReady,
+    setRoomCategory,
     startGame,
     leaveRoom,
   } = useGame();
   const [copied, setCopied] = useState(false);
+  const [voiceError, setVoiceError] = useState<string | null>(null);
 
   if (!profile || !room) {
     return (
@@ -41,7 +45,9 @@ export function LobbyScreen({ onLeave }: { onLeave: () => void }) {
   const collection = animeCollections.find(
     (item) => item.id === room.settings.collection,
   );
-  const readyToStart = canHostStart(room.players, room.settings.mode);
+  const readyToStart =
+    room.settings.categorySelected &&
+    canHostStart(room.players, room.settings.mode);
   const isDuel = room.settings.mode === 'duel';
 
   const copyCode = () => {
@@ -112,9 +118,85 @@ export function LobbyScreen({ onLeave }: { onLeave: () => void }) {
           </>
         )}
         <SettingPill
-          label={collection?.label ?? category?.label ?? 'الصنف'}
+          label={room.settings.categorySelected
+            ? collection?.label ?? category?.label ?? 'الصنف'
+            : 'لم يُختر التصنيف'}
           emoji={category?.emoji ?? '🎲'}
         />
+      </View>
+
+      <View style={styles.chatCard}>
+        <Text style={styles.chatTitle}>🎙️ دردشة الغرفة</Text>
+        <Text style={styles.chatText}>
+          تحدثوا واتفقوا على التصنيف، ويمكن لكل لاعب التحكم بالمايك والصوت.
+        </Text>
+        <LiveAudioRoom
+          access={voiceAccess}
+          canSpeak
+          onError={setVoiceError}
+        />
+      </View>
+
+      <View style={styles.categorySection}>
+        <Text style={styles.categoryTitle}>
+          {isHost ? 'اختر التصنيف بعد اتفاقكم' : 'التصنيف الذي اختاره المضيف'}
+        </Text>
+        {isHost ? (
+          <>
+            <View style={styles.categoryGrid}>
+              {categories.map((item) => {
+                const selected =
+                  room.settings.categorySelected &&
+                  room.settings.category === item.id;
+                return (
+                  <Pressable
+                    accessibilityRole="button"
+                    accessibilityState={{ selected }}
+                    disabled={isWorking}
+                    key={item.id}
+                    onPress={() =>
+                      void setRoomCategory(
+                        item.id,
+                        item.id === 'anime' ? 'all-anime' : null,
+                      ).catch(() => undefined)
+                    }
+                    style={[styles.categoryChip, selected && styles.categoryChipSelected]}
+                  >
+                    <Text style={styles.categoryEmoji}>{item.emoji}</Text>
+                    <Text style={styles.categoryLabel}>{item.label}</Text>
+                  </Pressable>
+                );
+              })}
+            </View>
+            {room.settings.categorySelected && room.settings.category === 'anime' ? (
+              <View style={styles.collectionGrid}>
+                {animeCollections.map((item) => {
+                  const selected = room.settings.collection === item.id;
+                  return (
+                    <Pressable
+                      accessibilityRole="button"
+                      accessibilityState={{ selected }}
+                      disabled={isWorking}
+                      key={item.id}
+                      onPress={() =>
+                        void setRoomCategory('anime', item.id).catch(() => undefined)
+                      }
+                      style={[styles.collectionChip, selected && styles.collectionChipSelected]}
+                    >
+                      <Text style={styles.collectionLabel}>{item.label}</Text>
+                    </Pressable>
+                  );
+                })}
+              </View>
+            ) : null}
+          </>
+        ) : (
+          <Text style={styles.selectedCategoryText}>
+            {room.settings.categorySelected
+              ? `${category?.emoji ?? '🎲'} ${collection?.label ?? category?.label}`
+              : 'بانتظار اختيار المضيف بعد اتفاقكم…'}
+          </Text>
+        )}
       </View>
 
       <View style={styles.playersHeader}>
@@ -156,7 +238,13 @@ export function LobbyScreen({ onLeave }: { onLeave: () => void }) {
         ))}
       </View>
 
-      <ErrorBanner message={error} onDismiss={clearError} />
+      <ErrorBanner
+        message={voiceError ?? error}
+        onDismiss={() => {
+          setVoiceError(null);
+          clearError();
+        }}
+      />
 
       <View style={styles.bottomActions}>
         {isHost ? (
@@ -169,9 +257,11 @@ export function LobbyScreen({ onLeave }: { onLeave: () => void }) {
             />
             {!readyToStart ? (
               <Text style={styles.waitHint}>
-                {isDuel
-                  ? 'بانتظار اللاعب الثاني وأن يضغط جاهز'
-                  : 'يلزم 3 لاعبين وأن يكون جميع الأصدقاء جاهزين'}
+                {!room.settings.categorySelected
+                  ? 'اتفقوا ثم اختر التصنيف أولًا'
+                  : isDuel
+                    ? 'بانتظار اللاعب الثاني وأن يضغط جاهز'
+                    : 'يلزم 3 لاعبين وأن يكون جميع الأصدقاء جاهزين'}
               </Text>
             ) : null}
           </>
@@ -295,6 +385,93 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     gap: 8,
     marginTop: 14,
+  },
+  chatCard: {
+    alignItems: 'center',
+    borderRadius: radii.lg,
+    borderWidth: 1,
+    borderColor: colors.secondary,
+    backgroundColor: '#123A42',
+    padding: 16,
+    marginTop: 16,
+  },
+  chatTitle: {
+    color: colors.text,
+    fontSize: 17,
+    fontWeight: '900',
+  },
+  chatText: {
+    color: colors.textMuted,
+    fontSize: 12,
+    lineHeight: 19,
+    textAlign: 'center',
+    marginTop: 5,
+  },
+  categorySection: {
+    borderRadius: radii.lg,
+    borderWidth: 1,
+    borderColor: colors.border,
+    backgroundColor: colors.backgroundElevated,
+    padding: 14,
+    marginTop: 14,
+  },
+  categoryTitle: {
+    color: colors.text,
+    fontSize: 16,
+    fontWeight: '900',
+    textAlign: 'right',
+    marginBottom: 12,
+  },
+  categoryGrid: {
+    flexDirection: 'row-reverse',
+    flexWrap: 'wrap',
+    gap: 8,
+  },
+  categoryChip: {
+    minWidth: '30%',
+    flexGrow: 1,
+    flexDirection: 'row-reverse',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 5,
+    borderRadius: radii.md,
+    borderWidth: 1,
+    borderColor: colors.border,
+    backgroundColor: colors.surface,
+    paddingVertical: 10,
+    paddingHorizontal: 8,
+  },
+  categoryChipSelected: {
+    borderColor: colors.secondary,
+    backgroundColor: '#134A50',
+  },
+  categoryEmoji: { fontSize: 17 },
+  categoryLabel: { color: colors.text, fontSize: 12, fontWeight: '800' },
+  collectionGrid: {
+    flexDirection: 'row-reverse',
+    flexWrap: 'wrap',
+    gap: 7,
+    marginTop: 12,
+  },
+  collectionChip: {
+    borderRadius: radii.pill,
+    borderWidth: 1,
+    borderColor: colors.border,
+    backgroundColor: colors.surface,
+    paddingVertical: 8,
+    paddingHorizontal: 12,
+  },
+  collectionChipSelected: {
+    borderColor: colors.primaryLight,
+    backgroundColor: colors.surfaceBright,
+  },
+  collectionLabel: { color: colors.textMuted, fontSize: 11, fontWeight: '700' },
+  selectedCategoryText: {
+    color: colors.secondary,
+    fontSize: 18,
+    fontWeight: '900',
+    textAlign: 'center',
+    paddingVertical: 8,
   },
   settingPill: {
     flexDirection: 'row-reverse',

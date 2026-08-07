@@ -18,7 +18,7 @@ function phaseLabel(game: GameView): string {
     return `سؤال تلقائي ${game.automaticTurnIndex + 1} من ${game.automaticTurnCount}`;
   }
   if (game.phase === 'free_questions') {
-    return `أسئلة حرة · اللاعب ${game.freePlayerIndex + 1} من ${game.players.length}`;
+    return `السؤال ${game.freeQuestionIndex + 1} من ${game.freeQuestionCount} · دور اللاعب ${game.freePlayerIndex + 1} من ${game.players.length}`;
   }
   if (game.phase === 'voting') {
     return 'التصويت';

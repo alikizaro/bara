@@ -16,6 +16,7 @@ import type { Id } from '../../convex/_generated/dataModel';
 import type {
   GameView,
   DuelView,
+  CategoryId,
   PlayerProfile,
   RoomSettings,
   RoomSnapshot,
@@ -41,6 +42,7 @@ export function OnlineGameProvider({ children }: { children: ReactNode }) {
   const createOnlineRoom = useMutation(api.rooms!.create!);
   const joinOnlineRoom = useMutation(api.rooms!.join!);
   const setOnlineReady = useMutation(api.rooms!.setReady!);
+  const setOnlineCategory = useMutation(api.rooms!.setCategory!);
   const startOnlineGame = useMutation(api.rooms!.start!);
   const leaveOnlineRoom = useMutation(api.rooms!.leave!);
   const chooseOnlineFreeAnswerer = useMutation(api.game!.chooseFreeAnswerer!);
@@ -135,7 +137,8 @@ export function OnlineGameProvider({ children }: { children: ReactNode }) {
     if (
       !installationId ||
       !roomId ||
-      (!gameQuery && !duelQuery) ||
+      !roomQuery ||
+      roomQuery.status === 'finished' ||
       voiceAccess
     ) {
       return;
@@ -156,11 +159,10 @@ export function OnlineGameProvider({ children }: { children: ReactNode }) {
       active = false;
     };
   }, [
-    duelQuery,
-    gameQuery,
     installationId,
     issueVoiceToken,
     roomId,
+    roomQuery,
     voiceAccess,
   ]);
 
@@ -198,7 +200,10 @@ export function OnlineGameProvider({ children }: { children: ReactNode }) {
       try {
         const result = (await createOnlineRoom({
           installationId,
-          ...settings,
+          mode: settings.mode,
+          maxPlayers: settings.maxPlayers,
+          automaticQuestions: settings.automaticQuestions,
+          freeQuestionsPerPlayer: settings.freeQuestionsPerPlayer,
         })) as { roomId: Id<'rooms'>; code: string };
         setRoomId(result.roomId);
         setVoiceAccess(null);
@@ -249,6 +254,25 @@ export function OnlineGameProvider({ children }: { children: ReactNode }) {
       }
     },
     [installationId, roomId, setOnlineReady],
+  );
+
+  const setRoomCategory = useCallback(
+    async (category: CategoryId, collection: string | null) => {
+      if (!installationId || !roomId) {
+        return;
+      }
+      setIsWorking(true);
+      setError(null);
+      try {
+        await setOnlineCategory({ installationId, roomId, category, collection });
+      } catch (nextError) {
+        setError(readableError(nextError));
+        throw nextError;
+      } finally {
+        setIsWorking(false);
+      }
+    },
+    [installationId, roomId, setOnlineCategory],
   );
 
   const startGame = useCallback(async () => {
@@ -437,6 +461,7 @@ export function OnlineGameProvider({ children }: { children: ReactNode }) {
       createRoom,
       joinRoom,
       setReady,
+      setRoomCategory,
       startGame,
       chooseFreeAnswerer,
       advanceConversation,
@@ -463,6 +488,7 @@ export function OnlineGameProvider({ children }: { children: ReactNode }) {
       roomQuery,
       saveDisplayName,
       setReady,
+      setRoomCategory,
       skipOutsiderGuess,
       startGame,
       startNextRound,

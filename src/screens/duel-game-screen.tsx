@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react';
-import { Alert, Pressable, StyleSheet, Text, View } from 'react-native';
+import { Alert, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
 
 import { ActionButton } from '../components/action-button';
 import { ErrorBanner } from '../components/error-banner';
@@ -22,6 +22,7 @@ export function DuelGameScreen({ onLeave }: { onLeave: () => void }) {
     leaveRoom,
   } = useGame();
   const [voiceError, setVoiceError] = useState<string | null>(null);
+  const [guessText, setGuessText] = useState('');
   const handleVoiceError = useCallback((message: string) => {
     setVoiceError(message);
   }, []);
@@ -81,30 +82,29 @@ export function DuelGameScreen({ onLeave }: { onLeave: () => void }) {
         <View style={styles.guessSection}>
           <Text style={styles.sectionTitle}>ما الصورة التي ظهرت لخصمك؟</Text>
           <Text style={styles.sectionHint}>
-            اسأله بالمايك ثم اختر إجابتك النهائية.
+            اسأله بالمايك ثم اكتب الاسم الذي تعتقد أنه ظهر له.
           </Text>
-          <View style={styles.choiceGrid}>
-            {duel.guessChoices.map((choice) => (
-              <Pressable
-                accessibilityRole="button"
-                disabled={isWorking}
-                key={choice.name}
-                onPress={() =>
-                  void submitDuelGuess(choice.name).catch(() => undefined)
-                }
-                style={({ pressed }) => [
-                  styles.choiceCard,
-                  pressed && styles.pressed,
-                ]}
-              >
-                <RemoteArtwork
-                  imageUrl={choice.imageUrl}
-                  label={choice.name}
-                  size={128}
-                />
-                <Text style={styles.choiceName}>{choice.name}</Text>
-              </Pressable>
-            ))}
+          <View style={styles.guessForm}>
+            <TextInput
+              accessibilityLabel="اسم تخمينك"
+              editable={!isWorking}
+              maxLength={120}
+              onChangeText={setGuessText}
+              placeholder="اكتب الاسم هنا"
+              placeholderTextColor={colors.textDim}
+              returnKeyType="done"
+              style={styles.guessInput}
+              textAlign="right"
+              value={guessText}
+            />
+            <ActionButton
+              disabled={!guessText.trim()}
+              label="إرسال التخمين النهائي"
+              loading={isWorking}
+              onPress={() =>
+                void submitDuelGuess(guessText).catch(() => undefined)
+              }
+            />
           </View>
         </View>
       ) : null}
@@ -240,18 +240,18 @@ const styles = StyleSheet.create({
   guessSection: { marginTop: 22 },
   sectionTitle: { color: colors.text, fontSize: 20, fontWeight: '900', textAlign: 'right' },
   sectionHint: { color: colors.textMuted, fontSize: 12, textAlign: 'right', marginTop: 5 },
-  choiceGrid: { flexDirection: 'row-reverse', flexWrap: 'wrap', gap: 10, marginTop: 14 },
-  choiceCard: {
-    width: '48%',
-    alignItems: 'center',
+  guessForm: { gap: 10, marginTop: 14 },
+  guessInput: {
+    minHeight: 56,
     borderRadius: radii.md,
     borderWidth: 1,
     borderColor: colors.border,
     backgroundColor: colors.surface,
-    padding: 8,
+    color: colors.text,
+    fontSize: 16,
+    fontWeight: '700',
+    paddingHorizontal: 16,
   },
-  choiceName: { color: colors.text, fontSize: 14, fontWeight: '800', textAlign: 'center', marginTop: 7 },
-  pressed: { opacity: 0.72, transform: [{ scale: 0.98 }] },
   waitingCard: {
     alignItems: 'center',
     borderRadius: radii.lg,

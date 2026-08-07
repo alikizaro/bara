@@ -89,3 +89,40 @@ export function pickDistinctPair(
     answererId: answerer.playerId,
   };
 }
+
+export function pickOrderedPair(
+  members: readonly Pick<Doc<'roomMembers'>, 'playerId'>[],
+  turnIndex: number,
+): {
+  questionerId: Id<'players'>;
+  answererId: Id<'players'>;
+} {
+  if (members.length < 2) {
+    throw new Error('يلزم لاعبان على الأقل لبدء السؤال');
+  }
+  const questioner = members[turnIndex % members.length];
+  const answerer = members[(turnIndex + 1) % members.length];
+  if (!questioner || !answerer) {
+    throw new Error('تعذر اختيار طرفي السؤال');
+  }
+  return {
+    questionerId: questioner.playerId,
+    answererId: answerer.playerId,
+  };
+}
+
+export function nextFreeTurn(options: {
+  playerIndex: number;
+  questionIndex: number;
+  playerCount: number;
+  questionsPerPlayer: number;
+}): { playerIndex: number; questionIndex: number } | null {
+  const playerIndex = (options.playerIndex + 1) % options.playerCount;
+  const questionIndex = playerIndex === 0
+    ? options.questionIndex + 1
+    : options.questionIndex;
+  if (questionIndex >= options.questionsPerPlayer) {
+    return null;
+  }
+  return { playerIndex, questionIndex };
+}
