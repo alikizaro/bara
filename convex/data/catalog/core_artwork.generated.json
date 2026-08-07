@@ -1,0 +1,2226 @@
+{
+  "animals": {
+    "أبوسوم": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Didelphis_virginiana_with_young.JPG/960px-Didelphis_virginiana_with_young.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Opossum"
+    },
+    "آكل النمل الشوكي": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Short-beaked_echidna_in_ANBG.jpg/960px-Short-beaked_echidna_in_ANBG.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Echidna"
+    },
+    "خلد الماء": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Duck-billed_platypus_%28Ornithorhynchus_anatinus%29_Scottsdale.jpg/960px-Duck-billed_platypus_%28Ornithorhynchus_anatinus%29_Scottsdale.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Platypus"
+    },
+    "دلفين": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Tursiops_truncatus_01.jpg/960px-Tursiops_truncatus_01.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Dolphin"
+    },
+    "حوت أزرق": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Anim1754_-_Flickr_-_NOAA_Photo_Library.jpg/960px-Anim1754_-_Flickr_-_NOAA_Photo_Library.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Blue_whale"
+    },
+    "حوت أحدب": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Humpback_Whale_underwater_shot.jpg/960px-Humpback_Whale_underwater_shot.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Humpback_whale"
+    },
+    "حوت قاتل": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Killerwhales_jumping.jpg/960px-Killerwhales_jumping.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Orca"
+    },
+    "فقمة": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Pinnipeds_vertical_version_montage.jpg/960px-Pinnipeds_vertical_version_montage.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Pinniped"
+    },
+    "أسد البحر": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/South_American_bull_sea_lion_%28Otaria_flavescens%29.jpg/960px-South_American_bull_sea_lion_%28Otaria_flavescens%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Sea_lion"
+    },
+    "خروف البحر": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Underwater_photography_on_endangered_mammal_manatee.jpg/960px-Underwater_photography_on_endangered_mammal_manatee.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Manatee"
+    },
+    "قرش المطرقة": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Scalloped_Hammerhead_Shark_Sphyrna_Lewini_%28226845659%29.jpeg/960px-Scalloped_Hammerhead_Shark_Sphyrna_Lewini_%28226845659%29.jpeg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hammerhead_shark"
+    },
+    "سمكة ذهبية": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Gold_fish1.jpg/960px-Gold_fish1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Goldfish"
+    },
+    "شفنين": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Raya_pel%C3%A1gica_%28Pteroplatytrygon_violacea%29%2C_Cabo_de_Palos%2C_Espa%C3%B1a%2C_2022-07-16%2C_DD_69.jpg/960px-Raya_pel%C3%A1gica_%28Pteroplatytrygon_violacea%29%2C_Cabo_de_Palos%2C_Espa%C3%B1a%2C_2022-07-16%2C_DD_69.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Batomorphi"
+    },
+    "ثعبان البحر": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Pelamis_platura%2C_Costa_Rica.jpg/960px-Pelamis_platura%2C_Costa_Rica.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Sea_snake"
+    },
+    "فرس البحر": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Hippocampus_hippocampus_%28on_Ascophyllum_nodosum%29.jpg/960px-Hippocampus_hippocampus_%28on_Ascophyllum_nodosum%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Seahorse"
+    },
+    "أخطبوط": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Octopus2.jpg/960px-Octopus2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Octopus"
+    },
+    "حبار": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Sepioteuthis_sepioidea_%28Caribbean_Reef_Squid%29.jpg/960px-Sepioteuthis_sepioidea_%28Caribbean_Reef_Squid%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Squid"
+    },
+    "قنديل البحر": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Jelly_cc11.jpg/960px-Jelly_cc11.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Jellyfish"
+    },
+    "نجم البحر": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Starfish_montage.png/960px-Starfish_montage.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Starfish"
+    },
+    "سرطان البحر": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Cancer_pagurus.jpg/960px-Cancer_pagurus.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Crab"
+    },
+    "كركند": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/KreeftbijDenOsse.jpg/960px-KreeftbijDenOsse.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Lobster"
+    },
+    "روبيان": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/b9/Palaemon_serratus_Croazia.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Shrimp"
+    },
+    "محار": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Crassostrea_gigas_p1040848.jpg/960px-Crassostrea_gigas_p1040848.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Oyster"
+    },
+    "تمساح": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Nile_crocodile_head.jpg/960px-Nile_crocodile_head.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Crocodile"
+    },
+    "قاطور": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Chinese%2Bamerican_alligators.png/960px-Chinese%2Bamerican_alligators.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Alligator"
+    },
+    "سلحفاة": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Turtle_diversity.jpg/960px-Turtle_diversity.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Turtle"
+    },
+    "سلحفاة بحرية": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Chelonia_mydas_is_going_for_the_air_edit.jpg/960px-Chelonia_mydas_is_going_for_the_air_edit.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Sea_turtle"
+    },
+    "إغوانا": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Green_Iguana_In_Florida.jpg/960px-Green_Iguana_In_Florida.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Iguana"
+    },
+    "حرباء": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Panther_Chameleon_738367_%28cropped%29.jpg/960px-Panther_Chameleon_738367_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Chameleon"
+    },
+    "وزغ": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Phelsuma_l._laticauda.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Gecko"
+    },
+    "سحلية": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Hemidactylus_platyurus_%28Flat-tailed_House_Gecko%29_on_white_background%2C_focus_stacking.jpg/960px-Hemidactylus_platyurus_%28Flat-tailed_House_Gecko%29_on_white_background%2C_focus_stacking.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Lizard"
+    },
+    "تنين كومودو": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/202306_Varanus_komodoensis.jpg/960px-202306_Varanus_komodoensis.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Komodo_dragon"
+    },
+    "كوبرا": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/66/Indiancobra.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Cobra"
+    },
+    "أفعى": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Viperidae-01.jpg/960px-Viperidae-01.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Viper"
+    },
+    "أناكوندا": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Sucuri_verde.jpg/960px-Sucuri_verde.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Green_anaconda"
+    },
+    "ثعبان أصلة": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/32/Python_molurus_molurus_2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Pythonidae"
+    },
+    "ضفدع": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Red-eyed_Leaf_Frog_%2849661076226%29.jpg/960px-Red-eyed_Leaf_Frog_%2849661076226%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Frog"
+    },
+    "علجوم": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/31/Bombina_bombina_1_%28Marek_Szczepanek%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Toad"
+    },
+    "سمندر": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/b2/SpottedSalamander.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Salamander"
+    },
+    "نسر": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Gyps_rueppellii_-Nairobi_National_Park%2C_Kenya-8-4c.jpg/960px-Gyps_rueppellii_-Nairobi_National_Park%2C_Kenya-8-4c.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Vulture"
+    },
+    "صقر": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/df/Eurasian_hobby_%28Falco_subbuteo%29_by_Shantanu_Kuveskar.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Falcon"
+    },
+    "بومة": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Bubo_bubo_sibiricus_-_01.JPG/960px-Bubo_bubo_sibiricus_-_01.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Owl"
+    },
+    "غراب": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Corvus_corone_-near_Canford_Cliffs%2C_Poole%2C_England-8.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Crow"
+    },
+    "حمامة": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Treron_vernans_male_-_Kent_Ridge_Park.jpg/960px-Treron_vernans_male_-_Kent_Ridge_Park.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Columbidae"
+    },
+    "عصفور": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Passeriformes-01v01.jpg/960px-Passeriformes-01v01.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AC%D9%88%D8%A7%D8%AB%D9%85"
+    },
+    "بلبل": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/87/Brown-eared_Bulbul_1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Bulbul"
+    },
+    "كناري": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/GelbA.JPG/960px-GelbA.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Domestic_canary"
+    },
+    "ببغاء": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Rainbow_lorikeet_%28Trichoglossus_moluccanus_moluccanus%29_Sydney.jpg/960px-Rainbow_lorikeet_%28Trichoglossus_moluccanus_moluccanus%29_Sydney.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Parrot"
+    },
+    "طاووس": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Peacock_Plumage.jpg/960px-Peacock_Plumage.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Peafowl"
+    },
+    "نعامة": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Struthio_Diversity.jpg/960px-Struthio_Diversity.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Ostrich"
+    },
+    "بطريق": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/South_Shetland-2016-Deception_Island%E2%80%93Chinstrap_penguin_%28Pygoscelis_antarctica%29_04.jpg/960px-South_Shetland-2016-Deception_Island%E2%80%93Chinstrap_penguin_%28Pygoscelis_antarctica%29_04.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Penguin"
+    },
+    "بجعة": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Mute_Swan_Emsworth2.JPG/960px-Mute_Swan_Emsworth2.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Swan"
+    },
+    "مالك الحزين": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Ardeidae-01.jpg/960px-Ardeidae-01.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Heron"
+    },
+    "نورس": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Herring_Gull_%28Larus_argentatus%29%2C_Brighton%2C_England.JPG/960px-Herring_Gull_%28Larus_argentatus%29%2C_Brighton%2C_England.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Gull"
+    },
+    "بطة": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Bucephala-albeola-010.jpg/960px-Bucephala-albeola-010.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Duck"
+    },
+    "إوزة": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Anser_anser_1_%28Piotr_Kuczynski%29_%28cropped%29.jpg/960px-Anser_anser_1_%28Piotr_Kuczynski%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Goose"
+    },
+    "ديك": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/84/Male_and_female_chicken_sitting_together.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Chicken"
+    },
+    "دجاجة": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/84/Male_and_female_chicken_sitting_together.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Chicken"
+    },
+    "ديك رومي": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Male_wild_turkey_%28Meleagris_gallopavo%29_strutting.jpg/960px-Male_wild_turkey_%28Meleagris_gallopavo%29_strutting.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Turkey_(bird)"
+    },
+    "سمان": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Brown_Quail.jpg/960px-Brown_Quail.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Quail"
+    },
+    "هدهد": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Upupa_epops_Madrid_01.jpg/960px-Upupa_epops_Madrid_01.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hoopoe"
+    },
+    "نقار الخشب": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/PileatedWoodpeckerFeedingonTree%2C_crop.jpg/960px-PileatedWoodpeckerFeedingonTree%2C_crop.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Woodpecker"
+    },
+    "نحلة": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Tetragonula_carbonaria_%2814521993792%29.jpg/960px-Tetragonula_carbonaria_%2814521993792%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Bee"
+    },
+    "دبور": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Vespula_germanica_Richard_Bartz.jpg/960px-Vespula_germanica_Richard_Bartz.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Wasp"
+    },
+    "نملة": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Red_Ant_-_March_2025.jpg/960px-Red_Ant_-_March_2025.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Ant"
+    },
+    "فراشة": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Fesoj_-_Papilio_machaon_%28by%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Butterfly"
+    },
+    "عثة": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Autographa_gamma_en_Trachelospermum_jasminoides_-_02.jpg/960px-Autographa_gamma_en_Trachelospermum_jasminoides_-_02.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Moth"
+    },
+    "يعسوب": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Red_grasshawk_%28Neurothemis_fluctuans%29_male_Phuket_2.jpg/960px-Red_grasshawk_%28Neurothemis_fluctuans%29_male_Phuket_2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Dragonfly"
+    },
+    "صرصور": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Snodgrass_common_household_roaches.png/960px-Snodgrass_common_household_roaches.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Cockroach"
+    },
+    "خنفساء": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Coleoptera_collage.png/960px-Coleoptera_collage.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Beetle"
+    },
+    "دعسوقة": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Coccinella-septempunctata-15-fws.jpg/960px-Coccinella-septempunctata-15-fws.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Coccinellidae"
+    },
+    "ذبابة": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Bessenbandzweefvlieg_Vrouwtje_%282%29.JPG/960px-Bessenbandzweefvlieg_Vrouwtje_%282%29.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Fly"
+    },
+    "بعوضة": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Aedes_aegypti.jpg/960px-Aedes_aegypti.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Mosquito"
+    },
+    "عنكبوت": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Araneus_diadematus_%28Clerck%2C_1757%29.JPG/960px-Araneus_diadematus_%28Clerck%2C_1757%29.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Spider"
+    },
+    "عقرب": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Scorpion_Photograph_By_Shantanu_Kuveskar.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Scorpion"
+    },
+    "قرادة": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Ixodus_ricinus_5x.jpg/960px-Ixodus_ricinus_5x.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Tick"
+    },
+    "حلزون": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Snail.jpg/960px-Snail.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Snail"
+    },
+    "أم أربعة وأربعين": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Chilopoda_collage.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Centipede"
+    },
+    "فرس النبي": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Mantis_%28European%29.jpg/960px-Mantis_%28European%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Mantis"
+    },
+    "قط منزلي": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Cat_August_2010-4.jpg/960px-Cat_August_2010-4.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Cat"
+    },
+    "فهد": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Male_cheetah_facing_left_in_South_Africa.jpg/960px-Male_cheetah_facing_left_in_South_Africa.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Cheetah"
+    },
+    "أسد": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/020_The_lion_king_Snyggve_in_the_Serengeti_National_Park_Photo_by_Giles_Laurent.jpg/960px-020_The_lion_king_Snyggve_in_the_Serengeti_National_Park_Photo_by_Giles_Laurent.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Lion"
+    },
+    "قط بري": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/European_Wildcat_Nationalpark_Bayerischer_Wald_03.jpg/960px-European_Wildcat_Nationalpark_Bayerischer_Wald_03.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Wildcat"
+    },
+    "كلب": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Huskiesatrest.jpg/960px-Huskiesatrest.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Dog"
+    },
+    "يغور": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Standing_jaguar.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Jaguar"
+    },
+    "نمر": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Bengal_tiger_%28Panthera_tigris_tigris%29_female_3_crop.jpg/960px-Bengal_tiger_%28Panthera_tigris_tigris%29_female_3_crop.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Tiger"
+    },
+    "وشق": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Lynx_heads_collage.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Lynx"
+    },
+    "ذئب": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Eurasian_wolf_2.jpg/960px-Eurasian_wolf_2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Wolf"
+    },
+    "ثعلب": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Portrait_of_a_red_fox_in_Rautas_fj%C3%A4llurskog_%28cropped%29.jpg/960px-Portrait_of_a_red_fox_in_Rautas_fj%C3%A4llurskog_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Red_fox"
+    },
+    "دب بني": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/2010-kodiak-bear-1.jpg/960px-2010-kodiak-bear-1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Brown_bear"
+    },
+    "دب قطبي": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/66/Polar_Bear_-_Alaska_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Polar_bear"
+    },
+    "ابن آوى": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Flickr_-_Rainbirder_-_Golden_Jackal_%281%29.jpg/960px-Flickr_-_Rainbirder_-_Golden_Jackal_%281%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Jackal"
+    },
+    "باندا": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Grosser_Panda.JPG/960px-Grosser_Panda.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Giant_panda"
+    },
+    "كوالا": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Koala_climbing_tree.jpg/960px-Koala_climbing_tree.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Koala"
+    },
+    "ضبع": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Hyaenidae_Diversity.jpg/960px-Hyaenidae_Diversity.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hyena"
+    },
+    "زرافة": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Giraffe_Mikumi_National_Park.jpg/960px-Giraffe_Mikumi_National_Park.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Giraffe"
+    },
+    "فرس النهر": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Portrait_Hippopotamus_in_the_water.jpg/960px-Portrait_Hippopotamus_in_the_water.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hippopotamus"
+    },
+    "عجل": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Poddy_Calf_sitting_in_the_long_grass.jpg/960px-Poddy_Calf_sitting_in_the_long_grass.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Calf_(animal)"
+    },
+    "ثور": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/b5/A_Friesian_Bull%2C_Llandeilo_Graban_-_geograph.org.uk_-_579885.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Bull"
+    },
+    "ظربان": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Striped_Skunk.jpg/960px-Striped_Skunk.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Skunk"
+    },
+    "خنزير بري": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Wildschwein%2C_N%C3%A4he_Pulverstampftor_%28cropped%29.jpg/960px-Wildschwein%2C_N%C3%A4he_Pulverstampftor_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Wild_boar"
+    },
+    "قندس": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/6b/American_Beaver.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Beaver"
+    },
+    "نمس": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/39/Mongoose_collection.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Mongoose"
+    },
+    "راكون": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Raccoon_in_Central_Park_%2835264%29.jpg/960px-Raccoon_in_Central_Park_%2835264%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Raccoon"
+    },
+    "غرير": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/European_badger_%28Meles_meles_taxus%29_Drenthe.jpg/960px-European_badger_%28Meles_meles_taxus%29_Drenthe.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Badger"
+    },
+    "غوريلا": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Gorille_des_plaines_de_l%27ouest_%C3%A0_l%27Espace_Zoologique.jpg/960px-Gorille_des_plaines_de_l%27ouest_%C3%A0_l%27Espace_Zoologique.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Gorilla"
+    },
+    "بابون": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Olive_baboon_Ngorongoro.jpg/960px-Olive_baboon_Ngorongoro.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Baboon"
+    },
+    "أورانغوتان": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Orang_Utan%2C_Semenggok_Forest_Reserve%2C_Sarawak%2C_Borneo%2C_Malaysia.JPG/960px-Orang_Utan%2C_Semenggok_Forest_Reserve%2C_Sarawak%2C_Borneo%2C_Malaysia.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Orangutan"
+    },
+    "قرد": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Ubud_Monkey_Family.jpg/960px-Ubud_Monkey_Family.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Monkey"
+    },
+    "شمبانزي": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/015_Chimpanzee_at_Kibale_forest_National_Park_Photo_by_Giles_Laurent.jpg/960px-015_Chimpanzee_at_Kibale_forest_National_Park_Photo_by_Giles_Laurent.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Chimpanzee"
+    },
+    "ليمور": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Lemuroidea.jpg/960px-Lemuroidea.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Lemur"
+    },
+    "كسلان": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Bicho-pregui%C3%A7a_3.jpg/960px-Bicho-pregui%C3%A7a_3.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Sloth"
+    },
+    "آكل النمل": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Tamandu%C3%A1-bandeira_no_Parque_Nacional_da_Serra_da_Canastra_%28cropped%29.jpg/960px-Tamandu%C3%A1-bandeira_no_Parque_Nacional_da_Serra_da_Canastra_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Anteater"
+    },
+    "جرذ": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Brown_Rat_%28Rattus_norvegicus%29.jpg/960px-Brown_Rat_%28Rattus_norvegicus%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Rat"
+    },
+    "خفاش": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/77/Big-eared-townsend-fledermaus.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Bat"
+    },
+    "خلد": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Kret_mole.jpg/960px-Kret_mole.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Mole_(animal)"
+    },
+    "كنغر": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Forester_kangaroo_%28Macropus_giganteus_tasmaniensis%29_juvenile_hopping_Esk_Valley.jpg/960px-Forester_kangaroo_%28Macropus_giganteus_tasmaniensis%29_juvenile_hopping_Esk_Valley.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Kangaroo"
+    },
+    "هامستر": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/European_hamster_%28Cricetus_cricetus%29_Meidling.jpg/960px-European_hamster_%28Cricetus_cricetus%29_Meidling.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hamster"
+    },
+    "فيل": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/African_Bush_Elephant.jpg/960px-African_Bush_Elephant.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Elephant"
+    },
+    "حمار وحشي": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/9/96/Plains_Zebra_Equus_quagga_cropped.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Zebra"
+    },
+    "وحيد القرن": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/081_White_rhinoceros_%28male%29_in_the_Kalahari_Desert_of_Namibia_Photo_by_Giles_Laurent.jpg/960px-081_White_rhinoceros_%28male%29_in_the_Kalahari_Desert_of_Namibia_Photo_by_Giles_Laurent.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Rhinoceros"
+    },
+    "جاموس": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Water_buffalo_at_Rinca.jpg/960px-Water_buffalo_at_Rinca.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Water_buffalo"
+    },
+    "بقرة": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Cow_%28Fleckvieh_breed%29_Oeschinensee_Slaunger_2009-07-07.jpg/960px-Cow_%28Fleckvieh_breed%29_Oeschinensee_Slaunger_2009-07-07.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Cattle"
+    },
+    "ماعز": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hausziege_04.jpg/960px-Hausziege_04.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Goat"
+    },
+    "خروف": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Flock_of_sheep.jpg/960px-Flock_of_sheep.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Sheep"
+    },
+    "كبش": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Flock_of_sheep.jpg/960px-Flock_of_sheep.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Sheep"
+    },
+    "غزال": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Chinkara_-_Shreeram_M_V_-_Bikaner.jpg/960px-Chinkara_-_Shreeram_M_V_-_Bikaner.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Gazelle"
+    },
+    "أيل": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Family_Cervidae_five_species.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Deer"
+    },
+    "موظ": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Alaska_moose.jpg/960px-Alaska_moose.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Moose"
+    },
+    "رنة": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Reinbukken_p%C3%A5_frisk_gr%C3%B8nt_beite._-_panoramio.jpg/960px-Reinbukken_p%C3%A5_frisk_gr%C3%B8nt_beite._-_panoramio.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Reindeer"
+    },
+    "مها": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Oryx_gazella_male_8054.jpg/960px-Oryx_gazella_male_8054.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Oryx"
+    },
+    "وعل": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Capra_ibex_ibex.jpg/960px-Capra_ibex_ibex.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Ibex"
+    },
+    "ظبي": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Blackbuck_male_female.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Antelope"
+    },
+    "حصان": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/de/Nokota_Horses_cropped.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Horse"
+    },
+    "مهر": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Standingarabianfoalone.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Foal"
+    },
+    "حمار": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Donkey_in_Clovelly%2C_North_Devon%2C_England.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Donkey"
+    },
+    "جمل": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/07._Camel_Profile%2C_near_Silverton%2C_NSW%2C_07.07.2007.jpg/960px-07._Camel_Profile%2C_near_Silverton%2C_NSW%2C_07.07.2007.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Camel"
+    },
+    "ألبكة": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Alpaca_in_Higashiyama_Zoo_-_1.jpg/960px-Alpaca_in_Higashiyama_Zoo_-_1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Alpaca"
+    },
+    "سمكة تونة": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/21/Tuna_assortment.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Tuna"
+    },
+    "سمكة مهرج": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Amphiprion_ocellaris_%28Clown_anemonefish%29_by_Nick_Hobgood.jpg/960px-Amphiprion_ocellaris_%28Clown_anemonefish%29_by_Nick_Hobgood.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Clownfish"
+    },
+    "سمكة سلمون": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Salmo_salar.jpg/960px-Salmo_salar.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Salmon"
+    },
+    "سمكة سيف": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Xiphias_gladius_Linnaeus%2C_1758_2599925021.jpg/960px-Xiphias_gladius_Linnaeus%2C_1758_2599925021.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Swordfish"
+    },
+    "باراكودا": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Barracuda_laban.jpg/960px-Barracuda_laban.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Barracuda"
+    },
+    "كيوي": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/TeTuatahianui.jpg/960px-TeTuatahianui.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Kiwi_(bird)"
+    },
+    "جرادة": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Locusta-migratoria-wanderheuschrecke.jpg/960px-Locusta-migratoria-wanderheuschrecke.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Locust"
+    },
+    "دودة أرض": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Eisenia_foetida_R.H._%288%29.JPG/960px-Eisenia_foetida_R.H._%288%29.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Earthworm"
+    },
+    "مدرع": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Nine-banded_Armadillo.jpg/960px-Nine-banded_Armadillo.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Armadillo"
+    },
+    "فأر": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/%D0%9C%D1%8B%D1%88%D1%8C_2.jpg/960px-%D0%9C%D1%8B%D1%88%D1%8C_2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Mouse"
+    },
+    "يربوع": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Scarturus_euphraticus_438215030_%28cropped%29.jpg/960px-Scarturus_euphraticus_438215030_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Jerboa"
+    },
+    "ولب": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Red_necked_wallaby444.jpg/960px-Red_necked_wallaby444.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Wallaby"
+    },
+    "شيطان تسمانيا": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Sarcophilus_harrisii_taranna.jpg/960px-Sarcophilus_harrisii_taranna.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Tasmanian_devil"
+    },
+    "فظ": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Walrus_in_the_Russian_Arctic_National_Park%2C_Novaya_Zemlya_2015-2.jpg/960px-Walrus_in_the_Russian_Arctic_National_Park%2C_Novaya_Zemlya_2015-2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Walrus"
+    },
+    "قرش أبيض": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/White_shark.jpg/960px-White_shark.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Great_white_shark"
+    },
+    "سمكة قرش الحوت": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Similan_Dive_Center_-_great_whale_shark.jpg/960px-Similan_Dive_Center_-_great_whale_shark.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Whale_shark"
+    },
+    "عقاب": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Eagles_together.jpg/960px-Eagles_together.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Eagle"
+    },
+    "باز": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/81/Northern_Goshawk_ad_M2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hawk"
+    },
+    "فلامنغو": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Flamingos_Laguna_Colorada.jpg/960px-Flamingos_Laguna_Colorada.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Flamingo"
+    },
+    "لقلاق": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Ringed_white_stork.jpg/960px-Ringed_white_stork.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Stork"
+    },
+    "طائر الطنان": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Trinidad_and_Tobago_hummingbirds_composite.jpg/960px-Trinidad_and_Tobago_hummingbirds_composite.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hummingbird"
+    },
+    "بزاقة": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Slugs_1896.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Slug"
+    },
+    "بغل": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Pack_Mules_Waiting_%2815755930793%29.jpg/960px-Pack_Mules_Waiting_%2815755930793%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Mule"
+    },
+    "لاما": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Llamas%2C_Vernagt-Stausee%2C_Italy.jpg/960px-Llamas%2C_Vernagt-Stausee%2C_Italy.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Llama"
+    },
+    "خنزير": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Pig_farm_Vampula_1.jpg/960px-Pig_farm_Vampula_1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Pig"
+    },
+    "قنفذ": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Igel.JPG/960px-Igel.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hedgehog"
+    },
+    "نيص": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Erethizon_dorsatum_-_Prince_Rupert.jpg/960px-Erethizon_dorsatum_-_Prince_Rupert.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Porcupine"
+    },
+    "أرنب": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Oryctolagus_cuniculus_Rcdo.jpg/960px-Oryctolagus_cuniculus_Rcdo.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Rabbit"
+    },
+    "سنجاب": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/68/Sciuridae.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Squirrel"
+    },
+    "سمور": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Sobol_bur.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Sable"
+    }
+  },
+  "countries": {
+    "العراق": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Flag_of_Iraq.svg/960px-Flag_of_Iraq.svg.png?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%B9%D8%B1%D8%A7%D9%82"
+    },
+    "السعودية": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Flag_of_Saudi_Arabia.svg/960px-Flag_of_Saudi_Arabia.svg.png?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9"
+    },
+    "الكويت": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Flag_of_Kuwait.svg/960px-Flag_of_Kuwait.svg.png?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D9%83%D9%88%D9%8A%D8%AA"
+    },
+    "قطر": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Flag_of_Qatar_in_a_2_to_1_ratio.png/960px-Flag_of_Qatar_in_a_2_to_1_ratio.png?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%82%D8%B7%D8%B1"
+    },
+    "البحرين": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Flag_of_Bahrain.svg/960px-Flag_of_Bahrain.svg.png?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%A8%D8%AD%D8%B1%D9%8A%D9%86"
+    },
+    "الإمارات": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flag_of_the_United_Arab_Emirates.svg/960px-Flag_of_the_United_Arab_Emirates.svg.png?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%A5%D9%85%D8%A7%D8%B1%D8%A7%D8%AA_%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9_%D8%A7%D9%84%D9%85%D8%AA%D8%AD%D8%AF%D8%A9"
+    },
+    "عُمان": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Flag_of_Oman.svg/960px-Flag_of_Oman.svg.png?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B3%D9%84%D8%B7%D9%86%D8%A9_%D8%B9%D9%85%D8%A7%D9%86"
+    },
+    "اليمن": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Flag_of_Yemen.svg/960px-Flag_of_Yemen.svg.png?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D9%8A%D9%85%D9%86"
+    },
+    "الأردن": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Flag_of_Jordan.svg/960px-Flag_of_Jordan.svg.png?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%A3%D8%B1%D8%AF%D9%86"
+    },
+    "فلسطين": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Flag_of_Palestine.svg/960px-Flag_of_Palestine.svg.png?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%81%D9%84%D8%B3%D8%B7%D9%8A%D9%86"
+    },
+    "لبنان": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Flag_of_Lebanon.svg/960px-Flag_of_Lebanon.svg.png?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%84%D8%A8%D9%86%D8%A7%D9%86"
+    },
+    "سوريا": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Flag_of_Syria_%282025-%29.svg/960px-Flag_of_Syria_%282025-%29.svg.png?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B3%D9%88%D8%B1%D9%8A%D8%A7"
+    },
+    "مصر": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Flag_of_Egypt.svg/960px-Flag_of_Egypt.svg.png?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B5%D8%B1"
+    },
+    "ليبيا": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Flag_of_Libya.svg/960px-Flag_of_Libya.svg.png?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%84%D9%8A%D8%A8%D9%8A%D8%A7"
+    },
+    "تونس": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Flag_of_Tunisia.svg/960px-Flag_of_Tunisia.svg.png?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AA%D9%88%D9%86%D8%B3"
+    },
+    "الجزائر": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Flag_of_Algeria.svg/960px-Flag_of_Algeria.svg.png?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1"
+    },
+    "المغرب": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Flag_of_Morocco.svg/960px-Flag_of_Morocco.svg.png?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D9%85%D8%BA%D8%B1%D8%A8"
+    },
+    "موريتانيا": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Flag_of_Mauritania.svg/960px-Flag_of_Mauritania.svg.png?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D9%88%D8%B1%D9%8A%D8%AA%D8%A7%D9%86%D9%8A%D8%A7"
+    },
+    "السودان": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Flag_of_Sudan.svg/960px-Flag_of_Sudan.svg.png?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%B3%D9%88%D8%AF%D8%A7%D9%86"
+    },
+    "الصومال": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Flag_of_Somalia.svg/960px-Flag_of_Somalia.svg.png?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%B5%D9%88%D9%85%D8%A7%D9%84"
+    },
+    "جيبوتي": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Flag_of_Djibouti.svg/960px-Flag_of_Djibouti.svg.png?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AC%D9%8A%D8%A8%D9%88%D8%AA%D9%8A"
+    },
+    "جزر القمر": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Flag_of_the_Comoros.svg/960px-Flag_of_the_Comoros.svg.png?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AC%D8%B2%D8%B1_%D8%A7%D9%84%D9%82%D9%85%D8%B1"
+    },
+    "تركيا": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Flag_of_Turkey.svg/960px-Flag_of_Turkey.svg.png?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AA%D8%B1%D9%83%D9%8A%D8%A7"
+    },
+    "إيران": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Flag_of_Iran.svg/960px-Flag_of_Iran.svg.png?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A5%D9%8A%D8%B1%D8%A7%D9%86"
+    }
+  },
+  "cities": {
+    "مونتريال": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Mtl_from_mont_royal_%28cropped%29.jpg/960px-Mtl_from_mont_royal_%28cropped%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D9%88%D9%86%D8%AA%D8%B1%D9%8A%D8%A7%D9%84"
+    },
+    "مكسيكو سيتي": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Sobrevuelos_CDMX_HJ2A5091_%2840386338731%29.jpg/960px-Sobrevuelos_CDMX_HJ2A5091_%2840386338731%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%AF%D9%8A%D9%86%D8%A9_%D9%85%D9%83%D8%B3%D9%8A%D9%83%D9%88"
+    },
+    "هافانا": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/DJI_0197_crp_wiki.jpg/960px-DJI_0197_crp_wiki.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%87%D8%A7%D9%81%D8%A7%D9%86%D8%A7"
+    },
+    "بنما سيتي": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Panama_City_FL_City_Hall.jpg/960px-Panama_City_FL_City_Hall.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D9%86%D9%85%D8%A7_%D8%B3%D9%8A%D8%AA%D9%8A"
+    },
+    "ريو دي جانيرو": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Cidade_Maravilhosa.jpg/960px-Cidade_Maravilhosa.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B1%D9%8A%D9%88_%D8%AF%D9%8A_%D8%AC%D8%A7%D9%86%D9%8A%D8%B1%D9%88"
+    },
+    "ساو باولو": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Sao_Paulo_Skyline_in_Brazil.jpg/960px-Sao_Paulo_Skyline_in_Brazil.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B3%D8%A7%D9%88_%D8%A8%D8%A7%D9%88%D9%84%D9%88"
+    },
+    "بوينس آيرس": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Vista_a%C3%A9rea_de_la_Plaza_del_Congreso_10.jpg/960px-Vista_a%C3%A9rea_de_la_Plaza_del_Congreso_10.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D9%88%D9%8A%D9%86%D8%B3_%D8%A2%D9%8A%D8%B1%D8%B3"
+    },
+    "ليما": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Square_in_Lima_Peru_01.jpg/960px-Square_in_Lima_Peru_01.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%84%D9%8A%D9%85%D8%A7"
+    },
+    "سانتياغو": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/MontajeStgo-4.jpg/960px-MontajeStgo-4.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B3%D8%A7%D9%86%D8%AA%D9%8A%D8%A7%D8%BA%D9%88"
+    },
+    "بوغوتا": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Centro_internacional.JPG/960px-Centro_internacional.JPG?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D9%88%D8%BA%D9%88%D8%AA%D8%A7"
+    },
+    "مونتفيديو": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/The_City_%28198895997%29.jpeg/960px-The_City_%28198895997%29.jpeg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D9%88%D9%86%D8%AA%D9%8A%D9%81%D9%8A%D8%AF%D9%8A%D9%88"
+    },
+    "كيتو": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/FACHADA_ASAMBLEA_NACIONAL._QUITO%2C_20_DE_FEBRERO_2020._01.jpg/960px-FACHADA_ASAMBLEA_NACIONAL._QUITO%2C_20_DE_FEBRERO_2020._01.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%83%D9%8A%D8%AA%D9%88"
+    },
+    "كيب تاون": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Ciudad_del_Cabo_desde_Cabeza_de_Le%C3%B3n%2C_Sud%C3%A1frica%2C_2018-07-22%2C_DD_34.jpg/960px-Ciudad_del_Cabo_desde_Cabeza_de_Le%C3%B3n%2C_Sud%C3%A1frica%2C_2018-07-22%2C_DD_34.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%83%D9%8A%D8%A8_%D8%AA%D8%A7%D9%88%D9%86"
+    },
+    "جوهانسبرغ": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Johannesburg_CBD.jpg/960px-Johannesburg_CBD.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AC%D9%88%D9%87%D8%A7%D9%86%D8%B3%D8%A8%D8%B1%D8%BA"
+    },
+    "نيروبي": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Nairobi%2C_view_from_KICC.JPG/960px-Nairobi%2C_view_from_KICC.JPG?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%86%D9%8A%D8%B1%D9%88%D8%A8%D9%8A"
+    },
+    "أديس أبابا": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/AddisView.jpg/960px-AddisView.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A3%D8%AF%D9%8A%D8%B3_%D8%A3%D8%A8%D8%A7%D8%A8%D8%A7"
+    },
+    "كمبالا": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/View_from_7th_floor_on_Crane_Chambers_at_Kampala_road_-_panoramio.jpg/960px-View_from_7th_floor_on_Crane_Chambers_at_Kampala_road_-_panoramio.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%83%D8%A7%D9%85%D8%A8%D8%A7%D9%84%D8%A7"
+    },
+    "لاغوس": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Lagos_Island.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%84%D8%A7%D8%BA%D9%88%D8%B3"
+    },
+    "أبوجا": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/The_National_Assembly_Globe.jpg/960px-The_National_Assembly_Globe.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A3%D8%A8%D9%88%D8%AC%D8%A7"
+    },
+    "أكرا": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Central_accra-2.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A3%D9%83%D8%B1%D8%A7"
+    },
+    "داكار": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Pointe_des_Almadies_-_Senegal.jpg/960px-Pointe_des_Almadies_-_Senegal.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AF%D9%83%D8%A7%D8%B1"
+    },
+    "مراكش": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Djemaa_el_Fna.jpg/960px-Djemaa_el_Fna.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B1%D8%A7%D9%83%D8%B4"
+    },
+    "زنجبار": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Flag_of_Zanzibar.svg/960px-Flag_of_Zanzibar.svg.png?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B2%D9%86%D8%AC%D8%A8%D8%A7%D8%B1"
+    },
+    "سيدني": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/00_3178_Sydney%2C_Australia.jpg/960px-00_3178_Sydney%2C_Australia.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B3%D9%8A%D8%AF%D9%86%D9%8A"
+    },
+    "ملبورن": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Melbourne_CBD_and_Ceremonial_Avenue_%28in_2024%29_as_seen_from_the_rooftop_of_Shrine_of_Remembrance.jpg/960px-Melbourne_CBD_and_Ceremonial_Avenue_%28in_2024%29_as_seen_from_the_rooftop_of_Shrine_of_Remembrance.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D9%84%D8%A8%D9%88%D8%B1%D9%86"
+    },
+    "كانبرا": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Canberra_from_Mt_Ainslie_%285642431515%29.jpg/960px-Canberra_from_Mt_Ainslie_%285642431515%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%83%D8%A7%D9%86%D8%A8%D8%B1%D8%A7"
+    },
+    "بيرث": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Elizabeth_Quay_February_2016_%28cropped%29.jpg/960px-Elizabeth_Quay_February_2016_%28cropped%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D8%B1%D8%AB"
+    },
+    "أوكلاند": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Auckland_CBD.jpg/960px-Auckland_CBD.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A3%D9%88%D9%83%D9%84%D8%A7%D9%86%D8%AF"
+    },
+    "ويلينغتون": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/5d/WellingtonPanorama.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%88%D9%8A%D9%84%D9%8A%D9%86%D8%BA%D8%AA%D9%88%D9%86"
+    }
+  },
+  "food": {
+    "دولمة": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Sarma.jpg/960px-Sarma.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%88%D8%B1%D9%82_%D8%A7%D9%84%D8%B9%D9%86%D8%A8"
+    },
+    "برياني": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Biryani_Home.jpg/960px-Biryani_Home.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D8%B1%D9%8A%D8%A7%D9%86%D9%8A"
+    },
+    "قوزي": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Iraqi_Qoozi_.jpg/960px-Iraqi_Qoozi_.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%82%D9%88%D8%B2%D9%8A"
+    },
+    "كباب": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Kebab.jpg/960px-Kebab.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%83%D8%A8%D8%A7%D8%A8"
+    },
+    "باجة": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/B%C3%A9jaSkyline.jpg/960px-B%C3%A9jaSkyline.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D8%A7%D8%AC%D8%A9"
+    },
+    "كبة": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Kibbeh3.jpg/960px-Kibbeh3.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%83%D8%A8%D8%A9"
+    },
+    "صمون": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Iraqi_Samoon_2.jpg/960px-Iraqi_Samoon_2.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B5%D9%85%D9%88%D9%86"
+    },
+    "زلابية": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/2nd_Ayurveda_World_Summit%2C_Palace_grounds%2C_Bangalore_%282025%29_87.jpg/960px-2nd_Ayurveda_World_Summit%2C_Palace_grounds%2C_Bangalore_%282025%29_87.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B2%D9%84%D8%A7%D8%A8%D9%8A%D8%A9"
+    },
+    "دهين": {
+      "url": "https://upload.wikimedia.org/wikipedia/ar/e/ef/Iraqup.com_20090228_55yPm-Ic8T_285996381.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AF%D9%87%D9%8A%D9%86"
+    },
+    "كليجة": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Kleeja_1.JPG/960px-Kleeja_1.JPG?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%83%D9%84%D9%8A%D8%AC%D8%A7"
+    },
+    "منسف": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/%D8%B3%D8%AF%D8%B1_%D9%85%D9%86%D8%B3%D9%81_02.jpg/960px-%D8%B3%D8%AF%D8%B1_%D9%85%D9%86%D8%B3%D9%81_02.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D9%86%D8%B3%D9%81"
+    },
+    "مقلوبة": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Makluba.JPG/960px-Makluba.JPG?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D9%82%D9%84%D9%88%D8%A8%D8%A9"
+    },
+    "مسخن": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Musakhan.jpg/960px-Musakhan.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B3%D8%AE%D9%86"
+    },
+    "مجدرة": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Mujaddara.jpg/960px-Mujaddara.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%AC%D8%AF%D8%B1%D8%A9"
+    },
+    "فتوش": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Fattoush.JPG/960px-Fattoush.JPG?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%81%D8%AA%D9%88%D8%B4"
+    },
+    "تبولة": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/%D8%B5%D8%AD%D9%86_%D8%AA%D8%A8%D9%88%D9%84%D8%A9.JPG/960px-%D8%B5%D8%AD%D9%86_%D8%AA%D8%A8%D9%88%D9%84%D8%A9.JPG?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AA%D8%A8%D9%88%D9%84%D8%A9"
+    },
+    "حمص": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Homs_New_Clock.jpg/960px-Homs_New_Clock.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AD%D9%85%D8%B5"
+    },
+    "متبل": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Noura_Restaurant_%283385996373%29.jpg/960px-Noura_Restaurant_%283385996373%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D8%A7%D8%A8%D8%A7_%D8%BA%D9%86%D9%88%D8%AC"
+    },
+    "بابا غنوج": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Noura_Restaurant_%283385996373%29.jpg/960px-Noura_Restaurant_%283385996373%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D8%A7%D8%A8%D8%A7_%D8%BA%D9%86%D9%88%D8%AC"
+    },
+    "فلافل": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Falafels_2.jpg/960px-Falafels_2.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%81%D9%84%D8%A7%D9%81%D9%84"
+    },
+    "شاورما": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/%D0%A8%D0%B0%D1%83%D1%80%D0%BC%D0%B0_6.jpg/960px-%D0%A8%D0%B0%D1%83%D1%80%D0%BC%D0%B0_6.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B4%D8%A7%D9%88%D8%B1%D9%85%D8%A7"
+    },
+    "فتة": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/c0/%D9%81%D8%AA%D9%91%D8%A9_%D8%A8%D8%A7%D9%84%D9%84%D8%AD%D9%85%D8%A9_%D9%88_%D8%A7%D9%84%D8%B5%D9%91%D9%86%D9%88%D8%A8%D8%B1.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%81%D8%AA%D8%A9"
+    },
+    "ورق عنب": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Sarma.jpg/960px-Sarma.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%88%D8%B1%D9%82_%D8%A7%D9%84%D8%B9%D9%86%D8%A8"
+    },
+    "محشي": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Mahshi_2.jpg/960px-Mahshi_2.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%AD%D8%B4%D9%8A"
+    },
+    "كشري": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Egyptian_food_Koshary.jpg/960px-Egyptian_food_Koshary.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%83%D8%B4%D8%B1%D9%8A"
+    },
+    "ملوخية": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/%22Arya%22_molokhia_Corchorus_olitorius_Pilangsari_2019_1.jpg/960px-%22Arya%22_molokhia_Corchorus_olitorius_Pilangsari_2019_1.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D9%84%D9%88%D8%AE%D9%8A%D8%A9"
+    },
+    "فول مدمس": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Foul_Mdammis%2C_Tunisie.jpg/960px-Foul_Mdammis%2C_Tunisie.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%81%D9%88%D9%84_%D9%85%D8%AF%D9%85%D8%B3"
+    },
+    "طعمية": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Falafels_2.jpg/960px-Falafels_2.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%81%D9%84%D8%A7%D9%81%D9%84"
+    },
+    "حواوشي": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Egyptian_meatloaf.jpg/960px-Egyptian_meatloaf.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AD%D9%88%D8%A7%D9%88%D8%B4%D9%8A"
+    },
+    "كبسة": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Kabsa.jpg/960px-Kabsa.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%83%D8%A8%D8%B3%D8%A9"
+    },
+    "مندي": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Rras_2013-07-06_09-35.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D9%86%D8%AF%D9%8A"
+    },
+    "حنيذ": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Overhead_view%2C_haneeth%2C_Marib_restaurant%2C_Springfield%2C_Virginia.jpg/960px-Overhead_view%2C_haneeth%2C_Marib_restaurant%2C_Springfield%2C_Virginia.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AD%D9%86%D9%8A%D8%B0"
+    },
+    "جريش": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Freekah_-_stonesoup_%28cropped%29.jpg/960px-Freekah_-_stonesoup_%28cropped%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AC%D8%B1%D9%8A%D8%B4"
+    },
+    "هريس": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Al_fanar_harees_%287797136886%29.jpg/960px-Al_fanar_harees_%287797136886%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%87%D8%B1%D9%8A%D8%B3"
+    },
+    "ثريد": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Tharid..JPG/960px-Tharid..JPG?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AB%D8%B1%D9%8A%D8%AF"
+    },
+    "مجبوس": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Kabsa.jpg/960px-Kabsa.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%83%D8%A8%D8%B3%D8%A9"
+    },
+    "سليق": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/The_Hijazi_Saleeg.jpg/960px-The_Hijazi_Saleeg.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B3%D9%84%D9%8A%D9%82_%D8%B7%D8%A7%D8%A6%D9%81%D9%8A"
+    },
+    "معصوب": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/e7/%D9%85%D8%B1%D8%B3%D9%87.JPG?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B9%D8%B5%D9%88%D8%A8"
+    },
+    "شكشوكة": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Shakshuka1.jpg/960px-Shakshuka1.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B4%D9%83%D8%B4%D9%88%D9%83%D8%A9"
+    },
+    "عريكة": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Arika%2C_a_Saudi_dish.jpg/960px-Arika%2C_a_Saudi_dish.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B9%D8%B1%D9%8A%D9%83%D8%A9"
+    },
+    "منتو": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Mantu_in_a_steamer.jpg/960px-Mantu_in_a_steamer.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D9%86%D8%AA%D9%88"
+    },
+    "سمبوسة": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Samosachutney.jpg/960px-Samosachutney.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B3%D9%85%D8%A8%D9%88%D8%B3%D8%A9"
+    },
+    "بيتزا": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Pizza_Pizza%27s_Meditteranean_Vegetarian.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D9%8A%D8%AA%D8%B2%D8%A7"
+    },
+    "هوت دوغ": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Hotdog_-_Evan_Swigart.jpg/960px-Hotdog_-_Evan_Swigart.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%87%D9%88%D8%AA_%D8%AF%D9%88%D8%BA"
+    },
+    "بطاطا مقلية": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Fries_2.jpg/960px-Fries_2.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D8%B7%D8%A7%D8%B7%D8%A7_%D9%85%D9%82%D9%84%D9%8A%D8%A9"
+    },
+    "دجاج مقلي": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Fried_Chicken_%28Unsplash%29.jpg/960px-Fried_Chicken_%28Unsplash%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AF%D8%AC%D8%A7%D8%AC_%D9%85%D9%82%D9%84%D9%8A"
+    },
+    "ستيك": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Beef_round_top_round_steak%2C_cooked.jpg/960px-Beef_round_top_round_steak%2C_cooked.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B3%D8%AA%D9%8A%D9%83"
+    },
+    "لازانيا": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Lasagne_-_stonesoup.jpg/960px-Lasagne_-_stonesoup.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%84%D8%A7%D8%B2%D8%A7%D9%86%D9%8A%D8%A7"
+    },
+    "سباغيتي": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Spaghetti2.jpg/960px-Spaghetti2.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B3%D8%A8%D8%A7%D8%BA%D9%8A%D8%AA%D9%8A"
+    },
+    "رافيولي": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/86/Ravioli_di_Faraona.JPG?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B1%D8%A7%D9%81%D9%8A%D9%88%D9%84%D9%8A"
+    },
+    "ريزوتو": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Risotto_Weihnachten_2020_13.jpg/960px-Risotto_Weihnachten_2020_13.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B1%D9%8A%D8%B2%D9%88%D8%AA%D9%88"
+    },
+    "ناتشوز": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/The_Beanery_Nachos.jpg/960px-The_Beanery_Nachos.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%86%D8%A7%D8%AA%D8%B4%D9%88%D8%B2"
+    },
+    "تاكو": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/001_Tacos_de_carnitas%2C_carne_asada_y_al_pastor.jpg/960px-001_Tacos_de_carnitas%2C_carne_asada_y_al_pastor.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AA%D8%A7%D9%83%D9%88"
+    },
+    "بوريتو": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Breakfast_burritos.jpg/960px-Breakfast_burritos.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D9%88%D8%B1%D9%8A%D8%AA%D9%88"
+    },
+    "سوشي": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Various_sushi%2C_beautiful_October_night_at_midnight.jpg/960px-Various_sushi%2C_beautiful_October_night_at_midnight.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B3%D9%88%D8%B4%D9%8A"
+    },
+    "رامن": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Ramen%2C_sopa_de_fideus.jpg/960px-Ramen%2C_sopa_de_fideus.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B1%D8%A7%D9%85%D9%86"
+    },
+    "أودون": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Udon_by_udono.jpg/960px-Udon_by_udono.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A3%D9%88%D8%AF%D9%88%D9%86"
+    },
+    "سوبا": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Dried_soba_noodles_by_FotoosVanRobin.jpg/960px-Dried_soba_noodles_by_FotoosVanRobin.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B3%D9%88%D8%A8%D8%A7"
+    },
+    "تمبورا": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/GCHQ-aerial.jpg/960px-GCHQ-aerial.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AA%D9%85%D8%A8%D9%88%D8%B1%D8%A7"
+    },
+    "ياكيتوري": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Cooking_yakitori.jpg/960px-Cooking_yakitori.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%8A%D8%A7%D9%83%D9%8A%D8%AA%D9%88%D8%B1%D9%8A"
+    },
+    "أونيغيري": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Japanese_rice_balls_%28onigiri%29.jpg/960px-Japanese_rice_balls_%28onigiri%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A3%D9%88%D9%86%D9%8A%D8%BA%D9%8A%D8%B1%D9%8A"
+    },
+    "كاري ياباني": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Beef_curry_rice_003.jpg/960px-Beef_curry_rice_003.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%83%D8%A7%D8%B1%D9%8A_%D9%8A%D8%A7%D8%A8%D8%A7%D9%86%D9%8A"
+    },
+    "كيمتشي": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Gimchi.jpg/960px-Gimchi.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%83%D9%85%D8%AA%D8%B4%D9%8A"
+    },
+    "بيبيمباب": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Korean.food-Bibimbap-02.jpg/960px-Korean.food-Bibimbap-02.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D9%8A%D8%A8%D9%8A%D9%85%D8%A8%D8%A7%D8%A8"
+    },
+    "بولغوغي": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Korean.cuisine-Bulgogi-01.jpg/960px-Korean.cuisine-Bulgogi-01.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D9%88%D9%84%D8%AC%D9%88%D8%AC%D9%8A"
+    },
+    "نودلز": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Noodles_2.png/960px-Noodles_2.png?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B9%D8%B5%D8%A7%D8%A6%D8%A8%D9%8A%D8%A9"
+    },
+    "بط بكين": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Vit-quay-bac-kinh-by-vit-quay-to-thi.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D8%B7_%D8%A8%D9%83%D9%8A%D9%86"
+    },
+    "دجاج تكا": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Tandoorimumbai.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AF%D8%AC%D8%A7%D8%AC_%D8%AA%D9%83%D8%A9"
+    },
+    "دال": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/11/HS-%D8%AF-_Arabic.png?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AF%D8%A7%D9%84"
+    },
+    "نان": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Thailand_Nan_locator_map.svg/960px-Thailand_Nan_locator_map.svg.png?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%AD%D8%A7%D9%81%D8%B8%D8%A9_%D9%86%D8%A7%D9%86"
+    },
+    "باني بوري": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Crispy_Pani_Puri.jpg/960px-Crispy_Pani_Puri.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D8%A7%D9%86%D9%8A_%D8%A8%D9%88%D8%B1%D9%8A"
+    },
+    "كاري": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Indiandishes.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%83%D8%A7%D8%B1%D9%8A"
+    },
+    "كروسان": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Croissants_au_beurre_%2818953292873%29.jpg/960px-Croissants_au_beurre_%2818953292873%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%83%D8%B1%D9%88%D8%A7%D8%B3%D9%88%D9%86"
+    },
+    "باغيت": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Baguettes_-_stonesoup.jpg/960px-Baguettes_-_stonesoup.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D8%A7%D8%AC%D9%8A%D8%AA"
+    },
+    "وافل": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Gaufre_molle.jpg/960px-Gaufre_molle.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%88%D9%81%D9%84"
+    },
+    "بان كيك": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Pancake-3529653_1280.jpg/960px-Pancake-3529653_1280.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%81%D8%B7%D9%8A%D8%B1%D8%A9_%D9%85%D8%AD%D9%84%D8%A7%D8%A9"
+    },
+    "دونات": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Glazed-Donut.jpg/960px-Glazed-Donut.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AF%D9%88%D9%86%D8%A7%D8%AA"
+    },
+    "تشيز كيك": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Baked_cheesecake_with_raspberries_and_blueberries.jpg/960px-Baked_cheesecake_with_raspberries_and_blueberries.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%83%D8%B9%D9%83%D8%A9_%D8%A7%D9%84%D8%AC%D8%A8%D9%86"
+    },
+    "براوني": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Chocolate_brownies_without_table.jpg/960px-Chocolate_brownies_without_table.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D8%B1%D8%A7%D9%88%D9%86%D9%8A"
+    },
+    "تيراميسو": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Classic_Italian_Tiramisu-3_%2829989504485%29.jpg/960px-Classic_Italian_Tiramisu-3_%2829989504485%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AA%D9%8A%D8%B1%D8%A7%D9%85%D9%8A%D8%B3%D9%88"
+    },
+    "كنافة": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/K%C3%BCnefe.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%83%D9%86%D8%A7%D9%81%D8%A9"
+    },
+    "بقلاوة": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Baklava_sweets_from_Aleppo.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D9%82%D9%84%D8%A7%D9%88%D8%A9"
+    },
+    "بسبوسة": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Basboosa.jpg/960px-Basboosa.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D8%B3%D8%A8%D9%88%D8%B3%D8%A9"
+    },
+    "لقيمات": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Lokma_Galata_Bridge.JPG/960px-Lokma_Galata_Bridge.JPG?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%84%D9%82%D9%8A%D9%85%D8%A7%D8%AA"
+    },
+    "مهلبية": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Turkish_muhallebi.jpg/960px-Turkish_muhallebi.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D9%87%D9%84%D8%A8%D9%8A%D8%A9"
+    },
+    "كريم كراميل": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Cremecaramel.jpg/960px-Cremecaramel.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%83%D8%B1%D9%8A%D9%85_%D9%83%D8%B1%D8%A7%D9%85%D9%8A%D9%84"
+    },
+    "آيس كريم": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Ice_Cream_dessert_02.jpg/960px-Ice_Cream_dessert_02.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%AB%D9%84%D8%AC%D8%A7%D8%AA"
+    },
+    "ماكرون": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Macron.svg/960px-Macron.svg.png?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D9%83%D8%B1%D9%88%D9%86"
+    },
+    "سلطة قيصر": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Caesar_salad_%282%29.jpg/960px-Caesar_salad_%282%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B3%D9%84%D8%B7%D8%A9_%D8%B3%D9%8A%D8%B2%D8%B1"
+    },
+    "سلطة يونانية": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Flickr_-_cyclonebill_-_Gr%C3%A6sk_salat.jpg/960px-Flickr_-_cyclonebill_-_Gr%C3%A6sk_salat.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B3%D9%84%D8%B7%D8%A9_%D9%8A%D9%88%D9%86%D8%A7%D9%86%D9%8A%D8%A9"
+    },
+    "شوربة عدس": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Linsensuppe_mit_Tomaten_und_Kokosmilch_2.jpg/960px-Linsensuppe_mit_Tomaten_und_Kokosmilch_2.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B4%D9%88%D8%B1%D8%A8%D8%A9_%D8%B9%D8%AF%D8%B3"
+    },
+    "شوفان": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Avena_sativa_L.jpg/960px-Avena_sativa_L.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B4%D9%88%D9%81%D8%A7%D9%86"
+    },
+    "جرانولا": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Granola03242006.JPG/960px-Granola03242006.JPG?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AC%D8%B1%D8%A7%D9%86%D9%88%D9%84%D8%A7"
+    },
+    "بيض مقلي": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Sunny_side_up_by_yomi955.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D9%8A%D8%B6_%D9%85%D9%82%D9%84%D9%8A"
+    },
+    "بيض مسلوق": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Vaj%C3%AD%C4%8Dka_na_tvrdo.jpg/960px-Vaj%C3%AD%C4%8Dka_na_tvrdo.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D9%8A%D8%B6_%D9%85%D8%B3%D9%84%D9%88%D9%82"
+    },
+    "تفاح": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Red_Apple.jpg/960px-Red_Apple.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AA%D9%81%D8%A7%D8%AD"
+    },
+    "موز": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D9%88%D8%B2"
+    },
+    "برتقال": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Oranges_-_whole-halved-segment.jpg/960px-Oranges_-_whole-halved-segment.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D8%B1%D8%AA%D9%82%D8%A7%D9%84"
+    },
+    "يوسفي": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Mandarin_Oranges_%28Citrus_Reticulata%29.jpg/960px-Mandarin_Oranges_%28Citrus_Reticulata%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%8A%D9%88%D8%B3%D9%81%D9%8A_(%D9%81%D8%A7%D9%83%D9%87%D8%A9)"
+    },
+    "ليمون": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Citrus_x_limon_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-041.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%84%D9%8A%D9%85%D9%88%D9%86_%D8%AD%D8%A7%D9%85%D8%B6"
+    },
+    "عنب": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Edle_Weinrebe%2C_%27Vitis_vinifera%27_subsp._%27vinifera.jpg/960px-Edle_Weinrebe%2C_%27Vitis_vinifera%27_subsp._%27vinifera.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B9%D9%86%D8%A8"
+    },
+    "رمان": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Pomegranate02_edit.jpg/960px-Pomegranate02_edit.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B1%D9%85%D8%A7%D9%86"
+    },
+    "بطيخ": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Cantaloupe_and_canary_melon.jpg/960px-Cantaloupe_and_canary_melon.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D8%B7%D9%8A%D8%AE"
+    },
+    "شمام": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Starr_080914-9943_Cucumis_melo.jpg/960px-Starr_080914-9943_Cucumis_melo.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B4%D9%85%D8%A7%D9%85"
+    },
+    "فراولة": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Strawberries.JPG/960px-Strawberries.JPG?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%81%D8%B1%D8%A7%D9%88%D9%84%D8%A9"
+    },
+    "كرز": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Cherry.JPG?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%83%D8%B1%D8%B2"
+    },
+    "خوخ": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Vineyard_peaches_de.jpg/960px-Vineyard_peaches_de.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AF%D8%B1%D8%A7%D9%82"
+    },
+    "مشمش": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Apricots.jpg/960px-Apricots.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B4%D9%85%D8%B4"
+    },
+    "أناناس": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Nanas_variegata_cheche.jpg/960px-Nanas_variegata_cheche.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A3%D9%86%D8%A7%D9%86%D8%A7%D8%B3"
+    },
+    "تين": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Smokve_na_grani.jpg/960px-Smokve_na_grani.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AA%D9%8A%D9%86"
+    },
+    "تمر": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Dattes_deglet_from_Biskra.jpg/960px-Dattes_deglet_from_Biskra.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AA%D9%85%D8%B1"
+    },
+    "كمثرى": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/PearPhoto.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%83%D9%85%D8%AB%D8%B1%D9%89"
+    },
+    "جوافة": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Psidium_guajava.jpg/960px-Psidium_guajava.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AC%D9%88%D8%A7%D9%81%D8%A9_(%D9%86%D9%88%D8%B9)"
+    },
+    "بابايا": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Carica_papaya_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-029.jpg/960px-Carica_papaya_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-029.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D8%A8%D8%A7%D9%8A%D8%A7"
+    },
+    "أفوكادو": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Avocado_fruitnfoliage.jpg/960px-Avocado_fruitnfoliage.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A3%D9%81%D9%88%D9%83%D8%A7%D8%AF%D9%88"
+    },
+    "لوز": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Ametllesjuliol.jpg/960px-Ametllesjuliol.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%84%D9%88%D8%B2"
+    },
+    "جوز": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/07/Whole_Walnut_Kernel.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AC%D9%88%D8%B2"
+    },
+    "فستق": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Arabic-Shells-Dips-Sauces-Dumplings-Appetizers-Vegetables-1626976.jpg/960px-Arabic-Shells-Dips-Sauces-Dumplings-Appetizers-Vegetables-1626976.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%81%D8%B3%D8%AA%D9%82"
+    },
+    "كاجو": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/13/Gui1_cashewfruit2.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%83%D8%A7%D8%AC%D9%88"
+    },
+    "بندق": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Hazelnuts_%28Corylus_avellana%29_-_whole_with_kernels.jpg/960px-Hazelnuts_%28Corylus_avellana%29_-_whole_with_kernels.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D9%86%D8%AF%D9%82"
+    },
+    "فول سوداني": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Arachis_hypogaea_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-163.jpg/960px-Arachis_hypogaea_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-163.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%81%D9%88%D9%84_%D8%B3%D9%88%D8%AF%D8%A7%D9%86%D9%8A"
+    },
+    "بوشار": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Popcorn_-_Studio_-_2011.jpg/960px-Popcorn_-_Studio_-_2011.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%81%D8%B4%D8%A7%D8%B1"
+    },
+    "شوكولاتة": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Chocolate.jpg/960px-Chocolate.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B4%D9%88%D9%83%D9%88%D9%84%D8%A7%D8%AA%D8%A9"
+    },
+    "حلاوة طحينية": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/PistHalva.jpg/960px-PistHalva.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AD%D9%84%D8%A7%D9%88%D8%A9_%D8%B7%D8%AD%D9%8A%D9%86%D9%8A%D8%A9"
+    },
+    "لبن": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Melkkarussell.jpg/960px-Melkkarussell.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AD%D9%84%D9%8A%D8%A8"
+    },
+    "زبادي": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Cacik-1.jpg/960px-Cacik-1.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B2%D8%A8%D8%A7%D8%AF%D9%8A"
+    },
+    "جبن": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Cheese_platter.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AC%D8%A8%D9%86"
+    },
+    "عسل": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Runny_hunny.jpg/960px-Runny_hunny.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B9%D8%B3%D9%84"
+    },
+    "مربى": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Shaftali_murebbesi_hazir_e-citizen.jpg/960px-Shaftali_murebbesi_hazir_e-citizen.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B1%D8%A8%D9%89"
+    }
+  },
+  "people": {
+    "ألبرت أينشتاين": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Einstein_1921_by_F_Schmutzer_-_restoration.jpg/960px-Einstein_1921_by_F_Schmutzer_-_restoration.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A3%D9%84%D8%A8%D8%B1%D8%AA_%D8%A3%D9%8A%D9%86%D8%B4%D8%AA%D8%A7%D9%8A%D9%86"
+    },
+    "إسحاق نيوتن": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/GodfreyKneller-IsaacNewton-1689.jpg/960px-GodfreyKneller-IsaacNewton-1689.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A5%D8%B3%D8%AD%D8%A7%D9%82_%D9%86%D9%8A%D9%88%D8%AA%D9%86"
+    },
+    "نيكولا تسلا": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/79/Tesla_circa_1890.jpeg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%86%D9%8A%D9%83%D9%88%D9%84%D8%A7_%D8%AA%D8%B3%D9%84%D8%A7"
+    },
+    "ستيفن هوكينغ": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Stephen_Hawking.StarChild.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B3%D8%AA%D9%8A%D9%81%D9%86_%D9%87%D9%88%D9%83%D9%8A%D9%86%D8%AC"
+    },
+    "ماري كوري": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Mariecurie.jpg/960px-Mariecurie.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%A7%D8%B1%D9%8A_%D9%83%D9%88%D8%B1%D9%8A"
+    },
+    "تشارلز داروين": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Charles_Darwin_portrait.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AA%D8%B4%D8%A7%D8%B1%D9%84%D8%B2_%D8%AF%D8%A7%D8%B1%D9%88%D9%8A%D9%86"
+    },
+    "غاليليو غاليلي": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Galileo_Galilei_%281564-1642%29_RMG_BHC2700.tiff/lossy-page1-960px-Galileo_Galilei_%281564-1642%29_RMG_BHC2700.tiff.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%BA%D8%A7%D9%84%D9%8A%D9%84%D9%8A%D9%88_%D8%BA%D8%A7%D9%84%D9%8A%D9%84%D9%8A"
+    },
+    "توماس إديسون": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Thomas_Edison2.jpg/960px-Thomas_Edison2.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AA%D9%88%D9%85%D8%A7%D8%B3_%D8%A5%D8%AF%D9%8A%D8%B3%D9%88%D9%86"
+    },
+    "ألكسندر غراهام بيل": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/10/Alexander_Graham_Bell.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A3%D9%84%D9%83%D8%B3%D9%86%D8%AF%D8%B1_%D8%BA%D8%B1%D8%A7%D9%87%D8%A7%D9%85_%D8%A8%D9%84"
+    },
+    "لويس باستور": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/42/Louis_Pasteur.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%84%D9%88%D9%8A%D8%B3_%D8%A8%D8%A7%D8%B3%D8%AA%D9%88%D8%B1"
+    },
+    "ديمتري مندليف": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Medeleeff_by_repin.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AF%D9%8A%D9%85%D9%8A%D8%AA%D8%B1%D9%8A_%D9%85%D9%86%D8%AF%D9%84%D9%8A%D9%8A%D9%81"
+    },
+    "ابن الهيثم": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Ibn_Al-Haytham_portrait.jpg/960px-Ibn_Al-Haytham_portrait.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A7%D8%A8%D9%86_%D8%A7%D9%84%D9%87%D9%8A%D8%AB%D9%85"
+    },
+    "الخوارزمي": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Al-Khwarizmi_portrait.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%AD%D9%85%D8%AF_%D8%A8%D9%86_%D9%85%D9%88%D8%B3%D9%89_%D8%A7%D9%84%D8%AE%D9%88%D8%A7%D8%B1%D8%B2%D9%85%D9%8A"
+    },
+    "ابن سينا": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/e7/1950_%22Avicenna%22_stamp_of_Iran.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A7%D8%A8%D9%86_%D8%B3%D9%8A%D9%86%D8%A7"
+    },
+    "جابر بن حيان": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/26/J%C4%81bir_ibn_%E1%B8%A4ayy%C4%81n%2C_Sayr_mulhimah_min_al-Sharq_wa-al-Gharb.png?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AC%D8%A7%D8%A8%D8%B1_%D8%A8%D9%86_%D8%AD%D9%8A%D8%A7%D9%86"
+    },
+    "ليوناردو دا فينشي": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Leonardo_self.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%84%D9%8A%D9%88%D9%86%D8%A7%D8%B1%D8%AF%D9%88_%D8%AF%D8%A7_%D9%81%D9%8A%D9%86%D8%B4%D9%8A"
+    },
+    "مايكل أنجلو": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Michelangelo_Daniele_da_Volterra_%28dettaglio%29.jpg/960px-Michelangelo_Daniele_da_Volterra_%28dettaglio%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D9%8A%D9%83%D9%8A%D9%84%D8%A7%D9%86%D8%AC%D9%8A%D9%84%D9%88"
+    },
+    "بابلو بيكاسو": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Pablo_picasso_1.jpg/960px-Pablo_picasso_1.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D8%A7%D8%A8%D9%84%D9%88_%D8%A8%D9%8A%D9%83%D8%A7%D8%B3%D9%88"
+    },
+    "فنسنت فان غوخ": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Self-portrait_-_Vincent_van_Gogh.jpg/960px-Self-portrait_-_Vincent_van_Gogh.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%81%D9%86%D8%B3%D9%86%D8%AA_%D9%81%D8%A7%D9%86_%D8%BA%D9%88%D8%AE"
+    },
+    "سلفادور دالي": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Salvador_Dal%C3%AD_1939.jpg/960px-Salvador_Dal%C3%AD_1939.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B3%D9%84%D9%81%D8%A7%D8%AF%D9%88%D8%B1_%D8%AF%D8%A7%D9%84%D9%8A"
+    },
+    "رامبرانت": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Rembrandt_van_Rijn_-_Self-Portrait_%281659%29.jpg/960px-Rembrandt_van_Rijn_-_Self-Portrait_%281659%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B1%D8%A7%D9%85%D8%A8%D8%B1%D8%A7%D9%86%D8%AA"
+    },
+    "كلود مونيه": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Claude_Monet_1899_Nadar_crop.jpg/960px-Claude_Monet_1899_Nadar_crop.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%83%D9%84%D9%88%D8%AF_%D9%85%D9%88%D9%86%D9%8A%D9%87"
+    },
+    "فريدا كاهلو": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Frida_Kahlo%2C_by_Guillermo_Kahlo_%28cropped%29.jpg/960px-Frida_Kahlo%2C_by_Guillermo_Kahlo_%28cropped%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%81%D8%B1%D9%8A%D8%AF%D8%A7_%D9%83%D8%A7%D9%87%D9%84%D9%88"
+    },
+    "ويليام شكسبير": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Shakespeare.jpg/960px-Shakespeare.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%88%D9%84%D9%8A%D9%85_%D8%B4%D9%83%D8%B3%D8%A8%D9%8A%D8%B1"
+    },
+    "تشارلز ديكنز": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Dickens_Gurney_head.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AA%D8%B4%D8%A7%D8%B1%D9%84%D8%B2_%D8%AF%D9%8A%D9%83%D9%86%D8%B2"
+    },
+    "فيكتور هوغو": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Victor_Hugo_by_%C3%89tienne_Carjat_1876_-_full.jpg/960px-Victor_Hugo_by_%C3%89tienne_Carjat_1876_-_full.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%81%D9%83%D8%AA%D9%88%D8%B1_%D9%87%D9%8A%D8%BA%D9%88"
+    },
+    "دوستويفسكي": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Vasily_Perov_-_%D0%9F%D0%BE%D1%80%D1%82%D1%80%D0%B5%D1%82_%D0%A4.%D0%9C.%D0%94%D0%BE%D1%81%D1%82%D0%BE%D0%B5%D0%B2%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_-_Google_Art_Project.jpg/960px-Vasily_Perov_-_%D0%9F%D0%BE%D1%80%D1%82%D1%80%D0%B5%D1%82_%D0%A4.%D0%9C.%D0%94%D0%BE%D1%81%D1%82%D0%BE%D0%B5%D0%B2%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_-_Google_Art_Project.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%81%D9%8A%D9%88%D8%AF%D9%88%D8%B1_%D8%AF%D9%88%D8%B3%D8%AA%D9%88%D9%8A%D9%81%D8%B3%D9%83%D9%8A"
+    },
+    "تولستوي": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Leo_Tolstoy_1908_Portrait_%283x4_cropped%29.jpg/960px-Leo_Tolstoy_1908_Portrait_%283x4_cropped%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%84%D9%8A%D9%88_%D8%AA%D9%88%D9%84%D8%B3%D8%AA%D9%88%D9%8A"
+    },
+    "جورج أورويل": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/George_Orwell%2C_c._1940_%2841928180381%29.jpg/960px-George_Orwell%2C_c._1940_%2841928180381%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AC%D9%88%D8%B1%D8%AC_%D8%A3%D9%88%D8%B1%D9%88%D9%8A%D9%84"
+    },
+    "إرنست همنغواي": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/ErnestHemingway.jpg/960px-ErnestHemingway.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A5%D8%B1%D9%86%D8%B3%D8%AA_%D9%87%D9%85%D9%8A%D9%86%D8%BA%D9%88%D9%8A"
+    },
+    "أغاثا كريستي": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Agatha_Christie_in_Nederland_%28detectiveschrijfster%29%2C_bij_aankomst_op_Schiphol_me%2C_Bestanddeelnr_916-8898_%28cropped%29.jpg/960px-Agatha_Christie_in_Nederland_%28detectiveschrijfster%29%2C_bij_aankomst_op_Schiphol_me%2C_Bestanddeelnr_916-8898_%28cropped%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A3%D8%AC%D8%A7%D8%AB%D8%A7_%D9%83%D8%B1%D9%8A%D8%B3%D8%AA%D9%8A"
+    },
+    "آرثر كونان دويل": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Arthur_Conan_Doyle_by_Walter_Benington%2C_1914.png?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A2%D8%B1%D8%AB%D8%B1_%D9%83%D9%88%D9%86%D8%A7%D9%86_%D8%AF%D9%88%D9%8A%D9%84"
+    },
+    "جبران خليل جبران": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/34/Kahlil_Gibran_1913.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AC%D8%A8%D8%B1%D8%A7%D9%86_%D8%AE%D9%84%D9%8A%D9%84_%D8%AC%D8%A8%D8%B1%D8%A7%D9%86"
+    },
+    "نجيب محفوظ": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/66/Nagib_Mahfouz.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%86%D8%AC%D9%8A%D8%A8_%D9%85%D8%AD%D9%81%D9%88%D8%B8"
+    },
+    "المتنبي": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Al-Mutanabbi.jpg/960px-Al-Mutanabbi.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A3%D8%A8%D9%88_%D8%A7%D9%84%D8%B7%D9%8A%D8%A8_%D8%A7%D9%84%D9%85%D8%AA%D9%86%D8%A8%D9%8A"
+    },
+    "محمود درويش": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/2a/MahmoudDarwish.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%AD%D9%85%D9%88%D8%AF_%D8%AF%D8%B1%D9%88%D9%8A%D8%B4"
+    },
+    "بدر شاكر السياب": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/b5/Sayab0.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D8%AF%D8%B1_%D8%B4%D8%A7%D9%83%D8%B1_%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%A8"
+    },
+    "ليوناردو دي كابريو": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Leonardo_DiCaprio_-_BFI_Southbank.jpg/960px-Leonardo_DiCaprio_-_BFI_Southbank.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%84%D9%8A%D9%88%D9%86%D8%A7%D8%B1%D8%AF%D9%88_%D8%AF%D9%8A_%D9%83%D8%A7%D8%A8%D8%B1%D9%8A%D9%88"
+    },
+    "براد بيت": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Brad_Pitt-69858.jpg/960px-Brad_Pitt-69858.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D8%B1%D8%A7%D8%AF_%D8%A8%D9%8A%D8%AA"
+    },
+    "جوني ديب": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/21/Johnny_Depp_2020.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AC%D9%88%D9%86%D9%8A_%D8%AF%D9%8A%D8%A8"
+    },
+    "روبرت داوني جونيور": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Robert_Downey_Jr_2014_Comic_Con_%28cropped%29.jpg/960px-Robert_Downey_Jr_2014_Comic_Con_%28cropped%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B1%D9%88%D8%A8%D8%B1%D8%AA_%D8%AF%D8%A7%D9%88%D9%86%D9%8A_%D8%AC%D9%88%D9%86%D9%8A%D9%88%D8%B1"
+    },
+    "مورغان فريمان": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Morgan_Freeman_at_The_Pentagon_on_2_August_2023_-_230802-D-PM193-3363_%28cropped%29.jpg/960px-Morgan_Freeman_at_The_Pentagon_on_2_August_2023_-_230802-D-PM193-3363_%28cropped%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D9%88%D8%B1%D8%BA%D8%A7%D9%86_%D9%81%D8%B1%D9%8A%D9%85%D8%A7%D9%86"
+    },
+    "ويل سميث": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Will_Smith_by_Gage_Skidmore.jpg/960px-Will_Smith_by_Gage_Skidmore.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%88%D9%8A%D9%84_%D8%B3%D9%85%D9%8A%D8%AB"
+    },
+    "توم كروز": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Tom_Cruise_at_53rd_Saturn_Awards_2026-01.jpg/960px-Tom_Cruise_at_53rd_Saturn_Awards_2026-01.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AA%D9%88%D9%85_%D9%83%D8%B1%D9%88%D8%B2"
+    },
+    "جاكي شان": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Jackie_Chan_July_2016.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AC%D8%A7%D9%83%D9%8A_%D8%B4%D8%A7%D9%86"
+    },
+    "بروس لي": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Bruce_Lee_1973_%28cropped%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D8%B1%D9%88%D8%B3_%D9%84%D9%8A"
+    },
+    "أرنولد شوارزنيغر": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Arnold_Schwarzenegger_by_Gage_Skidmore_4.jpg/960px-Arnold_Schwarzenegger_by_Gage_Skidmore_4.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A3%D8%B1%D9%86%D9%88%D9%84%D8%AF_%D8%B4%D9%88%D8%A7%D8%B1%D8%B2%D9%86%D9%8A%D8%AC%D8%B1"
+    },
+    "سيلفستر ستالون": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/84/Sylvester_Stallone_Cannes_2019.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B3%D9%8A%D9%84%D9%81%D8%B3%D8%AA%D8%B1_%D8%B3%D8%AA%D8%A7%D9%84%D9%88%D9%86"
+    },
+    "خواكين فينيكس": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Joaquin_Phoenix_in_2018.jpg/960px-Joaquin_Phoenix_in_2018.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AE%D9%88%D8%A7%D9%83%D9%8A%D9%86_%D9%81%D9%8A%D9%86%D9%8A%D9%83%D8%B3"
+    },
+    "كيانو ريفز": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/58/Keanu_Reeves_LanaDRPrimavera_310524_%2822_of_147%29_%2853765066346%29_%28cropped%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%83%D9%8A%D8%A7%D9%86%D9%88_%D8%B1%D9%8A%D9%81%D8%B2"
+    },
+    "أنجلينا جولي": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Angelina_Jolie-643531_%28cropped%29.jpg/960px-Angelina_Jolie-643531_%28cropped%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A3%D9%86%D8%AC%D9%84%D9%8A%D9%86%D8%A7_%D8%AC%D9%88%D9%84%D9%8A"
+    },
+    "سكارليت جوهانسون": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Scarlett_Johansson-8588.jpg/960px-Scarlett_Johansson-8588.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B3%D9%83%D8%A7%D8%B1%D9%84%D9%8A%D8%AA_%D8%AC%D9%88%D9%87%D8%A7%D9%86%D8%B3%D9%88%D9%86"
+    },
+    "إيما واتسون": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Emma_Watson_interview_in_2017.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A5%D9%8A%D9%85%D8%A7_%D9%88%D8%A7%D8%AA%D8%B3%D9%88%D9%86"
+    },
+    "جينيفر لورنس": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Jennifer_Lawrence%2C_Cannes_Film_Festival_2025.jpg/960px-Jennifer_Lawrence%2C_Cannes_Film_Festival_2025.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AC%D9%8A%D9%86%D9%8A%D9%81%D8%B1_%D9%84%D9%88%D8%B1%D9%86%D8%B3"
+    },
+    "مارغوت روبي": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Margot_Robbie_at_the_Paris_premiere_of_%22Wuthering_Heights%22.jpg/960px-Margot_Robbie_at_the_Paris_premiere_of_%22Wuthering_Heights%22.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%A7%D8%B1%D8%AC%D9%88_%D8%B1%D9%88%D8%A8%D9%8A"
+    },
+    "ناتالي بورتمان": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/NataliePortman.jpg/960px-NataliePortman.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%86%D8%A7%D8%AA%D8%A7%D9%84%D9%8A_%D8%A8%D9%88%D8%B1%D8%AA%D9%85%D8%A7%D9%86"
+    },
+    "ميريل ستريب": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Meryl_Streep_at_the_Tokyo_International_Film_Festival_2016_%2832801846044%29_%28cropped%29.jpg/960px-Meryl_Streep_at_the_Tokyo_International_Film_Festival_2016_%2832801846044%29_%28cropped%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D9%8A%D8%B1%D9%8A%D9%84_%D8%B3%D8%AA%D8%B1%D9%8A%D8%A8"
+    },
+    "غال غادوت": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/08/Gal_Gadot_for_Revlon_%28cropped%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%BA%D8%A7%D9%84_%D8%BA%D8%A7%D8%AF%D9%88%D8%AA"
+    },
+    "هند صبري": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Couv-Tunivisions_Juin_2011.jpg/960px-Couv-Tunivisions_Juin_2011.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%87%D9%86%D8%AF_%D8%B5%D8%A8%D8%B1%D9%8A"
+    },
+    "مايكل جاكسون": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Michael_Jackson_1983_%283x4_cropped%29_%28contrast%29.jpg/960px-Michael_Jackson_1983_%283x4_cropped%29_%28contrast%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%A7%D9%8A%D9%83%D9%84_%D8%AC%D8%A7%D9%83%D8%B3%D9%88%D9%86"
+    },
+    "إلفيس بريسلي": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Elvis_Presley_promoting_Jailhouse_Rock.jpg/960px-Elvis_Presley_promoting_Jailhouse_Rock.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A5%D9%84%D9%81%D9%8A%D8%B3_%D8%A8%D8%B1%D9%8A%D8%B3%D9%84%D9%8A"
+    },
+    "فريدي ميركوري": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Freddie_Mercury_performing_in_New_Haven%2C_CT%2C_November_1977.jpg/960px-Freddie_Mercury_performing_in_New_Haven%2C_CT%2C_November_1977.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%81%D8%B1%D9%8A%D8%AF%D9%8A_%D9%85%D9%8A%D8%B1%D9%83%D9%88%D8%B1%D9%8A"
+    },
+    "بوب مارلي": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Bob_Marley_1976_press_photo.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D9%88%D8%A8_%D9%85%D8%A7%D8%B1%D9%84%D9%8A"
+    },
+    "أديل": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Adele_2016.jpg/960px-Adele_2016.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A3%D8%AF%D9%8A%D9%84"
+    },
+    "تايلور سويفت": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Taylor_Swift_at_the_2023_MTV_Video_Music_Awards_%282%29_%28cropped%29.png?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AA%D8%A7%D9%8A%D9%84%D9%88%D8%B1_%D8%B3%D9%88%D9%8A%D9%81%D8%AA"
+    },
+    "بيونسيه": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Beyonc%C3%A9_-_Tottenham_Hotspur_Stadium_-_1st_June_2023_%2810_of_118%29_%2852946364598%29_%28best_crop%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D9%8A%D9%88%D9%86%D8%B3%D9%8A%D9%87"
+    },
+    "ريهانا": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Rihanna_Fenty_2018.png?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B1%D9%8A%D8%A7%D9%86%D8%A7"
+    },
+    "إد شيران": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Ed_Sheeran-6886_%28cropped%29.jpg/960px-Ed_Sheeran-6886_%28cropped%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A5%D8%AF_%D8%B4%D9%8A%D8%B1%D8%A7%D9%86"
+    },
+    "ذا ويكند": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/The_Weeknd_Portrait_by_Brian_Ziff.jpg/960px-The_Weeknd_Portrait_by_Brian_Ziff.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B0%D8%A7_%D9%88%D9%8A%D9%83%D9%86%D8%AF"
+    },
+    "عبد الحليم حافظ": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Abdel_Halim_Hafez.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B9%D8%A8%D8%AF_%D8%A7%D9%84%D8%AD%D9%84%D9%8A%D9%85_%D8%AD%D8%A7%D9%81%D8%B8"
+    },
+    "كاظم الساهر": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Kazem_Main.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%83%D8%A7%D8%B8%D9%85_%D8%A7%D9%84%D8%B3%D8%A7%D9%87%D8%B1"
+    },
+    "ماجد المهندس": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/15/Majid_al-Muhandis%2C_Tenadeek_-_Arab_Idol%2C_Feb_18%2C_2017_%2802%29.png?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%A7%D8%AC%D8%AF_%D8%A7%D9%84%D9%85%D9%87%D9%86%D8%AF%D8%B3"
+    },
+    "حسين الجسمي": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Hussain_al-Jassmi%2C_Layali_Al_Qassim_concert%2C_Buraidah_-_Jan_15%2C_2020.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AD%D8%B3%D9%8A%D9%86_%D8%A7%D9%84%D8%AC%D8%B3%D9%85%D9%8A"
+    },
+    "ستيف جوبز": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Steve_Jobs_Headshot_2010.JPG/960px-Steve_Jobs_Headshot_2010.JPG?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B3%D8%AA%D9%8A%D9%81_%D8%AC%D9%88%D8%A8%D8%B2"
+    },
+    "بيل غيتس": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/88/Bill_Gates_at_the_European_Commission_-_2025_-_P067383-987995_%28cropped%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D9%8A%D9%84_%D8%BA%D9%8A%D8%AA%D8%B3"
+    },
+    "إيلون ماسك": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Elon_Musk_%2854816836217%29_%28cropped_2%29_%28b%29.jpg/960px-Elon_Musk_%2854816836217%29_%28cropped_2%29_%28b%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A5%D9%8A%D9%84%D9%88%D9%86_%D9%85%D8%A7%D8%B3%D9%83"
+    },
+    "مارك زوكربيرغ": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Mark_Zuckerberg_F8_2019_Keynote_%2832830578717%29_%28cropped%29.jpg/960px-Mark_Zuckerberg_F8_2019_Keynote_%2832830578717%29_%28cropped%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%A7%D8%B1%D9%83_%D8%B2%D9%88%D9%83%D8%B1%D8%A8%D9%8A%D8%B1%D8%BA"
+    },
+    "جيف بيزوس": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Jeff_Bezos_at_Amazon_Spheres_Grand_Opening_in_Seattle_-_2018_%2839074799225%29_%28cropped%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AC%D9%8A%D9%81_%D8%A8%D9%8A%D8%B2%D9%88%D8%B3"
+    },
+    "وارن بافيت": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Warren_Buffett_at_the_2015_SelectUSA_Investment_Summit_%28cropped%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%88%D8%A7%D8%B1%D9%86_%D8%A8%D8%A7%D9%81%D8%AA"
+    },
+    "جاك ما": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Enabling_eCommerce-_Small_Enterprises%2C_Global_Players_%2839008130265%29_%28cropped%29.jpg/960px-Enabling_eCommerce-_Small_Enterprises%2C_Global_Players_%2839008130265%29_%28cropped%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AC%D8%A7%D9%83_%D9%85%D8%A7"
+    },
+    "لاري بايج": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Larry_Page_in_the_European_Parliament%2C_17.06.2009.jpg/960px-Larry_Page_in_the_European_Parliament%2C_17.06.2009.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%84%D8%A7%D8%B1%D9%8A_%D8%A8%D8%A7%D9%8A%D8%AC"
+    },
+    "سيرجي برين": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Sergey_Brin_Ted_2010_%28cropped%29.jpg/960px-Sergey_Brin_Ted_2010_%28cropped%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B3%D9%8A%D8%B1%D8%AC%D9%8A_%D8%A8%D8%B1%D9%8A%D9%86"
+    },
+    "صلاح الدين الأيوبي": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/71/Saladin%27s_imaginary_portrait.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B5%D9%84%D8%A7%D8%AD_%D8%A7%D9%84%D8%AF%D9%8A%D9%86_%D8%A7%D9%84%D8%A3%D9%8A%D9%88%D8%A8%D9%8A"
+    },
+    "هارون الرشيد": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/65/H%C4%81r%C5%ABn_al-Rash%C4%ABd.png?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%87%D8%A7%D8%B1%D9%88%D9%86_%D8%A7%D9%84%D8%B1%D8%B4%D9%8A%D8%AF"
+    },
+    "الإسكندر الأكبر": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Alexander_the_Great_Ny_Carlsberg_Glyptotek_IN574_n1.jpg/960px-Alexander_the_Great_Ny_Carlsberg_Glyptotek_IN574_n1.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%A5%D8%B3%D9%83%D9%86%D8%AF%D8%B1_%D8%A7%D9%84%D8%A3%D9%83%D8%A8%D8%B1"
+    },
+    "يوليوس قيصر": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Retrato_de_Julio_C%C3%A9sar_%2826724093101%29_%28cropped%29.jpg/960px-Retrato_de_Julio_C%C3%A9sar_%2826724093101%29_%28cropped%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%8A%D9%88%D9%84%D9%8A%D9%88%D8%B3_%D9%82%D9%8A%D8%B5%D8%B1"
+    },
+    "نابليون بونابرت": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Painting_of_Napoleon_Bonaparte_by_Jacques-Louis_David%2C_1813.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%86%D8%A7%D8%A8%D9%84%D9%8A%D9%88%D9%86_%D8%A8%D9%88%D9%86%D8%A7%D8%A8%D8%B1%D8%AA"
+    },
+    "جنكيز خان": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/YuanEmperorAlbumGenghisPortrait.jpg/960px-YuanEmperorAlbumGenghisPortrait.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AC%D9%86%D9%83%D9%8A%D8%B2_%D8%AE%D8%A7%D9%86"
+    },
+    "كليوباترا": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Kleopatra-VII.-Altes-Museum-Berlin1.jpg/960px-Kleopatra-VII.-Altes-Museum-Berlin1.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%83%D9%84%D9%8A%D9%88%D8%A8%D8%A7%D8%AA%D8%B1%D8%A7"
+    },
+    "الملكة إليزابيث الثانية": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/11/Queen_Elizabeth_II_official_portrait_for_1959_tour_%28retouched%29_%28cropped%29_%283-to-4_aspect_ratio%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A5%D9%84%D9%8A%D8%B2%D8%A7%D8%A8%D9%8A%D8%AB_%D8%A7%D9%84%D8%AB%D8%A7%D9%86%D9%8A%D8%A9"
+    },
+    "نيلسون مانديلا": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/14/Nelson_Mandela-2008_%28edit%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%86%D9%8A%D9%84%D8%B3%D9%88%D9%86_%D9%85%D8%A7%D9%86%D8%AF%D9%8A%D9%84%D8%A7"
+    },
+    "المهاتما غاندي": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Mahatma-Gandhi%2C_studio%2C_1931.jpg/960px-Mahatma-Gandhi%2C_studio%2C_1931.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D9%87%D8%A7%D8%AA%D9%85%D8%A7_%D8%BA%D8%A7%D9%86%D8%AF%D9%8A"
+    },
+    "مارتن لوثر كينغ": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Martin_Luther_King%2C_Jr..jpg/960px-Martin_Luther_King%2C_Jr..jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%A7%D8%B1%D8%AA%D9%86_%D9%84%D9%88%D8%AB%D8%B1_%D9%83%D9%8A%D9%86%D8%BA_%D8%A7%D9%84%D8%A7%D8%A8%D9%86"
+    },
+    "أبراهام لينكون": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Abraham_Lincoln_O-77_matte_collodion_print.jpg/960px-Abraham_Lincoln_O-77_matte_collodion_print.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A3%D8%A8%D8%B1%D8%A7%D9%87%D8%A7%D9%85_%D9%84%D9%8A%D9%86%D9%83%D9%88%D9%86"
+    },
+    "محمد علي كلاي": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Muhammad_Ali_NYWTS.jpg/960px-Muhammad_Ali_NYWTS.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%AD%D9%85%D8%AF_%D8%B9%D9%84%D9%8A"
+    },
+    "مايك تايسون": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Mike_Tyson_Photo_Op_GalaxyCon_Austin_2023.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%A7%D9%8A%D9%83_%D8%AA%D8%A7%D9%8A%D8%B3%D9%88%D9%86"
+    },
+    "خبيب نورمحمدوف": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Khabib_nurmagomedov.jpg/960px-Khabib_nurmagomedov.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AD%D8%A8%D9%8A%D8%A8_%D9%86%D9%88%D8%B1%D9%85%D8%AD%D9%85%D8%AF%D9%88%D9%81"
+    },
+    "يوسين بولت": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Bolt_se_aposenta_com_medalha_de_ouro_no_4_x_100_metros_1039118-19.08.2016_frz-9565.jpg/960px-Bolt_se_aposenta_com_medalha_de_ouro_no_4_x_100_metros_1039118-19.08.2016_frz-9565.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%8A%D9%88%D8%B3%D9%8A%D9%86_%D8%A8%D9%88%D9%84%D8%AA"
+    },
+    "مايكل جوردان": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Michael_Jordan_in_2014.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%A7%D9%8A%D9%83%D9%84_%D8%AC%D9%88%D8%B1%D8%AF%D9%86"
+    },
+    "ليبرون جيمس": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/LeBron_James_-_51959723161_%28cropped%29.jpg/960px-LeBron_James_-_51959723161_%28cropped%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%84%D9%8A%D8%A8%D8%B1%D9%88%D9%86_%D8%AC%D9%8A%D9%85%D8%B3"
+    },
+    "كوبي براينت": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Kobe_Bryant_7144_adjusted.jpg/960px-Kobe_Bryant_7144_adjusted.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%83%D9%88%D8%A8%D9%8A_%D8%A8%D8%B1%D8%A7%D9%8A%D9%86%D8%AA"
+    },
+    "رافاييل نادال": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Rafael_Nadal_en_2024_%28cropped%29.jpg/960px-Rafael_Nadal_en_2024_%28cropped%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B1%D8%A7%D9%81%D8%A7%D9%8A%D9%8A%D9%84_%D9%86%D8%A7%D8%AF%D8%A7%D9%84"
+    },
+    "نوفاك دجوكوفيتش": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/48/Novak_Djokovi%C4%87_Trophy_Wimbledon_2019-croped_and_edited.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%86%D9%88%D9%81%D8%A7%D9%83_%D8%AF%D8%AC%D9%88%D9%83%D9%88%D9%81%D9%8A%D8%AA%D8%B4"
+    },
+    "مستر بيست": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/MrBeast_in_2026_%28cropped_4%29.png/960px-MrBeast_in_2026_%28cropped_4%29.png?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B3%D8%AA%D8%B1_%D8%A8%D9%8A%D8%B3%D8%AA"
+    },
+    "عمر فاروق": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Umar_Mutallab_crop_and_contrast.png?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B9%D9%85%D8%B1_%D9%81%D8%A7%D8%B1%D9%88%D9%82_%D8%B9%D8%A8%D8%AF_%D8%A7%D9%84%D9%85%D8%B7%D9%84%D8%A8"
+    },
+    "أبو فلة": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/%D8%A3%D8%A8%D9%88_%D9%81%D9%84%D8%A9.jpg/960px-%D8%A3%D8%A8%D9%88_%D9%81%D9%84%D8%A9.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A3%D8%A8%D9%88_%D9%81%D9%84%D8%A9"
+    }
+  },
+  "football": {
+    "ليونيل ميسي": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Leo_Messi_Argentina_v_Egypt_7_July_2026-1.jpg/960px-Leo_Messi_Argentina_v_Egypt_7_July_2026-1.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%84%D9%8A%D9%88%D9%86%D9%8A%D9%84_%D9%85%D9%8A%D8%B3%D9%8A"
+    },
+    "كريستيانو رونالدو": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Cristiano_Ronaldo_Croatia_v_Portugal_2_July_2026-075_%28cropped%29.jpg/960px-Cristiano_Ronaldo_Croatia_v_Portugal_2_July_2026-075_%28cropped%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%83%D8%B1%D9%8A%D8%B3%D8%AA%D9%8A%D8%A7%D9%86%D9%88_%D8%B1%D9%88%D9%86%D8%A7%D9%84%D8%AF%D9%88"
+    },
+    "نيمار": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Neymar_Junior_Brazil_V_Morocco_13_June_2026-40.jpg/960px-Neymar_Junior_Brazil_V_Morocco_13_June_2026-40.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%86%D9%8A%D9%85%D8%A7%D8%B1"
+    },
+    "كيليان مبابي": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Kylian_Mbappe_France_v_Senegal_16_June_2026-391_%28cropped_2%29.jpg/960px-Kylian_Mbappe_France_v_Senegal_16_June_2026-391_%28cropped_2%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%83%D9%8A%D9%84%D9%8A%D8%A7%D9%86_%D9%85%D8%A8%D8%A7%D8%A8%D9%8A"
+    },
+    "إيرلينغ هالاند": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Erling_Haaland_Morocco_v_Norway_7_June_2026-51.jpg/960px-Erling_Haaland_Morocco_v_Norway_7_June_2026-51.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A5%D9%8A%D8%B1%D9%84%D9%8A%D9%86%D8%BA_%D9%87%D8%A7%D9%84%D8%A7%D9%86%D8%AF"
+    },
+    "محمد صلاح": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Mohamed_Salah_Argentina_v_Egypt_7_July_2026-163_%28cropped%29.jpg/960px-Mohamed_Salah_Argentina_v_Egypt_7_July_2026-163_%28cropped%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%AD%D9%85%D8%AF_%D8%B5%D9%84%D8%A7%D8%AD"
+    },
+    "فينيسيوس جونيور": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Vin%C3%ADcius_J%C3%BAnior_Brazil_V_Morocco_13_June_2026-207_%28cropped%29.jpg/960px-Vin%C3%ADcius_J%C3%BAnior_Brazil_V_Morocco_13_June_2026-207_%28cropped%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%81%D9%8A%D9%86%D9%8A%D8%B3%D9%8A%D9%88%D8%B3_%D8%AC%D9%88%D9%86%D9%8A%D9%88%D8%B1"
+    },
+    "جود بيلينغهام": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Jude_Bellingham_England_v_Panama_27_June_26-160_%28cropped%29.jpg/960px-Jude_Bellingham_England_v_Panama_27_June_26-160_%28cropped%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AC%D9%88%D8%AF_%D8%A8%D9%8A%D9%84%D9%8A%D9%86%D8%BA%D9%87%D8%A7%D9%85"
+    },
+    "لامين يامال": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Lamine_Yamal_France_v_Spain_7.24.26-142.jpg/960px-Lamine_Yamal_France_v_Spain_7.24.26-142.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%84%D8%A7%D9%85%D9%8A%D9%86_%D8%AC%D9%85%D8%A7%D9%84"
+    },
+    "رودري": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Rodri_France_v_Spain_7.24.26-096_%28cropped%29.jpg/960px-Rodri_France_v_Spain_7.24.26-096_%28cropped%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B1%D9%88%D8%AF%D8%B1%D9%8A"
+    },
+    "كيفن دي بروين": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Kevin_De_Bruyne_USMNT_v_Belgium_Mar_28_2026-64_%28cropped%29.jpg/960px-Kevin_De_Bruyne_USMNT_v_Belgium_Mar_28_2026-64_%28cropped%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%83%D9%8A%D9%81%D9%86_%D8%AF%D9%8A_%D8%A8%D8%B1%D9%88%D9%8A%D9%86"
+    },
+    "هاري كين": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Harry_Kane_England_v_Ghana_23_June_2026-219_%28cropped%29.jpg/960px-Harry_Kane_England_v_Ghana_23_June_2026-219_%28cropped%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%87%D8%A7%D8%B1%D9%8A_%D9%83%D9%8A%D9%86"
+    },
+    "روبرت ليفاندوفسكي": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/2019147183134_2019-05-27_Fussball_1.FC_Kaiserslautern_vs_FC_Bayern_M%C3%BCnchen_-_Sven_-_1D_X_MK_II_-_0228_-_B70I8527_%28cropped%29.jpg/960px-2019147183134_2019-05-27_Fussball_1.FC_Kaiserslautern_vs_FC_Bayern_M%C3%BCnchen_-_Sven_-_1D_X_MK_II_-_0228_-_B70I8527_%28cropped%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B1%D9%88%D8%A8%D8%B1%D8%AA_%D9%84%D9%8A%D9%81%D8%A7%D9%86%D8%AF%D9%88%D9%81%D8%B3%D9%83%D9%8A"
+    },
+    "لوكا مودريتش": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Luka_Modric_Croatia_v_Portugal_2_July_2026-025.jpg/960px-Luka_Modric_Croatia_v_Portugal_2_July_2026-025.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%84%D9%88%D9%83%D8%A7_%D9%85%D9%88%D8%AF%D8%B1%D9%8A%D8%AA%D8%B4"
+    },
+    "توني كروس": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/64/Toni_Kroos_Real_Madrid_2021.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AA%D9%88%D9%86%D9%8A_%D9%83%D8%B1%D9%88%D8%B3"
+    },
+    "كاسيميرو": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Casemiro_Brazil_V_Morocco_13_June_2026-76_%28cropped%29.jpg/960px-Casemiro_Brazil_V_Morocco_13_June_2026-76_%28cropped%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%83%D8%A7%D8%B3%D9%8A%D9%85%D9%8A%D8%B1%D9%88"
+    },
+    "برونو فيرنانديز": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Bruno_Fernandes_USMNT_v_Portugal_Mar_31_2026-27_%28cropped%29.jpg/960px-Bruno_Fernandes_USMNT_v_Portugal_Mar_31_2026-27_%28cropped%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D8%B1%D9%88%D9%86%D9%88_%D9%81%D9%8A%D8%B1%D9%86%D8%A7%D9%86%D8%AF%D9%8A%D8%B2"
+    },
+    "برناردو سيلفا": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Bernardo_Silva_%28Isto_%C3%89_Gozar_Com_Quem_Trabalha%2C_2024%29.png?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D8%B1%D9%86%D8%A7%D8%B1%D8%AF%D9%88_%D8%B3%D9%8A%D9%84%D9%81%D8%A7"
+    },
+    "فيل فودين": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Phil_Foden_2022.jpeg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%81%D9%8A%D9%84_%D9%81%D9%88%D8%AF%D9%8A%D9%86"
+    },
+    "بوكايو ساكا": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Bukayo_Saka_England_v_Ghana_23_June_2026-057_%28cropped%29.jpg/960px-Bukayo_Saka_England_v_Ghana_23_June_2026-057_%28cropped%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D9%88%D9%83%D8%A7%D9%8A%D9%88_%D8%B3%D8%A7%D9%83%D8%A7"
+    },
+    "سون هيونغ مين": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Team_Korea_Russia_WorldCup_02_%28cropped%29.png?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B3%D9%88%D9%86_%D9%87%D9%8A%D9%88%D9%86%D8%BA_%D9%85%D9%8A%D9%86"
+    },
+    "رياض محرز": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/45/Mahrez_2021.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B1%D9%8A%D8%A7%D8%B6_%D9%85%D8%AD%D8%B1%D8%B2"
+    },
+    "ساديو ماني": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Sadio_Man%C3%A9_-_Persepolis_F.C._v_Al_Nassr_FC%2C_19_September_2023.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B3%D8%A7%D8%AF%D9%8A%D9%88_%D9%85%D8%A7%D9%86%D9%8A"
+    },
+    "فيكتور أوسيمين": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/0K8A7984_%2853451306826%29_%28cropped%29.jpg/960px-0K8A7984_%2853451306826%29_%28cropped%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%81%D9%83%D8%AA%D9%88%D8%B1_%D8%A3%D9%88%D8%B3%D9%8A%D9%85%D9%8A%D9%86"
+    },
+    "لاوتارو مارتينيز": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Lautaro_Martinez_Argentina_v_Egypt_7_July_2026-041.jpg/960px-Lautaro_Martinez_Argentina_v_Egypt_7_July_2026-041.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%84%D8%A7%D9%88%D8%AA%D8%A7%D8%B1%D9%88_%D9%85%D8%A7%D8%B1%D8%AA%D9%8A%D9%86%D9%8A%D8%B2"
+    },
+    "زين الدين زيدان": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Zinedine_Zidane_by_Tasnim_03.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B2%D9%8A%D9%86_%D8%A7%D9%84%D8%AF%D9%8A%D9%86_%D8%B2%D9%8A%D8%AF%D8%A7%D9%86"
+    },
+    "رونالدينيو": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Sports_Festival_2025_-_4_%28cropped%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B1%D9%88%D9%86%D8%A7%D9%84%D8%AF%D9%8A%D9%86%D9%8A%D9%88"
+    },
+    "كاكا": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Kak%C3%A1_visited_Stadium_St._Petersburg.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%83%D8%A7%D9%83%D8%A7"
+    },
+    "ريفالدو": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Rivaldo_bunyodkor_2010.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B1%D9%8A%D9%81%D8%A7%D9%84%D8%AF%D9%88"
+    },
+    "روبرتو كارلوس": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/67/Roberto_Carlos_in_Moscow_3.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B1%D9%88%D8%A8%D8%B1%D8%AA%D9%88_%D9%83%D8%A7%D8%B1%D9%84%D9%88%D8%B3"
+    },
+    "كافو": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/64/Cafu_-_26.02.2026_-_Cerim%C3%B4nia_de_apresenta%C3%A7%C3%A3o_das_ta%C3%A7as_da_Copa_do_Mundo_de_2026.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%83%D8%A7%D9%81%D9%88"
+    },
+    "روماريو": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Senadores_da_57%C2%AA_Legislatura_%2852689451805%29.jpg/960px-Senadores_da_57%C2%AA_Legislatura_%2852689451805%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B1%D9%88%D9%85%D8%A7%D8%B1%D9%8A%D9%88"
+    },
+    "بيليه": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Pele_con_brasil.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D9%8A%D9%84%D9%8A%D9%87"
+    },
+    "دييغو مارادونا": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Maradona-Mundial_86_con_la_copa.JPG/960px-Maradona-Mundial_86_con_la_copa.JPG?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AF%D9%8A%D9%8A%D8%BA%D9%88_%D9%85%D8%A7%D8%B1%D8%A7%D8%AF%D9%88%D9%86%D8%A7"
+    },
+    "غابرييل باتيستوتا": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/13/Omar_Batistuta_%282%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%BA%D8%A7%D8%A8%D8%B1%D9%8A%D9%8A%D9%84_%D8%A8%D8%A7%D8%AA%D9%8A%D8%B3%D8%AA%D9%88%D8%AA%D8%A7"
+    },
+    "خوان رومان ريكيلمي": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Juan_Rom%C3%A1n_Riquelme_-_2019.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AE%D9%88%D8%A7%D9%86_%D8%B1%D9%88%D9%85%D8%A7%D9%86_%D8%B1%D9%8A%D9%83%D9%8A%D9%84%D9%85%D9%8A"
+    },
+    "يوهان كرويف": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Johan_Cruyff_1974c.jpg/960px-Johan_Cruyff_1974c.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%8A%D9%88%D9%87%D8%A7%D9%86_%D9%83%D8%B1%D9%88%D9%8A%D9%81"
+    },
+    "فرانز بيكنباور": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/56/Franz_Beckenbauer_%281975%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%81%D8%B1%D8%A7%D9%86%D8%B2_%D8%A8%D9%83%D9%86%D8%A8%D8%A7%D9%88%D8%B1"
+    },
+    "غيرد مولر": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Gerd_M%C3%BCller_c1973.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%BA%D9%8A%D8%B1%D8%AF_%D9%85%D9%88%D9%84%D8%B1"
+    },
+    "ماركو فان باستن": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/24/Marco_van_Basten_%28ca_2006%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%A7%D8%B1%D9%83%D9%88_%D9%81%D8%A7%D9%86_%D8%A8%D8%A7%D8%B3%D8%AA%D9%86"
+    },
+    "رود خوليت": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/25th_Laureus_World_Sports_Awards_-_Ruud_Gullit_-_240422_131911_%28cropped%29.jpg/960px-25th_Laureus_World_Sports_Awards_-_Ruud_Gullit_-_240422_131911_%28cropped%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B1%D9%88%D8%AF_%D8%AE%D9%88%D9%84%D9%8A%D8%AA"
+    },
+    "دينيس بيركامب": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Dennis_Bergkamp_2014.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AF%D9%8A%D9%86%D9%8A%D8%B3_%D8%A8%D9%8A%D8%B1%D9%83%D8%A7%D9%85%D8%A8"
+    },
+    "ويسلي شنايدر": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/42/Wesley_Sneijder_%2815487233555%29_%28cropped%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%88%D9%8A%D8%B3%D9%84%D9%8A_%D8%B3%D9%86%D8%A7%D9%8A%D8%AF%D8%B1"
+    },
+    "لويس فيغو": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/15/Luis_Figo_2023.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%84%D9%88%D9%8A%D8%B3_%D9%81%D9%8A%D8%BA%D9%88"
+    },
+    "أوزيبيو": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Eusebio_%281963_version2%29.jpg/960px-Eusebio_%281963_version2%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A3%D9%88%D8%B2%D9%8A%D8%A8%D9%8A%D9%88"
+    },
+    "جورج بست": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/George_Best_%281976%29.jpg/960px-George_Best_%281976%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AC%D9%88%D8%B1%D8%AC_%D8%A8%D8%B3%D8%AA"
+    },
+    "تشافي هيرنانديز": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/53/Xavi_13981129001173637176666027076571.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AA%D8%B4%D8%A7%D9%81%D9%8A_%D9%87%D9%8A%D8%B1%D9%86%D8%A7%D9%86%D8%AF%D9%8A%D8%B2"
+    },
+    "أندريس إنييستا": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Andr%C3%A9s_Iniesta_%28cropped%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A3%D9%86%D8%AF%D8%B1%D9%8A%D8%B3_%D8%A5%D9%86%D9%8A%D9%8A%D8%B3%D8%AA%D8%A7"
+    },
+    "سيرجيو بوسكيتس": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Sergio_Busquets_NE_Revolution_Inter_Miami_7.9.25-028_%28cropped%29.jpg/960px-Sergio_Busquets_NE_Revolution_Inter_Miami_7.9.25-028_%28cropped%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B3%D9%8A%D8%B1%D8%AC%D9%8A%D9%88_%D8%A8%D9%88%D8%B3%D9%83%D9%8A%D8%AA%D8%B3"
+    },
+    "ديفيد فيا": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Spain-Tahiti%2C_Confederations_Cup_2013_%2802%29_%28Villa_crop%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AF%D8%A7%D9%81%D9%8A%D8%AF_%D9%81%D9%8A%D8%A7"
+    },
+    "فرناندو توريس": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/57/Fernando_Torres_2017.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%81%D8%B1%D9%86%D8%A7%D9%86%D8%AF%D9%88_%D8%AA%D9%88%D8%B1%D9%8A%D8%B3"
+    },
+    "راؤول غونزاليس": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/25th_Laureus_World_Sports_Awards_-_Ra%C3%BAl_-_240422_132916-2_%28cropped%29.jpg/960px-25th_Laureus_World_Sports_Awards_-_Ra%C3%BAl_-_240422_132916-2_%28cropped%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B1%D8%A7%D8%A4%D9%88%D9%84_%D8%BA%D9%88%D9%86%D8%B2%D8%A7%D9%84%D9%8A%D8%B3"
+    },
+    "إيكر كاسياس": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Iker-Casillas-SportsTrade-2021-cropped.jpg/960px-Iker-Casillas-SportsTrade-2021-cropped.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A5%D9%8A%D9%83%D8%B1_%D9%83%D8%A7%D8%B3%D9%8A%D8%A7%D8%B3"
+    },
+    "سيرجيو راموس": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/33/Sergio_Ramos_Interview_2021.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B3%D9%8A%D8%B1%D8%AE%D9%8A%D9%88_%D8%B1%D8%A7%D9%85%D9%88%D8%B3"
+    },
+    "كارليس بويول": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Premios_Goya_2020_-_Carles_Pujol.jpg/960px-Premios_Goya_2020_-_Carles_Pujol.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%83%D8%A7%D8%B1%D9%84%D9%8A%D8%B3_%D8%A8%D9%88%D9%8A%D9%88%D9%84"
+    },
+    "جيرارد بيكيه": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Gerard_Piqu%C3%A9_2017.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AC%D9%8A%D8%B1%D8%A7%D8%B1%D8%AF_%D8%A8%D9%8A%D9%83%D9%8A%D9%87"
+    },
+    "مارسيلو": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Marcelo_Vieira_in_2022.jpg/960px-Marcelo_Vieira_in_2022.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%A7%D8%B1%D8%B3%D9%8A%D9%84%D9%88"
+    },
+    "جانلويجي بوفون": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Gianluigi_Buffon_%2831784615942%29_%28cropped%29.jpg/960px-Gianluigi_Buffon_%2831784615942%29_%28cropped%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AC%D8%A7%D9%86%D9%84%D9%88%D9%8A%D8%AC%D9%8A_%D8%A8%D9%88%D9%81%D9%88%D9%86"
+    },
+    "باولو مالديني": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Paolo_Maldini_AC_Milan_Technical_director_2018.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D8%A7%D9%88%D9%84%D9%88_%D9%85%D8%A7%D9%84%D8%AF%D9%8A%D9%86%D9%8A"
+    },
+    "أندريا بيرلو": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/15/Andrea_Pirlo%2C_Save_the_Dream_at_the_Supercoppa_%28cropped%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A3%D9%86%D8%AF%D8%B1%D9%8A%D8%A7_%D8%A8%D9%8A%D8%B1%D9%84%D9%88"
+    },
+    "فرانشيسكو توتي": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/42/KL-2018_%284%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%81%D8%B1%D8%A7%D9%86%D8%B4%D9%8A%D8%B3%D9%83%D9%88_%D8%AA%D9%88%D8%AA%D9%8A"
+    },
+    "أليساندرو ديل بييرو": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Alessandro_Del_Piero_in_2014.jpg/960px-Alessandro_Del_Piero_in_2014.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A3%D9%84%D9%8A%D8%B3%D8%A7%D9%86%D8%AF%D8%B1%D9%88_%D8%AF%D9%84_%D8%A8%D9%8A%D9%8A%D8%B1%D9%88"
+    },
+    "روبرتو باجيو": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/4e/%D8%B1%D9%88%D8%A8%D8%B1%D8%AA%D9%88_%D8%A8%D8%A7%D8%AC%D9%88_%28cropped%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B1%D9%88%D8%A8%D8%B1%D8%AA%D9%88_%D8%A8%D8%A7%D8%AC%D9%88"
+    },
+    "فابيو كانافارو": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Fabio_Cannavaro_2011.jpg/960px-Fabio_Cannavaro_2011.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%81%D8%A7%D8%A8%D9%8A%D9%88_%D9%83%D8%A7%D9%86%D8%A7%D9%81%D8%A7%D8%B1%D9%88"
+    },
+    "جيورجيو كيليني": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/30/Chiellini_Mancini_Gravina_Mattarella_2021_%28Giorgio_Chiellini%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AC%D9%88%D8%B1%D8%AC%D9%8A%D9%88_%D9%83%D9%8A%D9%84%D9%84%D9%8A%D9%86%D9%8A"
+    },
+    "أندريا بارزالي": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Andrea_Barzagli_BGR-ITA_2012.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A3%D9%86%D8%AF%D8%B1%D9%8A%D8%A7_%D8%A8%D8%A7%D8%B1%D8%B2%D8%A7%D9%84%D9%8A"
+    },
+    "ليوناردو بونوتشي": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/6b/20150616_-_Portugal_-_Italie_-_Gen%C3%A8ve_-_Leonardo_Bonucci_%28cropped_2%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%84%D9%8A%D9%88%D9%86%D8%A7%D8%B1%D8%AF%D9%88_%D8%A8%D9%88%D9%86%D9%88%D8%AA%D8%B4%D9%8A"
+    },
+    "تييري هنري": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Thierry_Henry_%2851649035951%29_%28cropped%29.jpg/960px-Thierry_Henry_%2851649035951%29_%28cropped%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AA%D9%8A%D9%8A%D8%B1%D9%8A_%D9%87%D9%86%D8%B1%D9%8A"
+    },
+    "باتريك فييرا": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Patrick_Vieira_NYCFC_%28cropped%29.JPG?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D8%A7%D8%AA%D8%B1%D9%8A%D9%83_%D9%81%D9%8A%D9%8A%D8%B1%D8%A7"
+    },
+    "ديفيد بيكهام": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/73/David_Beckham_UNICEF_%28cropped2%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AF%D9%8A%D9%81%D9%8A%D8%AF_%D8%A8%D9%8A%D9%83%D9%87%D8%A7%D9%85"
+    },
+    "واين روني": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/60/Zarya-MU_%286%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%88%D8%A7%D9%8A%D9%86_%D8%B1%D9%88%D9%86%D9%8A"
+    },
+    "ستيفن جيرارد": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Steven_Gerrard_2018.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B3%D8%AA%D9%8A%D9%81%D9%86_%D8%AC%D9%8A%D8%B1%D8%A7%D8%B1%D8%AF"
+    },
+    "فرانك لامبارد": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Frank_Lampard_2019.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%81%D8%B1%D8%A7%D9%86%D9%83_%D9%84%D8%A7%D9%85%D8%A8%D8%A7%D8%B1%D8%AF"
+    },
+    "بول سكولز": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/P_Scholes.jpg/960px-P_Scholes.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D9%88%D9%84_%D8%B3%D9%83%D9%88%D9%84%D8%B2"
+    },
+    "ريان غيغز": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Ryan_Giggs_in_2008.jpg/960px-Ryan_Giggs_in_2008.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B1%D9%8A%D8%A7%D9%86_%D8%BA%D9%8A%D8%BA%D8%B2"
+    },
+    "روي كين": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Roy_keane_2014.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B1%D9%88%D9%8A_%D9%83%D9%8A%D9%86"
+    },
+    "آلان شيرر": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Alan_Shearer_2008.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A2%D9%84%D8%A7%D9%86_%D8%B4%D9%8A%D8%B1%D8%B1"
+    },
+    "ديدييه دروغبا": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Didier_Drogba_%282019%29_%28cropped%29.jpg/960px-Didier_Drogba_%282019%29_%28cropped%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AF%D9%8A%D8%AF%D9%8A%D9%8A%D9%87_%D8%AF%D8%B1%D9%88%D8%BA%D8%A8%D8%A7"
+    },
+    "صامويل إيتو": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Samuel_2011.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B5%D8%A7%D9%85%D9%88%D9%8A%D9%84_%D8%A5%D9%8A%D8%AA%D9%88"
+    },
+    "يايا توريه": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Yaya_Tour%C3%A9_%28cropped%29.jpg/960px-Yaya_Tour%C3%A9_%28cropped%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%8A%D8%AD%D9%8A%D9%89_%D8%AA%D9%88%D8%B1%D9%8A%D9%87"
+    },
+    "مانويل نوير": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Manuel_Neuer_Ecuador_v_Germany_25_June_2026-148.jpg/960px-Manuel_Neuer_Ecuador_v_Germany_25_June_2026-148.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%A7%D9%86%D9%88%D9%8A%D9%84_%D9%86%D9%88%D9%8A%D8%B1"
+    },
+    "أوليفر كان": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/20180423_FIFA_Fu%C3%9Fball-WM_2018%2C_Pressevorstellung_ARD_und_ZDF_by_Stepro_StP_3897.jpg/960px-20180423_FIFA_Fu%C3%9Fball-WM_2018%2C_Pressevorstellung_ARD_und_ZDF_by_Stepro_StP_3897.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A3%D9%88%D9%84%D9%8A%D9%81%D8%B1_%D9%83%D8%A7%D9%86"
+    },
+    "بيتر تشيك": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Petr_%C4%8Cech_Chelsea_2013.jpg/960px-Petr_%C4%8Cech_Chelsea_2013.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A8%D9%8A%D8%AA%D8%B1_%D8%AA%D8%B4%D9%8A%D9%83"
+    },
+    "أليسون بيكر": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/20180610_FIFA_Friendly_Match_Austria_vs._Brazil_850_1625.jpg/960px-20180610_FIFA_Friendly_Match_Austria_vs._Brazil_850_1625.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A3%D9%84%D9%8A%D8%B3%D9%88%D9%86_%D8%A8%D9%8A%D9%83%D8%B1"
+    },
+    "تيبو كورتوا": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Thibaut_Courtois_at_the_2018_World_Cup_%28cropped%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%AA%D9%8A%D8%A8%D9%88_%D9%83%D9%88%D8%B1%D8%AA%D9%88%D8%A7"
+    },
+    "يان أوبلاك": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Jan_Oblak_2019.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%8A%D8%A7%D9%86_%D8%A3%D9%88%D8%A8%D9%84%D8%A7%D9%83"
+    },
+    "مارك أندريه تير شتيغن": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Marc-Andre_Ter_Stegen_ACCI_FCBARCELONA_Turisme_Catalunya_gira_pretemporada_CATPRESS.jpg/960px-Marc-Andre_Ter_Stegen_ACCI_FCBARCELONA_Turisme_Catalunya_gira_pretemporada_CATPRESS.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%A7%D8%B1%D9%83_%D8%A3%D9%86%D8%AF%D8%B1%D9%8A%D9%87_%D8%AA%D9%8A%D8%B1_%D8%B4%D8%AA%D9%8A%D8%BA%D9%86"
+    },
+    "إيميليانو مارتينيز": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Emiliano_Martinez_Argentina_v_Egypt_7_July_2026-093_%28cropped%29.jpg/960px-Emiliano_Martinez_Argentina_v_Egypt_7_July_2026-093_%28cropped%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A5%D9%8A%D9%85%D9%8A%D9%84%D9%8A%D8%A7%D9%86%D9%88_%D9%85%D8%A7%D8%B1%D8%AA%D9%8A%D9%86%D9%8A%D8%B2"
+    },
+    "علي عدنان": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/68/Ali_Adnan_2019_AFC_Asian_Cup.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B9%D9%84%D9%8A_%D8%B9%D8%AF%D9%86%D8%A7%D9%86"
+    },
+    "يونس محمود": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Younis_Mahmoud_2012_2.jpg/960px-Younis_Mahmoud_2012_2.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%8A%D9%88%D9%86%D8%B3_%D9%85%D8%AD%D9%85%D9%88%D8%AF"
+    },
+    "نشأت أكرم": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Nashat_Akram.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%86%D8%B4%D8%A3%D8%AA_%D8%A3%D9%83%D8%B1%D9%85"
+    },
+    "أحمد راضي": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/%D8%A7%D8%AD%D9%85%D8%AF_%D8%B1%D8%A7%D8%B6%D9%8A.jpg/960px-%D8%A7%D8%AD%D9%85%D8%AF_%D8%B1%D8%A7%D8%B6%D9%8A.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A3%D8%AD%D9%85%D8%AF_%D8%B1%D8%A7%D8%B6%D9%8A"
+    },
+    "عدنان درجال": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/35/%D8%B9%D8%AF%D9%86%D8%A7%D9%86_%D8%AF%D8%B1%D8%AC%D8%A7%D9%84_2024.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B9%D8%AF%D9%86%D8%A7%D9%86_%D8%AF%D8%B1%D8%AC%D8%A7%D9%84"
+    },
+    "كرار جاسم": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Karrar_Jassim_playing_for_Sanat_Naft.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%83%D8%B1%D8%A7%D8%B1_%D8%AC%D8%A7%D8%B3%D9%85"
+    },
+    "مصطفى ناظم": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Mustafa_Nadhim_%28cropped%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%B5%D8%B7%D9%81%D9%89_%D9%86%D8%A7%D8%B8%D9%85"
+    },
+    "أيمن حسين": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/4822953_AE7I9053_%28cropped2%29.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%A3%D9%8A%D9%85%D9%86_%D8%AD%D8%B3%D9%8A%D9%86"
+    },
+    "زيدان إقبال": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/30/Zidane_Iqbal_debut.jpg?utm_source=ar.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "sourceUrl": "https://ar.wikipedia.org/wiki/%D8%B2%D9%8A%D8%AF%D8%A7%D9%86_%D8%A5%D9%82%D8%A8%D8%A7%D9%84"
+    }
+  }
+}

@@ -1,0 +1,233 @@
+import { v } from 'convex/values';
+
+import type { Doc, Id } from './_generated/dataModel';
+import type { MutationCtx } from './_generated/server';
+import { mutation, query } from './_generated/server';
+import { getPlayableItems } from './data/starterItems';
+import {
+  requireActiveMembership,
+  requirePlayer,
+  requireRoomHost,
+} from './lib/identity';
+import { createDuelRound } from './lib/duelRounds';
+import { loadActiveRoomPlayers } from './lib/roomView';
+
+const artworkValidator = v.object({
+  name: v.string(),
+  imageUrl: v.union(v.string(), v.null()),
+});
+
+const roomPlayerValidator = v.object({
+  id: v.id('players'),
+  displayName: v.string(),
+  avatarColor: v.string(),
+  totalPoints: v.number(),
+  isHost: v.boolean(),
+  isReady: v.boolean(),
+  isOnline: v.boolean(),
+  roomScore: v.number(),
+});
+
+const duelViewValidator = v.object({
+  roomId: v.id('rooms'),
+  roundNumber: v.number(),
+  phase: v.union(v.literal('duel_guessing'), v.literal('results')),
+  secret: artworkValidator,
+  opponent: roomPlayerValidator,
+  guessChoices: v.array(artworkValidator),
+  myGuessName: v.union(v.string(), v.null()),
+  opponentHasGuessed: v.boolean(),
+  result: v.union(
+    v.null(),
+    v.object({
+      opponentSecret: artworkValidator,
+      opponentGuessName: v.union(v.string(), v.null()),
+      myGuessCorrect: v.boolean(),
+      opponentGuessCorrect: v.boolean(),
+    }),
+  ),
+  players: v.array(roomPlayerValidator),
+});
+
+type DuelAssignment = NonNullable<Doc<'rounds'>['duelAssignments']>[number];
+
+function makeDuelChoices(
+  room: Doc<'rooms'>,
+  round: Doc<'rounds'>,
+  target: DuelAssignment,
+) {
+  const alternatives = getPlayableItems(room.category, room.collection).filter(
+    (item) => item.name !== target.name,
+  );
+  const offset = alternatives.length === 0
+    ? 0
+    : (round.roundNumber * 11) % alternatives.length;
+  const rotated = alternatives.slice(offset).concat(alternatives.slice(0, offset));
+  const choices = [target, ...rotated.slice(0, 3)].map(({ name, imageUrl }) => ({
+    name,
+    imageUrl,
+  }));
+  const shift = round.roundNumber % choices.length;
+  return choices.slice(shift).concat(choices.slice(0, shift));
+}
+
+async function awardPoint(
+  ctx: MutationCtx,
+  roomId: Id<'rooms'>,
+  playerId: Id<'players'>,
+): Promise<void> {
+  const membership = await ctx.db
+    .query('roomMembers')
+    .withIndex('by_room_id_and_player_id', (q) =>
+      q.eq('roomId', roomId).eq('playerId', playerId),
+    )
+    .unique();
+  const player = await ctx.db.get(playerId);
+  if (membership?.isActive) {
+    await ctx.db.patch(membership._id, { roomScore: membership.roomScore + 1 });
+  }
+  if (player) {
+    await ctx.db.patch(player._id, { totalPoints: player.totalPoints + 1 });
+  }
+}
+
+export const getMyView = query({
+  args: {
+    installationId: v.string(),
+    roomId: v.id('rooms'),
+  },
+  returns: v.union(v.null(), duelViewValidator),
+  handler: async (ctx, args) => {
+    const player = await requirePlayer(ctx, args.installationId);
+    await requireActiveMembership(ctx, args.roomId, player._id);
+    const room = await ctx.db.get(args.roomId);
+    if (!room?.activeRoundId || room.mode !== 'duel') {
+      return null;
+    }
+    const round = await ctx.db.get(room.activeRoundId);
+    const assignments = round?.duelAssignments ?? [];
+    if (!round || (round.phase !== 'duel_guessing' && round.phase !== 'results')) {
+      return null;
+    }
+    const mine = assignments.find((item) => item.playerId === player._id);
+    const theirs = assignments.find((item) => item.playerId !== player._id);
+    if (!mine || !theirs) {
+      return null;
+    }
+    const players = await loadActiveRoomPlayers(ctx, room._id, room.hostPlayerId);
+    const opponent = players.find((item) => item.id === theirs.playerId);
+    if (!opponent) {
+      return null;
+    }
+    const guesses = round.duelGuesses ?? [];
+    const myGuess = guesses.find((guess) => guess.playerId === player._id);
+    const opponentGuess = guesses.find((guess) => guess.playerId === opponent.id);
+    const reveal = round.phase === 'results';
+
+    return {
+      roomId: room._id,
+      roundNumber: round.roundNumber,
+      phase: round.phase,
+      secret: { name: mine.name, imageUrl: mine.imageUrl },
+      opponent,
+      guessChoices: makeDuelChoices(room, round, theirs),
+      myGuessName: myGuess?.guessedName ?? null,
+      opponentHasGuessed: Boolean(opponentGuess),
+      result: reveal
+        ? {
+            opponentSecret: { name: theirs.name, imageUrl: theirs.imageUrl },
+            opponentGuessName: opponentGuess?.guessedName ?? null,
+            myGuessCorrect: myGuess?.correct ?? false,
+            opponentGuessCorrect: opponentGuess?.correct ?? false,
+          }
+        : null,
+      players,
+    };
+  },
+});
+
+export const submitGuess = mutation({
+  args: {
+    installationId: v.string(),
+    roomId: v.id('rooms'),
+    guessedName: v.string(),
+  },
+  returns: v.object({ correct: v.boolean(), complete: v.boolean() }),
+  handler: async (ctx, args) => {
+    const player = await requirePlayer(ctx, args.installationId);
+    await requireActiveMembership(ctx, args.roomId, player._id);
+    const room = await ctx.db.get(args.roomId);
+    if (!room?.activeRoundId || room.mode !== 'duel') {
+      throw new Error('لا توجد مواجهة نشطة');
+    }
+    const round = await ctx.db.get(room.activeRoundId);
+    if (!round || round.phase !== 'duel_guessing') {
+      throw new Error('انتهت مرحلة التخمين');
+    }
+    const assignments = round.duelAssignments ?? [];
+    const target = assignments.find((item) => item.playerId !== player._id);
+    if (!target || assignments.length !== 2) {
+      throw new Error('تعذر العثور على صورة الخصم');
+    }
+    const guesses = round.duelGuesses ?? [];
+    if (guesses.some((guess) => guess.playerId === player._id)) {
+      throw new Error('تم إرسال تخمينك بالفعل');
+    }
+    const guessedName = args.guessedName.trim().slice(0, 120);
+    const choices = makeDuelChoices(room, round, target);
+    if (!choices.some((choice) => choice.name === guessedName)) {
+      throw new Error('هذا الخيار غير صالح');
+    }
+    const correct = guessedName === target.name;
+    const nextGuesses = [...guesses, { playerId: player._id, guessedName, correct }];
+    const complete = nextGuesses.length === 2;
+    if (complete) {
+      for (const guess of nextGuesses) {
+        if (guess.correct) {
+          await awardPoint(ctx, room._id, guess.playerId);
+        }
+      }
+    }
+    await ctx.db.patch(round._id, {
+      duelGuesses: nextGuesses,
+      phase: complete ? 'results' : 'duel_guessing',
+      completedAt: complete ? Date.now() : null,
+    });
+    return { correct, complete };
+  },
+});
+
+export const startNextRound = mutation({
+  args: {
+    installationId: v.string(),
+    roomId: v.id('rooms'),
+  },
+  returns: v.object({ roundId: v.id('rounds') }),
+  handler: async (ctx, args) => {
+    const player = await requirePlayer(ctx, args.installationId);
+    const room = await requireRoomHost(ctx, args.roomId, player._id);
+    await requireActiveMembership(ctx, room._id, player._id);
+    const previousRound = room.activeRoundId
+      ? await ctx.db.get(room.activeRoundId)
+      : null;
+    if (room.mode !== 'duel' || previousRound?.phase !== 'results') {
+      throw new Error('انتظر ظهور نتيجة المواجهة أولًا');
+    }
+    const memberships = await ctx.db
+      .query('roomMembers')
+      .withIndex('by_room_id_and_is_active', (q) =>
+        q.eq('roomId', room._id).eq('isActive', true),
+      )
+      .take(2);
+    if (memberships.length !== 2) {
+      throw new Error('يلزم وجود اللاعبين لبدء جولة جديدة');
+    }
+    const roundId = await createDuelRound(ctx, room, memberships, previousRound);
+    await ctx.db.patch(room._id, {
+      activeRoundId: roundId,
+      currentRoundNumber: room.currentRoundNumber + 1,
+      status: 'playing',
+    });
+    return { roundId };
+  },
+});

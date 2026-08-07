@@ -1,0 +1,75 @@
+name: Build Android release
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: android-release
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      EXPO_PUBLIC_CONVEX_URL: https://resolute-hound-961.convex.cloud
+      NODE_ENV: production
+      BARA_KEYSTORE_FILE: bara-release.jks
+      BARA_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+      BARA_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+      BARA_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - run: npm ci
+      - run: npm run verify
+      - run: npx expo prebuild --platform android --no-install
+
+      - name: Prepare version and signing
+        env:
+          ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+        run: |
+          echo "$ANDROID_KEYSTORE_BASE64" | base64 --decode > android/app/bara-release.jks
+          echo "BARA_VERSION_CODE=$((1000 + GITHUB_RUN_NUMBER))" >> "$GITHUB_ENV"
+          echo "BARA_VERSION_NAME=1.0.${GITHUB_RUN_NUMBER}" >> "$GITHUB_ENV"
+
+      - name: Configure Android release
+        run: node scripts/prepare-release-android.mjs
+
+      - name: Build APK
+        working-directory: android
+        run: ./gradlew :app:assembleRelease
+
+      - name: Prepare release files
+        run: |
+          cp android/app/build/outputs/apk/release/app-release.apk bara-alsalfa.apk
+          printf '{"versionCode":%s,"versionName":"%s","apkUrl":"https://github.com/alikizaro/bara/releases/download/latest/bara-alsalfa.apk"}\n' "$BARA_VERSION_CODE" "$BARA_VERSION_NAME" > update.json
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bara-alsalfa-${{ env.BARA_VERSION_NAME }}
+          path: bara-alsalfa.apk
+
+      - name: Publish rolling release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git tag -f latest
+          git push origin latest --force
+          gh release view latest >/dev/null 2>&1 || gh release create latest --title "برا السالفة $BARA_VERSION_NAME" --notes "نسخة Android محدثة تلقائيًا."
+          gh release upload latest bara-alsalfa.apk update.json --clobber
+          gh release edit latest --title "برا السالفة $BARA_VERSION_NAME" --notes "نسخة Android محدثة تلقائيًا." --latest

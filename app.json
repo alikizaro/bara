@@ -1,0 +1,42 @@
+{
+  "expo": {
+    "name": "برا السالفة",
+    "slug": "bara-alsalfa-android",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "baralsalfa",
+    "icon": "./assets/bara-alsalfa-icon.png",
+    "userInterfaceStyle": "dark",
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.aliwendy.baralsalfa",
+      "versionCode": 1,
+      "permissions": [
+        "android.permission.INTERNET",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.MODIFY_AUDIO_SETTINGS"
+      ],
+      "blockedPermissions": [
+        "android.permission.CAMERA"
+      ],
+      "adaptiveIcon": {
+        "backgroundColor": "#160D35",
+        "foregroundImage": "./assets/bara-alsalfa-icon.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-secure-store",
+      "@livekit/react-native-expo-plugin",
+      "@config-plugins/react-native-webrtc"
+    ],
+    "extra": {
+      "supportsLiveVoice": true
+    }
+  }
+}
