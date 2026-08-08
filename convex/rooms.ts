@@ -10,6 +10,7 @@ import { makeRoomCode, validateRoomOptions } from './lib/roomPolicy';
 import { loadActiveRoomPlayers } from './lib/roomView';
 import { createRoundForRoom } from './lib/rounds';
 import { createDuelRound } from './lib/duelRounds';
+import { createMafiaRound } from './lib/mafiaRounds';
 import {
   categoryValidator,
   gameModeValidator,
@@ -20,6 +21,7 @@ const roomPlayerValidator = v.object({
   id: v.id('players'),
   displayName: v.string(),
   avatarColor: v.string(),
+  avatarUrl: v.union(v.string(), v.null()),
   totalPoints: v.number(),
   isHost: v.boolean(),
   isReady: v.boolean(),
@@ -39,6 +41,8 @@ const roomSnapshotValidator = v.object({
     maxPlayers: v.number(),
     automaticQuestions: v.number(),
     freeQuestionsPerPlayer: v.number(),
+    outsiderCount: v.number(),
+    teamSize: v.number(),
   }),
   players: v.array(roomPlayerValidator),
   hostPlayerId: v.id('players'),
@@ -56,6 +60,8 @@ export const create = mutation({
     automaticQuestions: v.number(),
     freeQuestionsPerPlayer: v.number(),
     mode: v.optional(gameModeValidator),
+    outsiderCount: v.optional(v.number()),
+    teamSize: v.optional(v.number()),
   },
   returns: roomResultValidator,
   handler: async (ctx, args) => {
@@ -63,6 +69,8 @@ export const create = mutation({
     validateRoomOptions({
       ...args,
       mode,
+      outsiderCount: args.outsiderCount ?? 1,
+      teamSize: args.teamSize ?? 1,
       category: 'animals',
       collection: null,
     });
@@ -106,6 +114,8 @@ export const create = mutation({
       hostPlayerId: player._id,
       status: 'waiting',
       mode,
+      outsiderCount: args.outsiderCount ?? 1,
+      teamSize: args.teamSize ?? 1,
       category: 'animals',
       categorySelected: false,
       collection: null,
@@ -235,6 +245,8 @@ export const getLobby = query({
         maxPlayers: room.maxPlayers,
         automaticQuestions: room.automaticQuestions,
         freeQuestionsPerPlayer: room.freeQuestionsPerPlayer,
+        outsiderCount: room.outsiderCount ?? 1,
+        teamSize: room.teamSize ?? 1,
       },
       players,
       hostPlayerId: room.hostPlayerId,
@@ -263,6 +275,8 @@ export const setCategory = mutation({
       maxPlayers: room.maxPlayers,
       automaticQuestions: room.automaticQuestions,
       freeQuestionsPerPlayer: room.freeQuestionsPerPlayer,
+      outsiderCount: room.outsiderCount ?? 1,
+      teamSize: room.teamSize ?? 1,
     });
     await ctx.db.patch(room._id, {
       category: args.category,
@@ -318,13 +332,17 @@ export const start = mutation({
       )
       .take(room.maxPlayers);
     const mode = room.mode ?? 'classic';
-    if (!(room.categorySelected ?? false)) {
+    if (mode !== 'mafia' && !(room.categorySelected ?? false)) {
       throw new Error('اختر التصنيف بعد اتفاق اللاعبين أولًا');
     }
-    const requiredPlayers = mode === 'duel' ? 2 : 3;
+    const requiredPlayers = mode === 'duel'
+      ? (room.teamSize ?? 1) * 2
+      : mode === 'mafia' ? 5 : 3;
     if (memberships.length < requiredPlayers) {
       throw new Error(
-        mode === 'duel' ? 'يلزم لاعبان لبدء المواجهة' : 'يلزم 3 لاعبين على الأقل',
+        mode === 'duel'
+          ? `يلزم ${requiredPlayers} لاعبين لبدء المواجهة`
+          : mode === 'mafia' ? 'يلزم 5 لاعبين لبدء المافيا' : 'يلزم 3 لاعبين على الأقل',
       );
     }
     const notReady = memberships.some(
@@ -337,7 +355,9 @@ export const start = mutation({
 
     const roundId = mode === 'duel'
       ? await createDuelRound(ctx, room, memberships)
-      : await createRoundForRoom(ctx, room, memberships);
+      : mode === 'mafia'
+        ? await createMafiaRound(ctx, room, memberships)
+        : await createRoundForRoom(ctx, room, memberships);
     await ctx.db.patch(room._id, {
       status: 'playing',
       activeRoundId: roundId,

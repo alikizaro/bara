@@ -9,7 +9,7 @@ export type CategoryId =
   | 'mixed';
 
 export type RoomStatus = 'waiting' | 'playing' | 'finished';
-export type GameMode = 'classic' | 'duel';
+export type GameMode = 'classic' | 'duel' | 'mafia';
 
 export type BackendMode = 'demo' | 'online';
 
@@ -17,6 +17,7 @@ export interface PlayerProfile {
   id: string;
   displayName: string;
   avatarColor: string;
+  avatarUrl: string | null;
   totalPoints: number;
 }
 
@@ -34,6 +35,8 @@ export interface RoomSettings {
   maxPlayers: number;
   automaticQuestions: number;
   freeQuestionsPerPlayer: number;
+  outsiderCount: number;
+  teamSize: number;
 }
 
 export interface DuelView {
@@ -42,6 +45,8 @@ export interface DuelView {
   phase: 'duel_guessing' | 'results';
   secret: GuessChoice;
   opponent: RoomPlayer;
+  teamPlayers: RoomPlayer[];
+  opponents: RoomPlayer[];
   myGuessName: string | null;
   opponentHasGuessed: boolean;
   result: {
@@ -94,6 +99,7 @@ export interface GameView {
   role: 'inside' | 'outsider';
   secret: { name: string; imageUrl: string | null } | null;
   outsiderPlayerId: string | null;
+  outsiderPlayerIds: string[];
   currentQuestionerId: string | null;
   currentAnswererId: string | null;
   automaticTurnIndex: number;
@@ -191,4 +197,26 @@ export const defaultRoomSettings: RoomSettings = {
   maxPlayers: 6,
   automaticQuestions: 3,
   freeQuestionsPerPlayer: 1,
+  outsiderCount: 1,
+  teamSize: 1,
 };
+
+export type MafiaRole = 'mafia' | 'detective' | 'doctor' | 'citizen';
+
+export interface MafiaView {
+  roomId: string;
+  roundNumber: number;
+  phase: 'mafia_night' | 'mafia_discussion' | 'mafia_voting' | 'mafia_results';
+  role: MafiaRole;
+  teammates: RoomPlayer[];
+  eliminatedPlayerIds: string[];
+  myNightActionSubmitted: boolean;
+  detectiveFinding: { targetPlayerId: string; isMafia: boolean } | null;
+  players: RoomPlayer[];
+  myVoteTargetId: string | null;
+  submittedVoteCount: number;
+  totalVoterCount: number;
+  eliminatedPlayerId: string | null;
+  winner: 'mafia' | 'village' | null;
+  revealedRoles: { playerId: string; role: MafiaRole }[];
+}

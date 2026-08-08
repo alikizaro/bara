@@ -50,14 +50,18 @@ export function DuelGameScreen({ onLeave }: { onLeave: () => void }) {
   };
 
   return (
-    <ScreenShell>
+    <ScreenShell
+      floating={<LiveAudioRoom access={voiceAccess} canSpeak={duel.phase === 'duel_guessing'} onError={handleVoiceError} />}
+    >
       <View style={styles.topBar}>
         <Pressable accessibilityRole="button" onPress={exit} style={styles.exitButton}>
           <Text style={styles.exitText}>خروج</Text>
         </Pressable>
         <View style={styles.titleWrap}>
           <Text style={styles.title}>المواجهة {duel.roundNumber}</Text>
-          <Text style={styles.subtitle}>أنت ضد {duel.opponent.displayName}</Text>
+          <Text style={styles.subtitle}>
+            {duel.teamPlayers.length} ضد {duel.opponents.length} · خصومك: {duel.opponents.map((player) => player.displayName).join('، ')}
+          </Text>
         </View>
         <View style={styles.liveBadge}>
           <View style={styles.liveDot} />
@@ -114,7 +118,7 @@ export function DuelGameScreen({ onLeave }: { onLeave: () => void }) {
           <Text style={styles.waitingEmoji}>⏳</Text>
           <Text style={styles.waitingTitle}>تم إرسال تخمينك</Text>
           <Text style={styles.waitingText}>
-            اخترت: {duel.myGuessName}{'\n'}بانتظار تخمين {duel.opponent.displayName}…
+            اخترت: {duel.myGuessName}{'\n'}بانتظار بقية الفريقين…
           </Text>
         </View>
       ) : null}
@@ -165,11 +169,6 @@ export function DuelGameScreen({ onLeave }: { onLeave: () => void }) {
         </View>
       ) : null}
 
-      <LiveAudioRoom
-        access={voiceAccess}
-        canSpeak={duel.phase === 'duel_guessing'}
-        onError={handleVoiceError}
-      />
       <ErrorBanner
         message={voiceError ?? error}
         onDismiss={() => {

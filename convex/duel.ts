@@ -20,6 +20,7 @@ const roomPlayerValidator = v.object({
   id: v.id('players'),
   displayName: v.string(),
   avatarColor: v.string(),
+  avatarUrl: v.union(v.string(), v.null()),
   totalPoints: v.number(),
   isHost: v.boolean(),
   isReady: v.boolean(),
@@ -33,6 +34,8 @@ const duelViewValidator = v.object({
   phase: v.union(v.literal('duel_guessing'), v.literal('results')),
   secret: artworkValidator,
   opponent: roomPlayerValidator,
+  teamPlayers: v.array(roomPlayerValidator),
+  opponents: v.array(roomPlayerValidator),
   myGuessName: v.union(v.string(), v.null()),
   opponentHasGuessed: v.boolean(),
   result: v.union(
@@ -86,7 +89,11 @@ export const getMyView = query({
       return null;
     }
     const mine = assignments.find((item) => item.playerId === player._id);
-    const theirs = assignments.find((item) => item.playerId !== player._id);
+    const teams = round.duelTeams ?? assignments.map((item, index) => ({ playerId: item.playerId, team: index }));
+    const myTeam = teams.find((item) => item.playerId === player._id)?.team;
+    const opponentIds = new Set(teams.filter((item) => item.team !== myTeam).map((item) => item.playerId));
+    const teamIds = new Set(teams.filter((item) => item.team === myTeam).map((item) => item.playerId));
+    const theirs = assignments.find((item) => opponentIds.has(item.playerId));
     if (!mine || !theirs) {
       return null;
     }
@@ -106,6 +113,8 @@ export const getMyView = query({
       phase: round.phase,
       secret: { name: mine.name, imageUrl: mine.imageUrl },
       opponent,
+      teamPlayers: players.filter((item) => teamIds.has(item.id)),
+      opponents: players.filter((item) => opponentIds.has(item.id)),
       myGuessName: myGuess?.guessedName ?? null,
       opponentHasGuessed: Boolean(opponentGuess),
       result: reveal
@@ -140,8 +149,11 @@ export const submitGuess = mutation({
       throw new Error('انتهت مرحلة التخمين');
     }
     const assignments = round.duelAssignments ?? [];
-    const target = assignments.find((item) => item.playerId !== player._id);
-    if (!target || assignments.length !== 2) {
+    const teams = round.duelTeams ?? assignments.map((item, index) => ({ playerId: item.playerId, team: index }));
+    const myTeam = teams.find((item) => item.playerId === player._id)?.team;
+    const opponentId = teams.find((item) => item.team !== myTeam)?.playerId;
+    const target = assignments.find((item) => item.playerId === opponentId);
+    if (!target || assignments.length < 2) {
       throw new Error('تعذر العثور على صورة الخصم');
     }
     const guesses = round.duelGuesses ?? [];
@@ -154,7 +166,7 @@ export const submitGuess = mutation({
     }
     const correct = guessedName.toLocaleLowerCase() === target.name.toLocaleLowerCase();
     const nextGuesses = [...guesses, { playerId: player._id, guessedName, correct }];
-    const complete = nextGuesses.length === 2;
+    const complete = nextGuesses.length === assignments.length;
     if (complete) {
       for (const guess of nextGuesses) {
         if (guess.correct) {
@@ -192,9 +204,9 @@ export const startNextRound = mutation({
       .withIndex('by_room_id_and_is_active', (q) =>
         q.eq('roomId', room._id).eq('isActive', true),
       )
-      .take(2);
-    if (memberships.length !== 2) {
-      throw new Error('يلزم وجود اللاعبين لبدء جولة جديدة');
+      .take(room.maxPlayers);
+    if (memberships.length !== room.maxPlayers) {
+      throw new Error('يلزم وجود جميع لاعبي الفريقين لبدء جولة جديدة');
     }
     const roundId = await createDuelRound(ctx, room, memberships, previousRound);
     await ctx.db.patch(room._id, {

@@ -119,22 +119,19 @@ function VoiceControls({
   const connected = connectionState === ConnectionState.Connected;
   const micIsOn = connected && canSpeak && microphoneEnabled;
   return (
-    <View>
-      <View style={styles.connectionRow}>
-        <View style={[styles.connectionDot, connected && styles.connectionDotOnline]} />
-        <Text style={styles.connectionText}>
-          {connected ? 'الصوت متصل' : 'جارٍ توصيل الصوت…'}
-        </Text>
-      </View>
+    <View style={styles.dock}>
+      <View style={[styles.connectionDot, connected && styles.connectionDotOnline]} />
       <View style={styles.controls}>
         <Pressable
           accessibilityLabel={speakerEnabled ? 'كتم الصوت' : 'فتح الصوت'}
           accessibilityRole="button"
           onPress={() => setSpeakerEnabled((current) => !current)}
-          style={[styles.controlButton, speakerEnabled && styles.controlButtonActive]}
+          style={[
+            styles.controlButton,
+            speakerEnabled ? styles.controlButtonOn : styles.controlButtonOff,
+          ]}
         >
           <Text style={styles.controlIcon}>{speakerEnabled ? '🔊' : '🔇'}</Text>
-          <Text style={styles.controlLabel}>{speakerEnabled ? 'الصوت مفتوح' : 'الصوت مكتوم'}</Text>
         </Pressable>
         <Pressable
           accessibilityLabel={micIsOn ? 'إغلاق المايك' : 'فتح المايك'}
@@ -143,14 +140,11 @@ function VoiceControls({
           onPress={() => setMicrophoneEnabled((current) => !current)}
           style={[
             styles.controlButton,
-            micIsOn && styles.controlButtonActive,
+            micIsOn ? styles.controlButtonOn : styles.controlButtonOff,
             (!connected || !canSpeak) && styles.controlButtonDisabled,
           ]}
         >
           <Text style={styles.controlIcon}>{micIsOn ? '🎙️' : '🎤'}</Text>
-          <Text style={styles.controlLabel}>
-            {!connected ? 'جارٍ الاتصال' : !canSpeak ? 'ليس دورك' : micIsOn ? 'المايك مفتوح' : 'المايك مغلق'}
-          </Text>
         </Pressable>
       </View>
     </View>
@@ -158,37 +152,35 @@ function VoiceControls({
 }
 
 const styles = StyleSheet.create({
-  connectionRow: {
-    flexDirection: 'row-reverse',
+  dock: {
+    minHeight: 64,
     alignItems: 'center',
     justifyContent: 'center',
-    gap: 6,
-    marginTop: 10,
-  },
-  connectionDot: { width: 7, height: 7, borderRadius: 4, backgroundColor: colors.warning },
-  connectionDotOnline: { backgroundColor: colors.success },
-  connectionText: { color: colors.textDim, fontSize: 11, fontWeight: '700' },
-  controls: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    gap: 10,
-    marginTop: 8,
-  },
-  controlButton: {
-    minWidth: 126,
-    minHeight: 54,
-    flexDirection: 'row-reverse',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: 7,
     borderRadius: radii.pill,
     borderWidth: 1,
     borderColor: colors.border,
-    backgroundColor: colors.surface,
-    paddingHorizontal: 12,
+    backgroundColor: 'rgba(20,13,43,0.95)',
+    paddingHorizontal: 9,
+    paddingVertical: 6,
   },
-  controlButtonActive: { borderColor: colors.secondary, backgroundColor: '#134A50' },
+  connectionDot: { position: 'absolute', top: 4, width: 6, height: 6, borderRadius: 3, backgroundColor: colors.warning },
+  connectionDotOnline: { backgroundColor: colors.success },
+  controls: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    gap: 9,
+  },
+  controlButton: {
+    width: 48,
+    height: 48,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: radii.pill,
+    borderWidth: 2,
+    borderColor: 'rgba(255,255,255,0.82)',
+  },
+  controlButtonOn: { backgroundColor: '#20A84B' },
+  controlButtonOff: { backgroundColor: '#D9342B' },
   controlButtonDisabled: { opacity: 0.55 },
-  controlIcon: { fontSize: 18 },
-  controlLabel: { color: colors.text, fontSize: 11, fontWeight: '800' },
+  controlIcon: { fontSize: 22 },
 });

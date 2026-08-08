@@ -59,6 +59,7 @@ export function QuestionStage({
                   <Text style={styles.playerChoiceName}>{player.displayName}</Text>
                   <PlayerAvatar
                     color={player.avatarColor}
+                    imageUrl={player.avatarUrl}
                     name={player.displayName}
                     online={player.isOnline}
                     size={44}
@@ -141,6 +142,7 @@ function Speaker({
       <View style={active ? styles.activeSpeaker : undefined}>
         <PlayerAvatar
           color={player?.avatarColor ?? colors.textDim}
+          imageUrl={player?.avatarUrl}
           name={name}
           online={Boolean(player?.isOnline)}
           size={58}

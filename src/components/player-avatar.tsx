@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, View } from 'react-native';
 
 import { colors } from '../theme/tokens';
 
@@ -7,11 +7,13 @@ export function PlayerAvatar({
   color,
   size = 48,
   online,
+  imageUrl,
 }: {
   name: string;
   color: string;
   size?: number;
   online?: boolean;
+  imageUrl?: string | null;
 }) {
   return (
     <View style={{ width: size, height: size }}>
@@ -26,9 +28,13 @@ export function PlayerAvatar({
           },
         ]}
       >
-        <Text style={[styles.initial, { fontSize: size * 0.4 }]}>
-          {name.trim().charAt(0)}
-        </Text>
+        {imageUrl ? (
+          <Image source={{ uri: imageUrl }} style={[styles.image, { borderRadius: size / 2 }]} />
+        ) : (
+          <Text style={[styles.initial, { fontSize: size * 0.4 }]}>
+            {name.trim().charAt(0)}
+          </Text>
+        )}
       </View>
       {online !== undefined ? (
         <View
@@ -50,6 +56,7 @@ const styles = StyleSheet.create({
   avatar: {
     alignItems: 'center',
     justifyContent: 'center',
+    overflow: 'hidden',
     borderWidth: 2,
     borderColor: 'rgba(255,255,255,0.65)',
   },
@@ -57,6 +64,7 @@ const styles = StyleSheet.create({
     color: colors.text,
     fontWeight: '900',
   },
+  image: { width: '100%', height: '100%' },
   onlineDot: {
     position: 'absolute',
     width: 13,

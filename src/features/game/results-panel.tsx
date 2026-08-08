@@ -17,8 +17,8 @@ export function ResultsPanel({
   isWorking: boolean;
   onNextRound: () => void;
 }) {
-  const outsider = game.players.find(
-    (player) => player.id === game.outsiderPlayerId,
+  const outsiders = game.players.filter((player) =>
+    game.outsiderPlayerIds.includes(player.id),
   );
   const me = game.players.find((player) => player.id === profile.id);
   const votesByPlayer = new Map(
@@ -35,7 +35,7 @@ export function ResultsPanel({
         <Text style={styles.title}>نتيجة الجولة {game.roundNumber}</Text>
         <Text style={styles.outsiderLabel}>كان برا السالفة</Text>
         <Text style={styles.outsiderName}>
-          {outsider?.displayName ?? 'لاعب غير معروف'}
+          {outsiders.map((player) => player.displayName).join(' و ') || 'لاعب غير معروف'}
         </Text>
 
         {game.secret ? (
@@ -50,7 +50,7 @@ export function ResultsPanel({
           </View>
         ) : null}
 
-        <View
+        {game.outsiderPlayerIds.length === 1 ? <View
           style={[
             styles.guessResult,
             game.outsiderGuessCorrect ? styles.guessCorrect : styles.guessWrong,
@@ -66,7 +66,7 @@ export function ResultsPanel({
               ? `اختياره: ${game.outsiderGuessName}`
               : 'لم يقدّم إجابة'}
           </Text>
-        </View>
+        </View> : null}
       </View>
 
       <View style={styles.scoreCard}>
@@ -94,6 +94,7 @@ export function ResultsPanel({
                   ) : null}
                   <PlayerAvatar
                     color={player.avatarColor}
+                    imageUrl={player.avatarUrl}
                     name={player.displayName}
                     online={player.isOnline}
                     size={44}

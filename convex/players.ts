@@ -1,5 +1,7 @@
 import { v } from 'convex/values';
 
+import type { Doc } from './_generated/dataModel';
+import type { MutationCtx, QueryCtx } from './_generated/server';
 import { mutation, query } from './_generated/server';
 import {
   assertInstallationId,
@@ -20,8 +22,24 @@ const profileValidator = v.object({
   id: v.id('players'),
   displayName: v.string(),
   avatarColor: v.string(),
+  avatarUrl: v.union(v.string(), v.null()),
   totalPoints: v.number(),
 });
+
+async function toProfile(
+  ctx: Pick<MutationCtx, 'storage'> | Pick<QueryCtx, 'storage'>,
+  player: Doc<'players'>,
+) {
+  return {
+    id: player._id,
+    displayName: player.displayName,
+    avatarColor: player.avatarColor,
+    avatarUrl: player.avatarStorageId
+      ? await ctx.storage.getUrl(player.avatarStorageId)
+      : null,
+    totalPoints: player.totalPoints,
+  };
+}
 
 function colorForInstallation(installationId: string): string {
   let hash = 0;
@@ -52,12 +70,7 @@ export const upsertGuest = mutation({
         displayName,
         lastSeenAt: Date.now(),
       });
-      return {
-        id: existing._id,
-        displayName,
-        avatarColor: existing.avatarColor,
-        totalPoints: existing.totalPoints,
-      };
+      return await toProfile(ctx, { ...existing, displayName });
     }
 
     const avatarColor = colorForInstallation(args.installationId);
@@ -73,6 +86,7 @@ export const upsertGuest = mutation({
       id: playerId,
       displayName,
       avatarColor,
+      avatarUrl: null,
       totalPoints: 0,
     };
   },
@@ -93,12 +107,39 @@ export const getMe = query({
     if (!player) {
       return null;
     }
-    return {
-      id: player._id,
-      displayName: player.displayName,
-      avatarColor: player.avatarColor,
-      totalPoints: player.totalPoints,
-    };
+    return await toProfile(ctx, player);
+  },
+});
+
+export const generateAvatarUploadUrl = mutation({
+  args: { installationId: v.string() },
+  returns: v.string(),
+  handler: async (ctx, args) => {
+    await requirePlayer(ctx, args.installationId);
+    return await ctx.storage.generateUploadUrl();
+  },
+});
+
+export const updateProfile = mutation({
+  args: {
+    installationId: v.string(),
+    displayName: v.string(),
+    avatarStorageId: v.optional(v.id('_storage')),
+  },
+  returns: profileValidator,
+  handler: async (ctx, args) => {
+    const player = await requirePlayer(ctx, args.installationId);
+    const displayName = normalizeDisplayName(args.displayName);
+    await ctx.db.patch(player._id, {
+      displayName,
+      lastSeenAt: Date.now(),
+      ...(args.avatarStorageId ? { avatarStorageId: args.avatarStorageId } : {}),
+    });
+    return await toProfile(ctx, {
+      ...player,
+      displayName,
+      avatarStorageId: args.avatarStorageId ?? player.avatarStorageId,
+    });
   },
 });
 

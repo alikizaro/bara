@@ -87,7 +87,9 @@ export function GameScreen({ onLeave }: { onLeave: () => void }) {
   };
 
   return (
-    <ScreenShell>
+    <ScreenShell
+      floating={<LiveAudioRoom access={voiceAccess} canSpeak={canSpeak} onError={handleVoiceError} />}
+    >
       <View style={styles.topBar}>
         <Pressable
           accessibilityRole="button"
@@ -154,11 +156,6 @@ export function GameScreen({ onLeave }: { onLeave: () => void }) {
         />
       ) : null}
 
-      <LiveAudioRoom
-        access={voiceAccess}
-        canSpeak={canSpeak}
-        onError={handleVoiceError}
-      />
       <ErrorBanner
         message={voiceError ?? error}
         onDismiss={() => {

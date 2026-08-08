@@ -21,6 +21,7 @@ import type {
   RoomSettings,
   RoomSnapshot,
   VoiceAccess,
+  MafiaView,
 } from '../domain/game';
 import {
   getOrCreateInstallationId,
@@ -39,6 +40,8 @@ function readableError(error: unknown): string {
 export function OnlineGameProvider({ children }: { children: ReactNode }) {
   const upsertGuest = useMutation(api.players!.upsertGuest!);
   const heartbeat = useMutation(api.players!.heartbeat!);
+  const generateAvatarUploadUrl = useMutation(api.players!.generateAvatarUploadUrl!);
+  const updateOnlineProfile = useMutation(api.players!.updateProfile!);
   const createOnlineRoom = useMutation(api.rooms!.create!);
   const joinOnlineRoom = useMutation(api.rooms!.join!);
   const setOnlineReady = useMutation(api.rooms!.setReady!);
@@ -60,6 +63,10 @@ export function OnlineGameProvider({ children }: { children: ReactNode }) {
   );
   const startOnlineNextRound = useMutation(api.game!.startNextRound!);
   const issueVoiceToken = useAction(api.livekit!.issueRoomToken!);
+  const submitOnlineMafiaNightAction = useMutation(api.mafia!.submitNightAction!);
+  const beginOnlineMafiaVoting = useMutation(api.mafia!.beginVoting!);
+  const submitOnlineMafiaVote = useMutation(api.mafia!.submitVote!);
+  const startOnlineNextMafiaRound = useMutation(api.mafia!.startNextRound!);
 
   const [installationId, setInstallationId] = useState<string | null>(null);
   const [roomId, setRoomId] = useState<Id<'rooms'> | null>(null);
@@ -76,7 +83,7 @@ export function OnlineGameProvider({ children }: { children: ReactNode }) {
   const gameQuery = useQuery(
     api.game!.getMyView!,
     installationId && roomId && roomQuery?.status === 'playing' &&
-      roomQuery.settings.mode !== 'duel'
+      roomQuery.settings.mode === 'classic'
       ? { installationId, roomId }
       : 'skip',
   ) as GameView | null | undefined;
@@ -87,6 +94,13 @@ export function OnlineGameProvider({ children }: { children: ReactNode }) {
       ? { installationId, roomId }
       : 'skip',
   ) as DuelView | null | undefined;
+  const mafiaQuery = useQuery(
+    api.mafia!.getMyView!,
+    installationId && roomId && roomQuery?.status === 'playing' &&
+      roomQuery.settings.mode === 'mafia'
+      ? { installationId, roomId }
+      : 'skip',
+  ) as MafiaView | null | undefined;
 
   useEffect(() => {
     let active = true;
@@ -190,6 +204,42 @@ export function OnlineGameProvider({ children }: { children: ReactNode }) {
     [installationId, upsertGuest],
   );
 
+  const updateProfile = useCallback(
+    async (displayName: string, image?: { uri: string; mimeType: string }) => {
+      if (!installationId) return;
+      setIsWorking(true);
+      setError(null);
+      try {
+        let avatarStorageId: Id<'_storage'> | undefined;
+        if (image) {
+          const uploadUrl = await generateAvatarUploadUrl({ installationId });
+          const imageResponse = await fetch(image.uri);
+          const uploadResponse = await fetch(uploadUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': image.mimeType },
+            body: await imageResponse.blob(),
+          });
+          if (!uploadResponse.ok) throw new Error('تعذر رفع الصورة الشخصية');
+          const uploaded = (await uploadResponse.json()) as { storageId: Id<'_storage'> };
+          avatarStorageId = uploaded.storageId;
+        }
+        const nextProfile = (await updateOnlineProfile({
+          installationId,
+          displayName,
+          ...(avatarStorageId ? { avatarStorageId } : {}),
+        })) as PlayerProfile;
+        await storeDisplayName(nextProfile.displayName);
+        setProfile(nextProfile);
+      } catch (nextError) {
+        setError(readableError(nextError));
+        throw nextError;
+      } finally {
+        setIsWorking(false);
+      }
+    },
+    [generateAvatarUploadUrl, installationId, updateOnlineProfile],
+  );
+
   const createRoom = useCallback(
     async (settings: RoomSettings) => {
       if (!installationId) {
@@ -204,6 +254,8 @@ export function OnlineGameProvider({ children }: { children: ReactNode }) {
           maxPlayers: settings.maxPlayers,
           automaticQuestions: settings.automaticQuestions,
           freeQuestionsPerPlayer: settings.freeQuestionsPerPlayer,
+          outsiderCount: settings.outsiderCount,
+          teamSize: settings.teamSize,
         })) as { roomId: Id<'rooms'>; code: string };
         setRoomId(result.roomId);
         setVoiceAccess(null);
@@ -392,6 +444,31 @@ export function OnlineGameProvider({ children }: { children: ReactNode }) {
     [installationId, roomId, submitOnlineDuelGuess],
   );
 
+  const beginMafiaVoting = useCallback(async () => {
+    if (!installationId || !roomId) return;
+    setIsWorking(true);
+    try { await beginOnlineMafiaVoting({ installationId, roomId }); }
+    catch (nextError) { setError(readableError(nextError)); throw nextError; }
+    finally { setIsWorking(false); }
+  }, [beginOnlineMafiaVoting, installationId, roomId]);
+
+  const submitMafiaNightAction = useCallback(async (targetPlayerId: string) => {
+    if (!installationId || !roomId) return;
+    setIsWorking(true);
+    setError(null);
+    try { await submitOnlineMafiaNightAction({ installationId, roomId, targetPlayerId: targetPlayerId as Id<'players'> }); }
+    catch (nextError) { setError(readableError(nextError)); throw nextError; }
+    finally { setIsWorking(false); }
+  }, [installationId, roomId, submitOnlineMafiaNightAction]);
+
+  const submitMafiaVote = useCallback(async (targetPlayerId: string) => {
+    if (!installationId || !roomId) return;
+    setIsWorking(true);
+    try { await submitOnlineMafiaVote({ installationId, roomId, targetPlayerId: targetPlayerId as Id<'players'> }); }
+    catch (nextError) { setError(readableError(nextError)); throw nextError; }
+    finally { setIsWorking(false); }
+  }, [installationId, roomId, submitOnlineMafiaVote]);
+
   const skipOutsiderGuess = useCallback(async () => {
     if (!installationId || !roomId) {
       return;
@@ -417,6 +494,8 @@ export function OnlineGameProvider({ children }: { children: ReactNode }) {
     try {
       if (roomQuery?.settings.mode === 'duel') {
         await startOnlineNextDuelRound({ installationId, roomId });
+      } else if (roomQuery?.settings.mode === 'mafia') {
+        await startOnlineNextMafiaRound({ installationId, roomId });
       } else {
         await startOnlineNextRound({ installationId, roomId });
       }
@@ -431,6 +510,7 @@ export function OnlineGameProvider({ children }: { children: ReactNode }) {
     roomId,
     roomQuery,
     startOnlineNextDuelRound,
+    startOnlineNextMafiaRound,
     startOnlineNextRound,
   ]);
 
@@ -455,9 +535,11 @@ export function OnlineGameProvider({ children }: { children: ReactNode }) {
       room: roomQuery ?? null,
       game: gameQuery ?? null,
       duel: duelQuery ?? null,
+      mafia: mafiaQuery ?? null,
       voiceAccess,
       error,
       saveDisplayName,
+      updateProfile,
       createRoom,
       joinRoom,
       setReady,
@@ -468,6 +550,9 @@ export function OnlineGameProvider({ children }: { children: ReactNode }) {
       submitVote,
       submitOutsiderGuess,
       submitDuelGuess,
+      submitMafiaNightAction,
+      beginMafiaVoting,
+      submitMafiaVote,
       skipOutsiderGuess,
       startNextRound,
       leaveRoom,
@@ -480,6 +565,7 @@ export function OnlineGameProvider({ children }: { children: ReactNode }) {
       error,
       gameQuery,
       duelQuery,
+      mafiaQuery,
       isHydrating,
       isWorking,
       joinRoom,
@@ -487,6 +573,7 @@ export function OnlineGameProvider({ children }: { children: ReactNode }) {
       profile,
       roomQuery,
       saveDisplayName,
+      updateProfile,
       setReady,
       setRoomCategory,
       skipOutsiderGuess,
@@ -494,6 +581,9 @@ export function OnlineGameProvider({ children }: { children: ReactNode }) {
       startNextRound,
       submitOutsiderGuess,
       submitDuelGuess,
+      submitMafiaNightAction,
+      beginMafiaVoting,
+      submitMafiaVote,
       submitVote,
       voiceAccess,
     ],

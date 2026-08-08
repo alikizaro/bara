@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { Pressable, StyleSheet, Text, View } from 'react-native';
 
 import { ActionButton } from '../components/action-button';
 import { GameCard } from '../components/game-card';
@@ -11,9 +11,11 @@ import { colors } from '../theme/tokens';
 export function HomeScreen({
   onGame,
   onJoin,
+  onProfile,
 }: {
   onGame: (game: GameId) => void;
   onJoin: () => void;
+  onProfile: () => void;
 }) {
   const { profile, mode } = useGame();
   if (!profile) return null;
@@ -25,7 +27,9 @@ export function HomeScreen({
           <Text style={styles.brand}>لَمّة</Text>
           <Text style={styles.greeting}>أهلًا {profile.displayName} 👋</Text>
         </View>
-        <PlayerAvatar color={profile.avatarColor} name={profile.displayName} online size={54} />
+        <Pressable accessibilityLabel="فتح الملف الشخصي" accessibilityRole="button" onPress={onProfile}>
+          <PlayerAvatar color={profile.avatarColor} imageUrl={profile.avatarUrl} name={profile.displayName} online size={54} />
+        </Pressable>
       </View>
 
       <View style={styles.hero}>

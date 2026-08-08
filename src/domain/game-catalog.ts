@@ -32,6 +32,6 @@ export const gameCatalog: GameCatalogItem[] = [
     subtitle: 'خداع وتحقيق بين أهل اللّمّة',
     emoji: '🌙',
     accent: '#FF668A',
-    available: false,
+    available: true,
   },
 ];

@@ -4,11 +4,11 @@ import { BackHeader } from '../components/back-header';
 import { ModeCard } from '../components/mode-card';
 import { ScreenShell } from '../components/screen-shell';
 import type { GameId } from '../domain/game-catalog';
+import type { RoomSettings } from '../domain/game';
 import { colors } from '../theme/tokens';
 
 interface GameModeActions {
-  onClassic: () => void;
-  onDuel: () => void;
+  onCreate: (preset: Partial<RoomSettings>) => void;
   onJoin: () => void;
 }
 
@@ -34,20 +34,20 @@ export function GameModesScreen({
       <View style={styles.list}>
         {game === 'outsider' ? (
           <>
-            <ModeCard title="شخص واحد برا السالفة" description="الوضع الأصلي؛ لاعب واحد لا يعرف الموضوع" emoji="1️⃣" onPress={actions.onClassic} />
-            <ModeCard title="شخصان برا السالفة" description="متخفيان يحاولان النجاة من التصويت" emoji="2️⃣" available={false} onPress={() => undefined} />
-            <ModeCard title="غرفة خاصة" description="أنشئ غرفة وشارك الرمز مع أصدقائك" emoji="🔐" onPress={actions.onClassic} />
+            <ModeCard title="شخص واحد برا السالفة" description="الوضع الأصلي؛ لاعب واحد لا يعرف الموضوع" emoji="1️⃣" onPress={() => actions.onCreate({ mode: 'classic', outsiderCount: 1 })} />
+            <ModeCard title="شخصان برا السالفة" description="متخفيان يحاولان النجاة من التصويت" emoji="2️⃣" onPress={() => actions.onCreate({ mode: 'classic', outsiderCount: 2, maxPlayers: 6 })} />
+            <ModeCard title="غرفة خاصة" description="أنشئ غرفة وشارك الرمز مع أصدقائك" emoji="🔐" onPress={() => actions.onCreate({ mode: 'classic', outsiderCount: 1 })} />
           </>
         ) : game === 'character' ? (
           <>
-            <ModeCard title="1 ضد 1" description="لكل لاعب شخصية، اسأل وخمّن شخصية خصمك" emoji="⚔️" onPress={actions.onDuel} />
-            <ModeCard title="2 ضد 2" description="فريقان يتعاونان للوصول إلى الإجابة" emoji="👥" available={false} onPress={() => undefined} />
-            <ModeCard title="3 ضد 3" description="مواجهة جماعية بأسئلة صوتية مرتبة" emoji="👨‍👩‍👧" available={false} onPress={() => undefined} />
+            <ModeCard title="1 ضد 1" description="لكل لاعب شخصية، اسأل وخمّن شخصية خصمك" emoji="⚔️" onPress={() => actions.onCreate({ mode: 'duel', teamSize: 1, maxPlayers: 2 })} />
+            <ModeCard title="2 ضد 2" description="فريقان يتعاونان للوصول إلى الإجابة" emoji="👥" onPress={() => actions.onCreate({ mode: 'duel', teamSize: 2, maxPlayers: 4 })} />
+            <ModeCard title="3 ضد 3" description="مواجهة جماعية بأسئلة صوتية مفتوحة" emoji="👨‍👩‍👧" onPress={() => actions.onCreate({ mode: 'duel', teamSize: 3, maxPlayers: 6 })} />
           </>
         ) : (
           <>
-            <ModeCard title="مافيا كلاسيكية" description="مافيا، طبيب، محقق وأهالي القرية" emoji="🌙" available={false} onPress={() => undefined} />
-            <ModeCard title="جولة سريعة" description="أدوار أقل لمباراة قصيرة" emoji="⚡" available={false} onPress={() => undefined} />
+            <ModeCard title="مافيا كلاسيكية" description="مافيا، طبيب، محقق وأهالي القرية" emoji="🌙" onPress={() => actions.onCreate({ mode: 'mafia', maxPlayers: 7 })} />
+            <ModeCard title="جولة سريعة" description="خمسة لاعبين وجولة تصويت سريعة" emoji="⚡" onPress={() => actions.onCreate({ mode: 'mafia', maxPlayers: 5 })} />
           </>
         )}
       </View>

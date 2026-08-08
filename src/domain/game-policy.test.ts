@@ -25,6 +25,8 @@ describe('game policy', () => {
       maxPlayers: 6,
       automaticQuestions: 3,
       freeQuestionsPerPlayer: 1,
+      outsiderCount: 1,
+      teamSize: 1,
     };
     expect(validateRoomSettings(settings)).toBe('اختر عمل الأنمي أولًا');
   });
@@ -57,5 +59,21 @@ describe('game policy', () => {
         { isHost: false, isReady: true },
       ]),
     ).toBe(false);
+  });
+
+  it('requires five players when there are two outsiders', () => {
+    expect(validateRoomSettings({
+      mode: 'classic', category: 'animals', collection: null,
+      maxPlayers: 4, automaticQuestions: 3, freeQuestionsPerPlayer: 1,
+      outsiderCount: 2, teamSize: 1,
+    })).toBe('وضع شخصين برا السالفة يحتاج 5 لاعبين على الأقل');
+  });
+
+  it('requires both character teams to be full', () => {
+    expect(canHostStart([
+      { isHost: true, isReady: true },
+      { isHost: false, isReady: true },
+      { isHost: false, isReady: true },
+    ], 'duel', 4)).toBe(false);
   });
 });

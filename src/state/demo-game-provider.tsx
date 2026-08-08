@@ -20,6 +20,7 @@ const demoPlayers = [
     id: 'demo-mohammed',
     displayName: 'محمد',
     avatarColor: '#19D3C5',
+    avatarUrl: null,
     totalPoints: 8,
     isHost: false,
     isReady: true,
@@ -30,6 +31,7 @@ const demoPlayers = [
     id: 'demo-sara',
     displayName: 'سارة',
     avatarColor: '#FF668A',
+    avatarUrl: null,
     totalPoints: 12,
     isHost: false,
     isReady: true,
@@ -59,6 +61,7 @@ function buildGame(room: RoomSnapshot, profile: PlayerProfile): GameView {
       imageUrl: null,
     },
     outsiderPlayerId: null,
+    outsiderPlayerIds: [],
     currentQuestionerId: profile.id,
     currentAnswererId: firstAnswerer?.id ?? null,
     automaticTurnIndex: 0,
@@ -86,6 +89,8 @@ function buildDuel(room: RoomSnapshot, profile: PlayerProfile): DuelView {
     phase: 'duel_guessing',
     secret: { name: 'الثعلب', imageUrl: null },
     opponent,
+    teamPlayers: room.players.filter((player) => player.id === profile.id),
+    opponents: room.players.filter((player) => player.id !== profile.id),
     myGuessName: null,
     opponentHasGuessed: false,
     result: null,
@@ -111,6 +116,7 @@ export function DemoGameProvider({ children }: { children: ReactNode }) {
             id: 'demo-current-player',
             displayName,
             avatarColor: avatarPalette[0],
+            avatarUrl: null,
             totalPoints: 0,
           });
         }
@@ -134,11 +140,17 @@ export function DemoGameProvider({ children }: { children: ReactNode }) {
         id: 'demo-current-player',
         displayName,
         avatarColor: avatarPalette[0],
+        avatarUrl: null,
         totalPoints: 0,
       });
     } finally {
       setIsWorking(false);
     }
+  }, []);
+
+  const updateProfile = useCallback(async (displayName: string, image?: { uri: string }) => {
+    await storeDisplayName(displayName);
+    setProfile((current) => current ? { ...current, displayName, avatarUrl: image?.uri ?? current.avatarUrl } : current);
   }, []);
 
   const createRoom = useCallback(
@@ -192,6 +204,8 @@ export function DemoGameProvider({ children }: { children: ReactNode }) {
             maxPlayers: 6,
             automaticQuestions: 3,
             freeQuestionsPerPlayer: 1,
+            outsiderCount: 1,
+            teamSize: 1,
             categorySelected: false,
           },
           players: [
@@ -337,6 +351,7 @@ export function DemoGameProvider({ children }: { children: ReactNode }) {
           phase: 'results',
           secret: current.secret ?? { name: 'الثعلب', imageUrl: null },
           outsiderPlayerId,
+          outsiderPlayerIds: outsiderPlayerId ? [outsiderPlayerId] : [],
           myVoteTargetId: targetPlayerId,
           submittedVoteCount: current.totalVoterCount,
           voteResults: [{ playerId: targetPlayerId, voteCount: 2 }],
@@ -431,9 +446,11 @@ export function DemoGameProvider({ children }: { children: ReactNode }) {
       room,
       game,
       duel,
+      mafia: null,
       voiceAccess: null,
       error,
       saveDisplayName,
+      updateProfile,
       createRoom,
       joinRoom,
       setReady,
@@ -443,7 +460,10 @@ export function DemoGameProvider({ children }: { children: ReactNode }) {
       advanceConversation,
       submitVote,
       submitOutsiderGuess,
-      submitDuelGuess,
+        submitDuelGuess,
+        submitMafiaNightAction: async () => undefined,
+        beginMafiaVoting: async () => undefined,
+      submitMafiaVote: async () => undefined,
       skipOutsiderGuess,
       startNextRound,
       leaveRoom,
@@ -463,6 +483,7 @@ export function DemoGameProvider({ children }: { children: ReactNode }) {
       profile,
       room,
       saveDisplayName,
+      updateProfile,
       setReady,
       setRoomCategory,
       skipOutsiderGuess,

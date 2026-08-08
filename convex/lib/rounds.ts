@@ -26,21 +26,28 @@ export async function createRoundForRoom(
     items,
     (candidate) => candidate.name === previousRound?.secretName,
   );
-  const outsider = pickDifferent(
+  const firstOutsider = pickDifferent(
     orderedMemberships,
     (candidate) => candidate.playerId === previousRound?.outsiderPlayerId,
   );
-  if (!item || !outsider || orderedMemberships.length < 2) {
+  if (!item || !firstOutsider || orderedMemberships.length < 2) {
     throw new Error('لا توجد بيانات أو لاعبون كافون لبدء الجولة');
   }
   const pair = pickOrderedPair(orderedMemberships, 0);
+  const outsiderCount = Math.min(room.outsiderCount ?? 1, orderedMemberships.length - 1);
+  const outsiderPlayerIds = [firstOutsider.playerId];
+  for (const membership of orderedMemberships) {
+    if (outsiderPlayerIds.length >= outsiderCount) break;
+    if (!outsiderPlayerIds.includes(membership.playerId)) outsiderPlayerIds.push(membership.playerId);
+  }
 
   return ctx.db.insert('rounds', {
     roomId: room._id,
     roundNumber: room.currentRoundNumber + 1,
     secretName: item.name,
     secretImageUrl: item.imageUrl,
-    outsiderPlayerId: outsider.playerId,
+    outsiderPlayerId: firstOutsider.playerId,
+    outsiderPlayerIds,
     phase: 'automatic_questions',
     currentQuestionerId: pair.questionerId,
     currentAnswererId: pair.answererId,

@@ -7,15 +7,18 @@ export const MIN_PLAYERS = 3;
 export const MAX_PLAYERS = 10;
 
 export function validateRoomOptions(options: {
-  mode?: 'classic' | 'duel';
+  mode?: 'classic' | 'duel' | 'mafia';
   category: Doc<'rooms'>['category'];
   collection: string | null;
   maxPlayers: number;
   automaticQuestions: number;
   freeQuestionsPerPlayer: number;
+  outsiderCount?: number;
+  teamSize?: number;
 }): void {
-  if (options.mode === 'duel' && options.maxPlayers !== 2) {
-    throw new Error('وضع لاعب ضد لاعب يتطلب لاعبين فقط');
+  const teamSize = options.teamSize ?? 1;
+  if (options.mode === 'duel' && options.maxPlayers !== teamSize * 2) {
+    throw new Error('عدد لاعبي المواجهة يجب أن يساوي حجم الفريقين');
   }
   if (
     options.mode !== 'duel' &&
@@ -24,6 +27,12 @@ export function validateRoomOptions(options: {
       options.maxPlayers > MAX_PLAYERS)
   ) {
     throw new Error('عدد اللاعبين يجب أن يكون بين 3 و10');
+  }
+  if (options.mode === 'classic' && (options.outsiderCount ?? 1) === 2 && options.maxPlayers < 5) {
+    throw new Error('وضع شخصين برا السالفة يحتاج 5 لاعبين على الأقل');
+  }
+  if (options.mode === 'mafia' && options.maxPlayers < 5) {
+    throw new Error('المافيا تحتاج 5 لاعبين على الأقل');
   }
   if (
     !Number.isInteger(options.automaticQuestions) ||

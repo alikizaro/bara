@@ -37,6 +37,13 @@
     },
     "plugins": [
       "expo-secure-store",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "تحتاج لَمّة إلى صورك لاختيار صورة للملف الشخصي.",
+          "cameraPermission": false
+        }
+      ],
       "@livekit/react-native-expo-plugin",
       "@config-plugins/react-native-webrtc"
     ],

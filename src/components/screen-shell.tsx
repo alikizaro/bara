@@ -15,9 +15,11 @@ import { colors } from '../theme/tokens';
 export function ScreenShell({
   children,
   scroll = true,
+  floating,
 }: {
   children: ReactNode;
   scroll?: boolean;
+  floating?: ReactNode;
 }) {
   const content = scroll ? (
     <ScrollView
@@ -44,6 +46,7 @@ export function ScreenShell({
           style={styles.flex}
         >
           {content}
+          {floating ? <View style={styles.floating}>{floating}</View> : null}
         </KeyboardAvoidingView>
       </SafeAreaView>
     </LinearGradient>
@@ -63,6 +66,14 @@ const styles = StyleSheet.create({
   content: {
     flexGrow: 1,
     paddingHorizontal: 20,
-    paddingBottom: 30,
+    paddingBottom: 96,
+  },
+  floating: {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    bottom: 10,
+    alignItems: 'center',
+    pointerEvents: 'box-none',
   },
 });

@@ -45,9 +45,10 @@ export function LobbyScreen({ onLeave }: { onLeave: () => void }) {
   const collection = animeCollections.find(
     (item) => item.id === room.settings.collection,
   );
+  const isMafia = room.settings.mode === 'mafia';
   const readyToStart =
-    room.settings.categorySelected &&
-    canHostStart(room.players, room.settings.mode);
+    (isMafia || room.settings.categorySelected) &&
+    canHostStart(room.players, room.settings.mode, room.settings.maxPlayers);
   const isDuel = room.settings.mode === 'duel';
 
   const copyCode = () => {
@@ -63,7 +64,9 @@ export function LobbyScreen({ onLeave }: { onLeave: () => void }) {
   };
 
   return (
-    <ScreenShell>
+    <ScreenShell
+      floating={<LiveAudioRoom access={voiceAccess} canSpeak onError={setVoiceError} />}
+    >
       <View style={styles.topBar}>
         <Pressable
           accessibilityLabel="مغادرة الغرفة"
@@ -75,7 +78,7 @@ export function LobbyScreen({ onLeave }: { onLeave: () => void }) {
         </Pressable>
         <View style={styles.titleWrap}>
           <Text style={styles.title}>
-            {isDuel ? 'مواجهة لاعب ضد لاعب' : 'غرفة الانتظار'}
+            {isDuel ? `${room.settings.teamSize} ضد ${room.settings.teamSize}` : isMafia ? 'غرفة المافيا' : 'غرفة الانتظار'}
           </Text>
           <Text style={styles.status}>بانتظار بدء المباراة</Text>
         </View>
@@ -104,7 +107,9 @@ export function LobbyScreen({ onLeave }: { onLeave: () => void }) {
 
       <View style={styles.settingsBar}>
         {isDuel ? (
-          <SettingPill label="لاعبان · مايك مفتوح" emoji="⚔️" />
+          <SettingPill label={`${room.settings.teamSize} ضد ${room.settings.teamSize}`} emoji="⚔️" />
+        ) : isMafia ? (
+          <SettingPill label="أدوار سرية · تصويت" emoji="🌙" />
         ) : (
           <>
             <SettingPill
@@ -117,27 +122,22 @@ export function LobbyScreen({ onLeave }: { onLeave: () => void }) {
             />
           </>
         )}
-        <SettingPill
+        {!isMafia ? <SettingPill
           label={room.settings.categorySelected
             ? collection?.label ?? category?.label ?? 'الصنف'
             : 'لم يُختر التصنيف'}
           emoji={category?.emoji ?? '🎲'}
-        />
+        /> : null}
       </View>
 
       <View style={styles.chatCard}>
         <Text style={styles.chatTitle}>🎙️ دردشة الغرفة</Text>
         <Text style={styles.chatText}>
-          تحدثوا واتفقوا على التصنيف، ويمكن لكل لاعب التحكم بالمايك والصوت.
+          {isMafia ? 'تحدثوا حتى يكتمل العدد، ثم استعدوا لتوزيع الأدوار السرية.' : 'تحدثوا واتفقوا على التصنيف، ويمكن لكل لاعب التحكم بالمايك والصوت.'}
         </Text>
-        <LiveAudioRoom
-          access={voiceAccess}
-          canSpeak
-          onError={setVoiceError}
-        />
       </View>
 
-      <View style={styles.categorySection}>
+      {!isMafia ? <View style={styles.categorySection}>
         <Text style={styles.categoryTitle}>
           {isHost ? 'اختر التصنيف بعد اتفاقكم' : 'التصنيف الذي اختاره المضيف'}
         </Text>
@@ -197,7 +197,7 @@ export function LobbyScreen({ onLeave }: { onLeave: () => void }) {
               : 'بانتظار اختيار المضيف بعد اتفاقكم…'}
           </Text>
         )}
-      </View>
+      </View> : null}
 
       <View style={styles.playersHeader}>
         <Text style={styles.playersCount}>{room.players.length} متصل</Text>
@@ -231,6 +231,7 @@ export function LobbyScreen({ onLeave }: { onLeave: () => void }) {
             </View>
             <PlayerAvatar
               color={player.avatarColor}
+              imageUrl={player.avatarUrl}
               name={player.displayName}
               online={player.isOnline}
             />
@@ -257,11 +258,13 @@ export function LobbyScreen({ onLeave }: { onLeave: () => void }) {
             />
             {!readyToStart ? (
               <Text style={styles.waitHint}>
-                {!room.settings.categorySelected
+                {!isMafia && !room.settings.categorySelected
                   ? 'اتفقوا ثم اختر التصنيف أولًا'
                   : isDuel
-                    ? 'بانتظار اللاعب الثاني وأن يضغط جاهز'
-                    : 'يلزم 3 لاعبين وأن يكون جميع الأصدقاء جاهزين'}
+                    ? `بانتظار اكتمال ${room.settings.maxPlayers} لاعبين واستعدادهم`
+                    : isMafia
+                      ? 'يلزم 5 لاعبين وأن يكون الجميع جاهزين'
+                      : 'يلزم 3 لاعبين وأن يكون جميع الأصدقاء جاهزين'}
               </Text>
             ) : null}
           </>

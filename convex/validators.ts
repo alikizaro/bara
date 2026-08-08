@@ -14,6 +14,7 @@ export const categoryValidator = v.union(
 export const gameModeValidator = v.union(
   v.literal('classic'),
   v.literal('duel'),
+  v.literal('mafia'),
 );
 
 export const roomStatusValidator = v.union(
@@ -29,4 +30,15 @@ export const roundPhaseValidator = v.union(
   v.literal('outsider_guess'),
   v.literal('results'),
   v.literal('duel_guessing'),
+  v.literal('mafia_discussion'),
+  v.literal('mafia_night'),
+  v.literal('mafia_voting'),
+  v.literal('mafia_results'),
+);
+
+export const mafiaRoleValidator = v.union(
+  v.literal('mafia'),
+  v.literal('detective'),
+  v.literal('doctor'),
+  v.literal('citizen'),
 );

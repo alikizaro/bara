@@ -18,6 +18,7 @@ const roomPlayerValidator = v.object({
   id: v.id('players'),
   displayName: v.string(),
   avatarColor: v.string(),
+  avatarUrl: v.union(v.string(), v.null()),
   totalPoints: v.number(),
   isHost: v.boolean(),
   isReady: v.boolean(),
@@ -53,6 +54,7 @@ const gameViewValidator = v.object({
     }),
   ),
   outsiderPlayerId: v.union(v.id('players'), v.null()),
+  outsiderPlayerIds: v.array(v.id('players')),
   currentQuestionerId: v.union(v.id('players'), v.null()),
   currentAnswererId: v.union(v.id('players'), v.null()),
   automaticTurnIndex: v.number(),
@@ -110,12 +112,13 @@ function buildVoteResults(votes: Doc<'votes'>[]) {
 
 function buildRoundPoints(round: Doc<'rounds'>, votes: Doc<'votes'>[]) {
   const points = new Map<Id<'players'>, number>();
+  const outsiderIds = round.outsiderPlayerIds ?? [round.outsiderPlayerId];
   for (const vote of votes) {
-    if (vote.targetPlayerId === round.outsiderPlayerId) {
+    if (outsiderIds.includes(vote.targetPlayerId)) {
       points.set(vote.voterPlayerId, (points.get(vote.voterPlayerId) ?? 0) + 1);
     }
   }
-  if (round.outsiderGuessCorrect) {
+  if (round.outsiderGuessCorrect && outsiderIds.length === 1) {
     points.set(
       round.outsiderPlayerId,
       (points.get(round.outsiderPlayerId) ?? 0) + 1,
@@ -145,7 +148,8 @@ export const getMyView = query({
       return null;
     }
 
-    const isOutsider = round.outsiderPlayerId === player._id;
+    const outsiderIds = round.outsiderPlayerIds ?? [round.outsiderPlayerId];
+    const isOutsider = outsiderIds.includes(player._id);
     const role: 'inside' | 'outsider' = isOutsider ? 'outsider' : 'inside';
     const revealResult = round.phase === 'results';
     const revealVotes =
@@ -174,6 +178,7 @@ export const getMyView = query({
           ? { name: round.secretName, imageUrl: round.secretImageUrl }
           : null,
       outsiderPlayerId: revealVotes ? round.outsiderPlayerId : null,
+      outsiderPlayerIds: revealVotes ? outsiderIds : [],
       currentQuestionerId: round.currentQuestionerId,
       currentAnswererId: round.currentAnswererId,
       automaticTurnIndex: round.automaticTurnIndex,
@@ -407,12 +412,15 @@ export const submitVote = mutation({
       return { votingComplete: false };
     }
 
+    const outsiderIds = round.outsiderPlayerIds ?? [round.outsiderPlayerId];
     for (const vote of votes) {
-      if (vote.targetPlayerId === round.outsiderPlayerId) {
+      if (outsiderIds.includes(vote.targetPlayerId)) {
         await awardPoint(ctx, room._id, vote.voterPlayerId);
       }
     }
-    await ctx.db.patch(round._id, { phase: 'outsider_guess' });
+    await ctx.db.patch(round._id, outsiderIds.length > 1
+      ? { phase: 'results', outsiderGuessCorrect: false, completedAt: Date.now() }
+      : { phase: 'outsider_guess' });
     return { votingComplete: true };
   },
 });

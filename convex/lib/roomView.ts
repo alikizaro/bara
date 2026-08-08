@@ -1,7 +1,9 @@
 import type { Id } from '../_generated/dataModel';
 import type { MutationCtx, QueryCtx } from '../_generated/server';
 
-type ReaderCtx = Pick<QueryCtx, 'db'> | Pick<MutationCtx, 'db'>;
+type ReaderCtx =
+  | Pick<QueryCtx, 'db' | 'storage'>
+  | Pick<MutationCtx, 'db' | 'storage'>;
 
 export async function loadActiveRoomPlayers(
   ctx: ReaderCtx,
@@ -27,6 +29,9 @@ export async function loadActiveRoomPlayers(
         id: player._id,
         displayName: player.displayName,
         avatarColor: player.avatarColor,
+        avatarUrl: player.avatarStorageId
+          ? await ctx.storage.getUrl(player.avatarStorageId)
+          : null,
         totalPoints: player.totalPoints,
         isHost: player._id === hostPlayerId,
         isReady: membership.isReady,

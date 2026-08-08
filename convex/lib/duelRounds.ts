@@ -14,8 +14,9 @@ export async function createDuelRound(
   const items = getPlayableItems(room.category, room.collection).filter(
     (item) => item.name !== previousRound?.secretName,
   );
-  if (players.length !== 2 || items.length < 2) {
-    throw new Error('يلزم لاعبان وصورتان على الأقل لبدء المواجهة');
+  const teamSize = room.teamSize ?? 1;
+  if (players.length !== teamSize * 2 || items.length < 2) {
+    throw new Error(`يلزم ${teamSize * 2} لاعبين وصورتان على الأقل لبدء المواجهة`);
   }
 
   const firstIndex = Math.floor(Math.random() * items.length);
@@ -23,8 +24,7 @@ export async function createDuelRound(
   const firstItem = items[firstIndex];
   const secondItem = items[(firstIndex + secondOffset) % items.length];
   const firstPlayer = players[0];
-  const secondPlayer = players[1];
-  if (!firstItem || !secondItem || !firstPlayer || !secondPlayer) {
+  if (!firstItem || !secondItem || !firstPlayer) {
     throw new Error('تعذر اختيار صور المواجهة');
   }
 
@@ -43,18 +43,15 @@ export async function createDuelRound(
     outsiderGuessName: null,
     outsiderGuessCorrect: null,
     completedAt: null,
-    duelAssignments: [
-      {
-        playerId: firstPlayer.playerId,
-        name: firstItem.name,
-        imageUrl: firstItem.imageUrl,
-      },
-      {
-        playerId: secondPlayer.playerId,
-        name: secondItem.name,
-        imageUrl: secondItem.imageUrl,
-      },
-    ],
+    duelAssignments: players.map((player, index) => ({
+      playerId: player.playerId,
+      name: index < teamSize ? firstItem.name : secondItem.name,
+      imageUrl: index < teamSize ? firstItem.imageUrl : secondItem.imageUrl,
+    })),
+    duelTeams: players.map((player, index) => ({
+      playerId: player.playerId,
+      team: index < teamSize ? 0 : 1,
+    })),
     duelGuesses: [],
     createdAt: Date.now(),
   });

@@ -63,6 +63,7 @@ export function VotingPanel({
                 </View>
                 <PlayerAvatar
                   color={player.avatarColor}
+                  imageUrl={player.avatarUrl}
                   name={player.displayName}
                   online={player.isOnline}
                   size={48}

@@ -15,16 +15,19 @@ export function CreateRoomScreen({
   onBack,
   onCreated,
   initialMode = 'classic',
+  initialSettings,
 }: {
   onBack: () => void;
   onCreated: () => void;
   initialMode?: GameMode;
+  initialSettings?: Partial<RoomSettings>;
 }) {
   const { createRoom, isWorking, error, clearError } = useGame();
   const [settings, setSettings] = useState<RoomSettings>(() => ({
     ...defaultRoomSettings,
     mode: initialMode,
     maxPlayers: initialMode === 'duel' ? 2 : defaultRoomSettings.maxPlayers,
+    ...initialSettings,
   }));
   const [localError, setLocalError] = useState<string | null>(null);
 
@@ -42,10 +45,10 @@ export function CreateRoomScreen({
     <ScreenShell>
       <BackHeader
         onBack={onBack}
-        title={settings.mode === 'duel' ? 'لاعب ضد لاعب' : 'إنشاء غرفة'}
+        title={settings.mode === 'duel' ? `${settings.teamSize} ضد ${settings.teamSize}` : settings.mode === 'mafia' ? 'المافيا' : 'إنشاء غرفة'}
       />
       <Text style={styles.heading}>
-        {settings.mode === 'duel' ? 'أنشئ مواجهة' : 'أنشئ غرفة'}
+        {settings.mode === 'duel' ? 'أنشئ مواجهة' : settings.mode === 'mafia' ? 'أنشئ ليلة مافيا' : 'أنشئ غرفة'}
       </Text>
       <Text style={styles.subheading}>
         اجمع اللاعبين أولًا، تحدثوا واتفقوا على التصنيف داخل الغرفة.
@@ -59,7 +62,7 @@ export function CreateRoomScreen({
           hint="الحد المتاح داخل الغرفة"
           label="عدد اللاعبين"
           maximum={10}
-          minimum={3}
+          minimum={settings.outsiderCount === 2 ? 5 : 3}
           onChange={(maxPlayers) =>
             setSettings((current) => ({ ...current, maxPlayers }))
           }
@@ -90,12 +93,17 @@ export function CreateRoomScreen({
         />
           </View>
         </>
-      ) : (
+      ) : settings.mode === 'duel' ? (
         <View style={styles.duelNote}>
           <Text style={styles.duelNoteTitle}>🎙️ مواجهة صوتية مفتوحة</Text>
           <Text style={styles.duelNoteText}>
-            لاعبان فقط، لكل لاعب صورة واسم مختلفان، والتخمين مفتوح بلا خيارات محددة.
+            فريقان من {settings.teamSize} ضد {settings.teamSize}، لكل فريق صورة مختلفة والتخمين مفتوح بالمايك.
           </Text>
+        </View>
+      ) : (
+        <View style={styles.duelNote}>
+          <Text style={styles.duelNoteTitle}>🌙 أدوار سرية وتصويت جماعي</Text>
+          <Text style={styles.duelNoteText}>يجتمع {settings.maxPlayers} لاعبين، يتناقشون بالصوت ثم يصوّتون لكشف المافيا.</Text>
         </View>
       )}
 

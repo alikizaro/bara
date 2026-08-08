@@ -24,8 +24,8 @@ export function validateDisplayName(value: string): string | null {
 }
 
 export function validateRoomSettings(settings: RoomSettings): string | null {
-  if (settings.mode === 'duel' && settings.maxPlayers !== 2) {
-    return 'وضع لاعب ضد لاعب يتطلب لاعبين فقط';
+  if (settings.mode === 'duel' && settings.maxPlayers !== settings.teamSize * 2) {
+    return 'عدد لاعبي المواجهة يجب أن يساوي حجم الفريقين';
   }
   if (
     settings.mode !== 'duel' &&
@@ -34,6 +34,12 @@ export function validateRoomSettings(settings: RoomSettings): string | null {
       settings.maxPlayers > MAX_PLAYERS)
   ) {
     return 'عدد اللاعبين يجب أن يكون بين 3 و10';
+  }
+  if (settings.mode === 'classic' && settings.outsiderCount === 2 && settings.maxPlayers < 5) {
+    return 'وضع شخصين برا السالفة يحتاج 5 لاعبين على الأقل';
+  }
+  if (settings.mode === 'mafia' && settings.maxPlayers < 5) {
+    return 'المافيا تحتاج 5 لاعبين على الأقل';
   }
   if (
     !Number.isInteger(settings.automaticQuestions) ||
@@ -58,10 +64,12 @@ export function validateRoomSettings(settings: RoomSettings): string | null {
 export function canHostStart(
   players: readonly { isHost: boolean; isReady: boolean }[],
   mode: RoomSettings['mode'] = 'classic',
+  expectedPlayers?: number,
 ): boolean {
-  const requiredPlayers = mode === 'duel' ? 2 : MIN_PLAYERS;
+  const requiredPlayers = mode === 'duel' ? expectedPlayers ?? 2 : mode === 'mafia' ? 5 : MIN_PLAYERS;
   if (players.length < requiredPlayers) {
     return false;
   }
+  if (mode === 'duel' && expectedPlayers && players.length !== expectedPlayers) return false;
   return players.every((player) => player.isHost || player.isReady);
 }

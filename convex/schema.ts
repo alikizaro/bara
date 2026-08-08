@@ -13,6 +13,7 @@ export default defineSchema({
     installationId: v.string(),
     displayName: v.string(),
     avatarColor: v.string(),
+    avatarStorageId: v.optional(v.id('_storage')),
     totalPoints: v.number(),
     lastSeenAt: v.number(),
   }).index('by_installation_id', ['installationId']),
@@ -24,6 +25,8 @@ export default defineSchema({
     category: categoryValidator,
     categorySelected: v.optional(v.boolean()),
     mode: v.optional(gameModeValidator),
+    outsiderCount: v.optional(v.number()),
+    teamSize: v.optional(v.number()),
     collection: v.union(v.string(), v.null()),
     maxPlayers: v.number(),
     automaticQuestions: v.number(),
@@ -53,6 +56,7 @@ export default defineSchema({
     secretName: v.string(),
     secretImageUrl: v.union(v.string(), v.null()),
     outsiderPlayerId: v.id('players'),
+    outsiderPlayerIds: v.optional(v.array(v.id('players'))),
     phase: roundPhaseValidator,
     currentQuestionerId: v.union(v.id('players'), v.null()),
     currentAnswererId: v.union(v.id('players'), v.null()),
@@ -79,6 +83,32 @@ export default defineSchema({
           correct: v.boolean(),
         }),
       ),
+    ),
+    duelTeams: v.optional(
+      v.array(v.object({ playerId: v.id('players'), team: v.number() })),
+    ),
+    mafiaAssignments: v.optional(
+      v.array(
+        v.object({
+          playerId: v.id('players'),
+          role: v.union(
+            v.literal('mafia'),
+            v.literal('detective'),
+            v.literal('doctor'),
+            v.literal('citizen'),
+          ),
+        }),
+      ),
+    ),
+    mafiaNightActions: v.optional(
+      v.array(v.object({ playerId: v.id('players'), targetPlayerId: v.id('players') })),
+    ),
+    mafiaDetectiveFindings: v.optional(
+      v.array(v.object({ playerId: v.id('players'), targetPlayerId: v.id('players'), isMafia: v.boolean() })),
+    ),
+    mafiaEliminatedPlayerIds: v.optional(v.array(v.id('players'))),
+    mafiaWinner: v.optional(
+      v.union(v.literal('mafia'), v.literal('village'), v.null()),
     ),
     createdAt: v.number(),
   }).index('by_room_id_and_round_number', ['roomId', 'roundNumber']),
