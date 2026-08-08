@@ -1,298 +1,88 @@
-import { useEffect, useState } from 'react';
-import { Linking, Pressable, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
 import { ActionButton } from '../components/action-button';
+import { GameCard } from '../components/game-card';
 import { PlayerAvatar } from '../components/player-avatar';
 import { ScreenShell } from '../components/screen-shell';
-import {
-  checkForAppUpdate,
-  type AppUpdate,
-} from '../services/app-updates';
+import { gameCatalog, type GameId } from '../domain/game-catalog';
 import { useGame } from '../state/game-context';
-import { colors, radii, shadows } from '../theme/tokens';
+import { colors } from '../theme/tokens';
 
 export function HomeScreen({
-  onCreate,
+  onGame,
   onJoin,
-  onDuel,
 }: {
-  onCreate: () => void;
+  onGame: (game: GameId) => void;
   onJoin: () => void;
-  onDuel: () => void;
 }) {
   const { profile, mode } = useGame();
-  const [update, setUpdate] = useState<AppUpdate | null>(null);
-
-  useEffect(() => {
-    let active = true;
-    void checkForAppUpdate().then((available) => {
-      if (active) {
-        setUpdate(available);
-      }
-    });
-    return () => {
-      active = false;
-    };
-  }, []);
-  if (!profile) {
-    return null;
-  }
+  if (!profile) return null;
 
   return (
     <ScreenShell>
       <View style={styles.header}>
         <View style={styles.profileCopy}>
-          <Text style={styles.greeting}>هلا، {profile.displayName} 👋</Text>
-          <Text style={styles.points}>{profile.totalPoints} نقطة</Text>
+          <Text style={styles.brand}>لَمّة</Text>
+          <Text style={styles.greeting}>أهلًا {profile.displayName} 👋</Text>
         </View>
-        <PlayerAvatar
-          color={profile.avatarColor}
-          name={profile.displayName}
-          online
-          size={56}
-        />
+        <PlayerAvatar color={profile.avatarColor} name={profile.displayName} online size={54} />
       </View>
 
-      <View style={[styles.heroCard, shadows.card]}>
-        <View style={styles.decorOne} />
-        <View style={styles.decorTwo} />
-        <Text style={styles.heroEmoji}>🕵️‍♂️</Text>
-        <Text style={styles.heroTitle}>من هو برا السالفة؟</Text>
-        <Text style={styles.heroBody}>
-          اجمع أصدقاءك في غرفة واحدة، اسألوا بالصوت ثم صوّتوا للمتخفي
-        </Text>
+      <View style={styles.hero}>
+        <View style={styles.tokenRow}>
+          <View style={[styles.token, styles.tokenOne]}><Text style={styles.tokenEmoji}>🎭</Text></View>
+          <View style={[styles.token, styles.tokenTwo]}><Text style={styles.tokenEmoji}>🕵️</Text></View>
+          <View style={[styles.token, styles.tokenThree]}><Text style={styles.tokenEmoji}>🌙</Text></View>
+        </View>
+        <Text style={styles.heroTitle}>كل اللّمة في مكان واحد</Text>
+        <Text style={styles.heroText}>اختاروا اللعبة، افتحوا المايك، وابدؤوا السهرة.</Text>
       </View>
 
-      <View style={styles.actions}>
-        <ActionButton
-          label="لاعب ضد لاعب"
-          icon={<Text style={styles.actionIcon}>⚔️</Text>}
-          onPress={onDuel}
-          variant="secondary"
-        />
-        <ActionButton
-          label="إنشاء غرفة جديدة"
-          icon={<Text style={styles.actionIcon}>＋</Text>}
-          onPress={onCreate}
-        />
-        <ActionButton
-          label="الدخول برمز غرفة"
-          icon={<Text style={styles.actionIcon}>⌁</Text>}
-          onPress={onJoin}
-          variant="ghost"
-        />
+      <View style={styles.sectionRow}>
+        <Text style={styles.points}>{profile.totalPoints} نقطة</Text>
+        <Text style={styles.sectionTitle}>اختاروا لعبتكم</Text>
+      </View>
+      <View style={styles.games}>
+        {gameCatalog.map((game) => (
+          <GameCard key={game.id} game={game} onPress={() => onGame(game.id)} />
+        ))}
       </View>
 
-      {update ? (
-        <Pressable
-          accessibilityRole="button"
-          onPress={() => void Linking.openURL(update.apkUrl)}
-          style={styles.updateBanner}
-        >
-          <View style={styles.updateCopy}>
-            <Text style={styles.updateTitle}>يتوفر تحديث جديد</Text>
-            <Text style={styles.updateText}>
-              الإصدار {update.versionName} جاهز للتنزيل والتثبيت
-            </Text>
-          </View>
-          <Text style={styles.updateIcon}>⬇️</Text>
-        </Pressable>
-      ) : null}
+      <ActionButton
+        label="الدخول برمز غرفة"
+        icon={<Text style={styles.joinIcon}>⌁</Text>}
+        onPress={onJoin}
+        variant="ghost"
+      />
 
-      <View style={styles.sectionHeader}>
-        <Text style={styles.sectionTitle}>كيف ستكون الجولة؟</Text>
-      </View>
-      <View style={styles.featureGrid}>
-        <FeatureCard emoji="🎙️" label="سؤال وجواب صوتي" />
-        <FeatureCard emoji="👥" label="من 3 إلى 10 لاعبين" />
-        <FeatureCard emoji="🗳️" label="تصويت ونقاط" />
-        <FeatureCard emoji="🎭" label="دور سري لكل لاعب" />
-      </View>
-
-      <View style={styles.serverBanner}>
-        <View
-          style={[
-            styles.serverDot,
-            { backgroundColor: mode === 'online' ? colors.success : colors.warning },
-          ]}
-        />
-        <Text style={styles.serverText}>
-          {mode === 'online'
-            ? 'الخادم متصل — الغرف تعمل بين الأجهزة'
-            : 'معاينة محلية — اربط الخادم لتشغيل الغرف بين الأجهزة'}
-        </Text>
+      <View style={styles.serverRow}>
+        <View style={[styles.serverDot, { backgroundColor: mode === 'online' ? colors.success : colors.warning }]} />
+        <Text style={styles.serverText}>{mode === 'online' ? 'الخادم السحابي متصل' : 'وضع المعاينة المحلية'}</Text>
       </View>
     </ScreenShell>
   );
 }
 
-function FeatureCard({ emoji, label }: { emoji: string; label: string }) {
-  return (
-    <View style={styles.featureCard}>
-      <Text style={styles.featureEmoji}>{emoji}</Text>
-      <Text style={styles.featureLabel}>{label}</Text>
-    </View>
-  );
-}
-
 const styles = StyleSheet.create({
-  header: {
-    flexDirection: 'row-reverse',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    paddingTop: 12,
-    paddingBottom: 22,
-  },
-  profileCopy: {
-    flex: 1,
-    alignItems: 'flex-end',
-    marginRight: 14,
-  },
-  greeting: {
-    color: colors.text,
-    fontSize: 20,
-    fontWeight: '900',
-  },
-  points: {
-    color: colors.warning,
-    fontSize: 14,
-    fontWeight: '700',
-    marginTop: 4,
-  },
-  heroCard: {
-    minHeight: 245,
-    alignItems: 'center',
-    justifyContent: 'center',
-    overflow: 'hidden',
-    borderRadius: radii.lg,
-    borderWidth: 1,
-    borderColor: colors.primaryLight,
-    backgroundColor: colors.surface,
-    padding: 24,
-  },
-  decorOne: {
-    position: 'absolute',
-    width: 170,
-    height: 170,
-    borderRadius: 85,
-    backgroundColor: 'rgba(124,92,255,0.24)',
-    top: -80,
-    right: -50,
-  },
-  decorTwo: {
-    position: 'absolute',
-    width: 120,
-    height: 120,
-    borderRadius: 60,
-    backgroundColor: 'rgba(25,211,197,0.14)',
-    bottom: -55,
-    left: -30,
-  },
-  heroEmoji: {
-    fontSize: 58,
-  },
-  heroTitle: {
-    color: colors.text,
-    fontSize: 25,
-    fontWeight: '900',
-    marginTop: 14,
-  },
-  heroBody: {
-    color: colors.textMuted,
-    textAlign: 'center',
-    fontSize: 15,
-    lineHeight: 23,
-    marginTop: 9,
-    maxWidth: 310,
-  },
-  actions: {
-    gap: 12,
-    marginTop: 20,
-  },
-  actionIcon: {
-    color: colors.text,
-    fontSize: 24,
-    fontWeight: '800',
-  },
-  sectionHeader: {
-    alignItems: 'flex-end',
-    marginTop: 28,
-    marginBottom: 12,
-  },
-  sectionTitle: {
-    color: colors.text,
-    fontSize: 18,
-    fontWeight: '900',
-  },
-  featureGrid: {
-    flexDirection: 'row-reverse',
-    flexWrap: 'wrap',
-    gap: 10,
-  },
-  featureCard: {
-    width: '48%',
-    minHeight: 96,
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: radii.md,
-    borderWidth: 1,
-    borderColor: colors.border,
-    backgroundColor: colors.backgroundElevated,
-    padding: 10,
-  },
-  featureEmoji: {
-    fontSize: 28,
-  },
-  featureLabel: {
-    color: colors.textMuted,
-    fontSize: 13,
-    fontWeight: '700',
-    marginTop: 7,
-    textAlign: 'center',
-  },
-  serverBanner: {
-    flexDirection: 'row-reverse',
-    justifyContent: 'center',
-    alignItems: 'center',
-    gap: 8,
-    paddingTop: 22,
-  },
-  updateBanner: {
-    flexDirection: 'row-reverse',
-    alignItems: 'center',
-    borderRadius: radii.md,
-    borderWidth: 1,
-    borderColor: colors.success,
-    backgroundColor: '#17463D',
-    padding: 14,
-    marginTop: 16,
-  },
-  updateCopy: {
-    flex: 1,
-    alignItems: 'flex-end',
-    marginRight: 12,
-  },
-  updateTitle: {
-    color: colors.text,
-    fontSize: 15,
-    fontWeight: '900',
-  },
-  updateText: {
-    color: colors.textMuted,
-    fontSize: 11,
-    marginTop: 4,
-  },
-  updateIcon: {
-    fontSize: 28,
-  },
-  serverDot: {
-    width: 9,
-    height: 9,
-    borderRadius: 5,
-  },
-  serverText: {
-    color: colors.textDim,
-    fontSize: 12,
-    textAlign: 'center',
-  },
+  header: { flexDirection: 'row-reverse', alignItems: 'center', justifyContent: 'space-between', paddingTop: 10 },
+  profileCopy: { flex: 1, alignItems: 'flex-end', marginRight: 13 },
+  brand: { color: colors.warning, fontSize: 27, fontWeight: '900', letterSpacing: 0.5 },
+  greeting: { color: colors.textMuted, fontSize: 12, fontWeight: '700', marginTop: 2 },
+  hero: { alignItems: 'center', paddingVertical: 26 },
+  tokenRow: { flexDirection: 'row', alignItems: 'center', height: 76 },
+  token: { width: 68, height: 68, alignItems: 'center', justifyContent: 'center', borderRadius: 25, borderWidth: 3, borderColor: colors.background },
+  tokenOne: { backgroundColor: '#164B52', transform: [{ rotate: '-8deg' }] },
+  tokenTwo: { zIndex: 2, backgroundColor: '#5B3EC4', marginHorizontal: -12, transform: [{ translateY: -7 }] },
+  tokenThree: { backgroundColor: '#5C243E', transform: [{ rotate: '8deg' }] },
+  tokenEmoji: { fontSize: 31 },
+  heroTitle: { color: colors.text, fontSize: 24, fontWeight: '900', marginTop: 12 },
+  heroText: { color: colors.textMuted, fontSize: 13, textAlign: 'center', marginTop: 6 },
+  sectionRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 12 },
+  sectionTitle: { color: colors.text, fontSize: 19, fontWeight: '900' },
+  points: { color: colors.warning, fontSize: 12, fontWeight: '800' },
+  games: { gap: 12, marginBottom: 16 },
+  joinIcon: { color: colors.text, fontSize: 24 },
+  serverRow: { flexDirection: 'row-reverse', alignItems: 'center', justifyContent: 'center', gap: 7, marginTop: 18 },
+  serverDot: { width: 8, height: 8, borderRadius: 4 },
+  serverText: { color: colors.textDim, fontSize: 11 },
 });

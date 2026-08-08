@@ -1,14 +1,18 @@
 {
   "expo": {
-    "name": "برا السالفة",
+    "name": "لَمّة",
     "slug": "bara-alsalfa-android",
     "version": "1.0.0",
     "orientation": "portrait",
-    "scheme": "baralsalfa",
+    "scheme": "lamma",
     "icon": "./assets/bara-alsalfa-icon.png",
     "userInterfaceStyle": "dark",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.aliwendy.lamma",
+      "infoPlist": {
+        "NSMicrophoneUsageDescription": "تحتاج لَمّة إلى المايكروفون للمحادثة الصوتية داخل غرف اللعب."
+      }
     },
     "android": {
       "package": "com.aliwendy.baralsalfa",
@@ -16,7 +20,8 @@
       "permissions": [
         "android.permission.INTERNET",
         "android.permission.RECORD_AUDIO",
-        "android.permission.MODIFY_AUDIO_SETTINGS"
+        "android.permission.MODIFY_AUDIO_SETTINGS",
+        "android.permission.REQUEST_INSTALL_PACKAGES"
       ],
       "blockedPermissions": [
         "android.permission.CAMERA"

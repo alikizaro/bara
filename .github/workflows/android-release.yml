@@ -71,6 +71,6 @@ jobs:
         run: |
           git tag -f latest
           git push origin latest --force
-          gh release view latest >/dev/null 2>&1 || gh release create latest --title "برا السالفة $BARA_VERSION_NAME" --notes "نسخة Android محدثة تلقائيًا."
+          gh release view latest >/dev/null 2>&1 || gh release create latest --title "لَمّة $BARA_VERSION_NAME" --notes "نسخة Android محدثة تلقائيًا."
           gh release upload latest bara-alsalfa.apk update.json --clobber
-          gh release edit latest --title "برا السالفة $BARA_VERSION_NAME" --notes "نسخة Android محدثة تلقائيًا." --latest
+          gh release edit latest --title "لَمّة $BARA_VERSION_NAME" --notes "نسخة Android محدثة تلقائيًا." --latest

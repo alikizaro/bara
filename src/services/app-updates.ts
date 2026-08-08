@@ -1,35 +1,20 @@
-import * as Application from 'expo-application';
+import { Platform } from 'react-native';
 
-const manifestUrl =
-  'https://github.com/alikizaro/bara/releases/download/latest/update.json';
-const releasePrefix =
-  'https://github.com/alikizaro/bara/releases/download/latest/';
+import { installAndroidUpdate } from './updates/android-installer';
+import { openIosStoreUpdate } from './updates/ios-installer';
+import { checkForAppUpdate } from './updates/update-manifest';
+import type { AppUpdate, UpdateProgressHandler } from './updates/types';
 
-export interface AppUpdate {
-  versionCode: number;
-  versionName: string;
-  apkUrl: string;
-}
+export type { AppUpdate } from './updates/types';
+export { checkForAppUpdate };
 
-export async function checkForAppUpdate(): Promise<AppUpdate | null> {
-  try {
-    const response = await fetch(`${manifestUrl}?t=${Date.now()}`);
-    if (!response.ok) {
-      return null;
-    }
-    const value = (await response.json()) as Partial<AppUpdate>;
-    if (
-      typeof value.versionCode !== 'number' ||
-      !Number.isInteger(value.versionCode) ||
-      typeof value.versionName !== 'string' ||
-      typeof value.apkUrl !== 'string' ||
-      !value.apkUrl.startsWith(releasePrefix)
-    ) {
-      return null;
-    }
-    const installedCode = Number(Application.nativeBuildVersion ?? 0);
-    return value.versionCode > installedCode ? (value as AppUpdate) : null;
-  } catch {
-    return null;
+export async function downloadAndInstallUpdate(
+  update: AppUpdate,
+  onProgress: UpdateProgressHandler,
+): Promise<void> {
+  if (Platform.OS === 'android') {
+    await installAndroidUpdate(update, onProgress);
+    return;
   }
+  await openIosStoreUpdate(update);
 }

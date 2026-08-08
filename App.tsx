@@ -3,9 +3,12 @@ import { I18nManager, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import { ScreenShell } from './src/components/screen-shell';
+import { AppUpdatePrompt } from './src/components/app-update-prompt';
+import type { GameId } from './src/domain/game-catalog';
 import { CreateRoomScreen } from './src/screens/create-room-screen';
 import { DuelGameScreen } from './src/screens/duel-game-screen';
 import { GameScreen } from './src/screens/game-screen';
+import { GameModesScreen } from './src/screens/game-modes-screen';
 import { HomeScreen } from './src/screens/home-screen';
 import { JoinRoomScreen } from './src/screens/join-room-screen';
 import { LobbyScreen } from './src/screens/lobby-screen';
@@ -14,7 +17,7 @@ import { GameBackendProvider } from './src/state/game-backend-provider';
 import { useGame } from './src/state/game-context';
 import { colors } from './src/theme/tokens';
 
-type AppScreen = 'home' | 'create' | 'duel-create' | 'join' | 'lobby';
+type AppScreen = 'home' | 'game-modes' | 'create' | 'duel-create' | 'join' | 'lobby';
 
 I18nManager.allowRTL(true);
 I18nManager.swapLeftAndRightInRTL(true);
@@ -24,6 +27,7 @@ export default function App() {
     <SafeAreaProvider>
       <GameBackendProvider>
         <AppNavigator />
+        <AppUpdatePrompt />
       </GameBackendProvider>
     </SafeAreaProvider>
   );
@@ -32,6 +36,7 @@ export default function App() {
 function AppNavigator() {
   const { isHydrating, profile, room, game, duel } = useGame();
   const [screen, setScreen] = useState<AppScreen>('home');
+  const [selectedGame, setSelectedGame] = useState<GameId>('outsider');
 
   if (isHydrating) {
     return (
@@ -40,7 +45,7 @@ function AppNavigator() {
           <View style={styles.loadingLogo}>
             <Text style={styles.loadingQuestion}>؟</Text>
           </View>
-          <Text style={styles.loadingTitle}>برا السالفة</Text>
+          <Text style={styles.loadingTitle}>لَمّة</Text>
           <Text style={styles.loadingHint}>جارٍ تجهيز اللعبة…</Text>
         </View>
       </ScreenShell>
@@ -91,10 +96,26 @@ function AppNavigator() {
     );
   }
 
+  if (screen === 'game-modes') {
+    return (
+      <GameModesScreen
+        game={selectedGame}
+        onBack={() => setScreen('home')}
+        actions={{
+          onClassic: () => setScreen('create'),
+          onDuel: () => setScreen('duel-create'),
+          onJoin: () => setScreen('join'),
+        }}
+      />
+    );
+  }
+
   return (
     <HomeScreen
-      onCreate={() => setScreen('create')}
-      onDuel={() => setScreen('duel-create')}
+      onGame={(game) => {
+        setSelectedGame(game);
+        setScreen('game-modes');
+      }}
       onJoin={() => setScreen('join')}
     />
   );
