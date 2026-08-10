@@ -1,6 +1,8 @@
+import { Image } from 'expo-image';
 import { useState } from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
+import { getArtworkAttemptUrl } from '../services/artwork-image';
 import { colors, radii } from '../theme/tokens';
 
 export function RemoteArtwork({
@@ -14,20 +16,23 @@ export function RemoteArtwork({
   size?: number;
   fallback?: string;
 }) {
-  const [failedUrl, setFailedUrl] = useState<string | null>(null);
-  const failed = Boolean(imageUrl && failedUrl === imageUrl);
+  const [failure, setFailure] = useState({ imageUrl: '', attempt: 0 });
+  const attempt = failure.imageUrl === imageUrl ? failure.attempt : 0;
+  const displayUrl = imageUrl ? getArtworkAttemptUrl(imageUrl, attempt) : null;
 
   return (
     <View
       accessibilityLabel={`صورة ${label}`}
       style={[styles.frame, { width: size, height: size }]}
     >
-      {imageUrl && !failed ? (
+      {displayUrl ? (
         <Image
-          onError={() => setFailedUrl(imageUrl)}
-          resizeMode="cover"
-          source={{ uri: imageUrl }}
+          cachePolicy="disk"
+          contentFit="cover"
+          onError={() => setFailure({ imageUrl: imageUrl ?? '', attempt: attempt + 1 })}
+          source={displayUrl}
           style={styles.image}
+          transition={120}
         />
       ) : (
         <Text style={[styles.fallback, { fontSize: Math.round(size * 0.4) }]}>

@@ -30,6 +30,7 @@ export const roundPhaseValidator = v.union(
   v.literal('outsider_guess'),
   v.literal('results'),
   v.literal('duel_guessing'),
+  v.literal('duel_voting'),
   v.literal('mafia_discussion'),
   v.literal('mafia_night'),
   v.literal('mafia_voting'),

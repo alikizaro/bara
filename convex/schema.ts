@@ -87,6 +87,15 @@ export default defineSchema({
     duelTeams: v.optional(
       v.array(v.object({ playerId: v.id('players'), team: v.number() })),
     ),
+    duelReadyPlayerIds: v.optional(v.array(v.id('players'))),
+    duelChoices: v.optional(
+      v.array(
+        v.object({
+          name: v.string(),
+          imageUrl: v.union(v.string(), v.null()),
+        }),
+      ),
+    ),
     mafiaAssignments: v.optional(
       v.array(
         v.object({

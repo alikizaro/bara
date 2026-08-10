@@ -3,12 +3,13 @@ import { v } from 'convex/values';
 import type { Id } from './_generated/dataModel';
 import type { MutationCtx } from './_generated/server';
 import { mutation, query } from './_generated/server';
+import { getPlayableItems } from './data/starterItems';
 import {
   requireActiveMembership,
   requirePlayer,
   requireRoomHost,
 } from './lib/identity';
-import { createDuelRound } from './lib/duelRounds';
+import { buildDuelChoices, createDuelRound } from './lib/duelRounds';
 import { loadActiveRoomPlayers } from './lib/roomView';
 
 const artworkValidator = v.object({
@@ -31,11 +32,19 @@ const roomPlayerValidator = v.object({
 const duelViewValidator = v.object({
   roomId: v.id('rooms'),
   roundNumber: v.number(),
-  phase: v.union(v.literal('duel_guessing'), v.literal('results')),
+  phase: v.union(
+    v.literal('duel_guessing'),
+    v.literal('duel_voting'),
+    v.literal('results'),
+  ),
   secret: artworkValidator,
   opponent: roomPlayerValidator,
   teamPlayers: v.array(roomPlayerValidator),
   opponents: v.array(roomPlayerValidator),
+  myReadyToVote: v.boolean(),
+  readyToVoteCount: v.number(),
+  totalPlayerCount: v.number(),
+  voteChoices: v.array(artworkValidator),
   myGuessName: v.union(v.string(), v.null()),
   opponentHasGuessed: v.boolean(),
   result: v.union(
@@ -85,7 +94,11 @@ export const getMyView = query({
     }
     const round = await ctx.db.get(room.activeRoundId);
     const assignments = round?.duelAssignments ?? [];
-    if (!round || (round.phase !== 'duel_guessing' && round.phase !== 'results')) {
+    if (!round || (
+      round.phase !== 'duel_guessing' &&
+      round.phase !== 'duel_voting' &&
+      round.phase !== 'results'
+    )) {
       return null;
     }
     const mine = assignments.find((item) => item.playerId === player._id);
@@ -103,6 +116,7 @@ export const getMyView = query({
       return null;
     }
     const guesses = round.duelGuesses ?? [];
+    const readyPlayerIds = round.duelReadyPlayerIds ?? [];
     const myGuess = guesses.find((guess) => guess.playerId === player._id);
     const opponentGuess = guesses.find((guess) => guess.playerId === opponent.id);
     const reveal = round.phase === 'results';
@@ -115,6 +129,10 @@ export const getMyView = query({
       opponent,
       teamPlayers: players.filter((item) => teamIds.has(item.id)),
       opponents: players.filter((item) => opponentIds.has(item.id)),
+      myReadyToVote: readyPlayerIds.includes(player._id),
+      readyToVoteCount: readyPlayerIds.length,
+      totalPlayerCount: assignments.length,
+      voteChoices: round.phase === 'duel_voting' ? (round.duelChoices ?? []) : [],
       myGuessName: myGuess?.guessedName ?? null,
       opponentHasGuessed: Boolean(opponentGuess),
       result: reveal
@@ -127,6 +145,49 @@ export const getMyView = query({
         : null,
       players,
     };
+  },
+});
+
+export const markReadyToVote = mutation({
+  args: {
+    installationId: v.string(),
+    roomId: v.id('rooms'),
+  },
+  returns: v.object({
+    readyCount: v.number(),
+    totalCount: v.number(),
+    complete: v.boolean(),
+  }),
+  handler: async (ctx, args) => {
+    const player = await requirePlayer(ctx, args.installationId);
+    await requireActiveMembership(ctx, args.roomId, player._id);
+    const room = await ctx.db.get(args.roomId);
+    const round = room?.activeRoundId ? await ctx.db.get(room.activeRoundId) : null;
+    if (!room || !round || room.mode !== 'duel' || round.phase !== 'duel_guessing') {
+      throw new Error('مرحلة الأسئلة انتهت بالفعل');
+    }
+    const assignments = round.duelAssignments ?? [];
+    if (!assignments.some((assignment) => assignment.playerId === player._id)) {
+      throw new Error('أنت لست ضمن لاعبي هذه المواجهة');
+    }
+    const current = round.duelReadyPlayerIds ?? [];
+    const next = current.includes(player._id) ? current : [...current, player._id];
+    const complete = next.length === assignments.length;
+    const legacyChoices = round.duelChoices?.length
+      ? round.duelChoices
+      : buildDuelChoices(
+          getPlayableItems(room.category, room.collection),
+          [...new Map(assignments.map((assignment) => [assignment.name, {
+            name: assignment.name,
+            imageUrl: assignment.imageUrl,
+          }])).values()],
+        );
+    await ctx.db.patch(round._id, {
+      duelReadyPlayerIds: next,
+      duelChoices: legacyChoices,
+      phase: complete ? 'duel_voting' : 'duel_guessing',
+    });
+    return { readyCount: next.length, totalCount: assignments.length, complete };
   },
 });
 
@@ -145,8 +206,8 @@ export const submitGuess = mutation({
       throw new Error('لا توجد مواجهة نشطة');
     }
     const round = await ctx.db.get(room.activeRoundId);
-    if (!round || round.phase !== 'duel_guessing') {
-      throw new Error('انتهت مرحلة التخمين');
+    if (!round || round.phase !== 'duel_voting') {
+      throw new Error('انتظر حتى يضغط جميع اللاعبين «فلنصوّت»');
     }
     const assignments = round.duelAssignments ?? [];
     const teams = round.duelTeams ?? assignments.map((item, index) => ({ playerId: item.playerId, team: index }));
@@ -161,8 +222,8 @@ export const submitGuess = mutation({
       throw new Error('تم إرسال تخمينك بالفعل');
     }
     const guessedName = args.guessedName.replace(/\s+/g, ' ').trim().slice(0, 120);
-    if (!guessedName) {
-      throw new Error('اكتب اسم تخمينك أولًا');
+    if (!(round.duelChoices ?? []).some((choice) => choice.name === guessedName)) {
+      throw new Error('اختر شخصية من بطاقات التصويت');
     }
     const correct = guessedName.toLocaleLowerCase() === target.name.toLocaleLowerCase();
     const nextGuesses = [...guesses, { playerId: player._id, guessedName, correct }];
@@ -176,7 +237,7 @@ export const submitGuess = mutation({
     }
     await ctx.db.patch(round._id, {
       duelGuesses: nextGuesses,
-      phase: complete ? 'results' : 'duel_guessing',
+      phase: complete ? 'results' : 'duel_voting',
       completedAt: complete ? Date.now() : null,
     });
     return { correct, complete };

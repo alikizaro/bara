@@ -42,11 +42,15 @@ export interface RoomSettings {
 export interface DuelView {
   roomId: string;
   roundNumber: number;
-  phase: 'duel_guessing' | 'results';
+  phase: 'duel_guessing' | 'duel_voting' | 'results';
   secret: GuessChoice;
   opponent: RoomPlayer;
   teamPlayers: RoomPlayer[];
   opponents: RoomPlayer[];
+  myReadyToVote: boolean;
+  readyToVoteCount: number;
+  totalPlayerCount: number;
+  voteChoices: GuessChoice[];
   myGuessName: string | null;
   opponentHasGuessed: boolean;
   result: {

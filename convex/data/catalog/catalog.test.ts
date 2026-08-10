@@ -29,7 +29,7 @@ describe('game content catalog', () => {
     const animals = getCatalogItems('animals', null);
     expect(animals).toHaveLength(168);
     expect(animals.every((item) => item.imageUrl !== null)).toBe(true);
-    expect(getPlayableCatalogItems('animals', null)).toHaveLength(168);
+    expect(getPlayableCatalogItems('animals', null).length).toBeGreaterThan(160);
   });
 
   it('only selects reviewed images when a category has enough artwork', () => {
@@ -48,6 +48,15 @@ describe('game content catalog', () => {
       const items = getPlayableCatalogItems(category, collection);
       expect(items.length).toBeGreaterThanOrEqual(4);
       expect(items.every((item) => item.imageUrl !== null)).toBe(true);
+      expect(new Set(items.map((item) => item.imageUrl)).size).toBe(items.length);
     }
+  });
+
+  it('excludes character names whose generated image belongs to somebody else', () => {
+    const names = getPlayableCatalogItems('anime', 'naruto').map((item) => item.name);
+    expect(names).not.toContain('ناغاتو');
+    expect(names).not.toContain('نيواكي');
+    expect(names).toContain('يوغيتو ني');
+    expect(names).toContain('أونـوكي');
   });
 });

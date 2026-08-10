@@ -37,6 +37,7 @@ export interface GameContextValue {
   advanceConversation: () => Promise<void>;
   submitVote: (targetPlayerId: string) => Promise<void>;
   submitOutsiderGuess: (guessedName: string) => Promise<void>;
+  markDuelReadyToVote: () => Promise<void>;
   submitDuelGuess: (guessedName: string) => Promise<void>;
   submitMafiaNightAction: (targetPlayerId: string) => Promise<void>;
   beginMafiaVoting: () => Promise<void>;

@@ -26,6 +26,31 @@ type ArtworkCatalog = Record<string, Record<string, ArtworkEntry>>;
 const animeArtwork = animeArtworkCatalog as ArtworkCatalog;
 const coreArtwork = coreArtworkCatalog as ArtworkCatalog;
 
+// These labels were generated from an ambiguous character search and resolved
+// to another character's exact image. Keep them out of live rounds until a
+// reviewed image is added.
+const rejectedArtworkLabels = new Set([
+  'غونبي',
+  'تاماغو',
+  'وابول',
+  'شاكا',
+  'إس هوك',
+  'أورز',
+  'أوم',
+  'أويمو',
+  'ياسوي',
+  'جيما',
+  'تاسك',
+  'ناغاتو',
+  'نيواكي',
+  'سينجورو رينغوكو',
+  'فيجيتو',
+  'غين',
+  'بوبيدي',
+  'سونيك',
+  'هيغوتشي',
+]);
+
 function artworkFor(word: GameWord): string | null {
   if (word.sourceCategory === 'anime' && word.animePackId) {
     return animeArtwork[word.animePackId]?.[word.label]?.url ?? null;
@@ -90,7 +115,16 @@ export function getPlayableCatalogItems(
   category: CatalogCategory,
   collection: string | null,
 ): CatalogItem[] {
-  const allItems = getCatalogItems(category, collection);
+  const allItems = getCatalogItems(category, collection).filter(
+    (item) => !rejectedArtworkLabels.has(item.name),
+  );
   const imagedItems = allItems.filter((item) => item.imageUrl !== null);
-  return imagedItems.length >= 4 ? imagedItems : allItems;
+  const candidates = imagedItems.length >= 4 ? imagedItems : allItems;
+  const seenImages = new Set<string>();
+  return candidates.filter((item) => {
+    if (!item.imageUrl) return true;
+    if (seenImages.has(item.imageUrl)) return false;
+    seenImages.add(item.imageUrl);
+    return true;
+  });
 }

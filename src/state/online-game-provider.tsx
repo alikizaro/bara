@@ -57,6 +57,7 @@ export function OnlineGameProvider({ children }: { children: ReactNode }) {
     api.game!.submitOutsiderGuess!,
   );
   const submitOnlineDuelGuess = useMutation(api.duel!.submitGuess!);
+  const markOnlineDuelReadyToVote = useMutation(api.duel!.markReadyToVote!);
   const startOnlineNextDuelRound = useMutation(api.duel!.startNextRound!);
   const skipOnlineOutsiderGuess = useMutation(
     api.game!.skipOutsiderGuess!,
@@ -444,6 +445,20 @@ export function OnlineGameProvider({ children }: { children: ReactNode }) {
     [installationId, roomId, submitOnlineDuelGuess],
   );
 
+  const markDuelReadyToVote = useCallback(async () => {
+    if (!installationId || !roomId) return;
+    setIsWorking(true);
+    setError(null);
+    try {
+      await markOnlineDuelReadyToVote({ installationId, roomId });
+    } catch (nextError) {
+      setError(readableError(nextError));
+      throw nextError;
+    } finally {
+      setIsWorking(false);
+    }
+  }, [installationId, markOnlineDuelReadyToVote, roomId]);
+
   const beginMafiaVoting = useCallback(async () => {
     if (!installationId || !roomId) return;
     setIsWorking(true);
@@ -549,6 +564,7 @@ export function OnlineGameProvider({ children }: { children: ReactNode }) {
       advanceConversation,
       submitVote,
       submitOutsiderGuess,
+      markDuelReadyToVote,
       submitDuelGuess,
       submitMafiaNightAction,
       beginMafiaVoting,
@@ -580,6 +596,7 @@ export function OnlineGameProvider({ children }: { children: ReactNode }) {
       startGame,
       startNextRound,
       submitOutsiderGuess,
+      markDuelReadyToVote,
       submitDuelGuess,
       submitMafiaNightAction,
       beginMafiaVoting,

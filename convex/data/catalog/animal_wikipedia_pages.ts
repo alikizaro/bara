@@ -130,7 +130,7 @@ export const ANIMAL_WIKIPEDIA_TITLES: Record<string, string> = {
   "بومة": "Owl",
   "غراب": "Crow",
   "حمامة": "Columbidae",
-  "عصفور": "Sparrow",
+  "عصفور": "House sparrow",
   "بلبل": "Bulbul",
   "كناري": "Domestic canary",
   "ببغاء": "Parrot",

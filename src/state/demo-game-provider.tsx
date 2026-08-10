@@ -91,6 +91,10 @@ function buildDuel(room: RoomSnapshot, profile: PlayerProfile): DuelView {
     opponent,
     teamPlayers: room.players.filter((player) => player.id === profile.id),
     opponents: room.players.filter((player) => player.id !== profile.id),
+    myReadyToVote: false,
+    readyToVoteCount: 0,
+    totalPlayerCount: room.players.length,
+    voteChoices: [],
     myGuessName: null,
     opponentHasGuessed: false,
     result: null,
@@ -412,6 +416,21 @@ export function DemoGameProvider({ children }: { children: ReactNode }) {
     );
   }, []);
 
+  const markDuelReadyToVote = useCallback(async () => {
+    setDuel((current) => current ? {
+      ...current,
+      phase: 'duel_voting',
+      myReadyToVote: true,
+      readyToVoteCount: current.totalPlayerCount,
+      voteChoices: [
+        { name: 'الأسد', imageUrl: null },
+        { name: 'الثعلب', imageUrl: null },
+        { name: 'النمر', imageUrl: null },
+        { name: 'الدب', imageUrl: null },
+      ],
+    } : current);
+  }, []);
+
   const startNextRound = useCallback(async () => {
     if (!room || !profile) {
       return;
@@ -460,9 +479,10 @@ export function DemoGameProvider({ children }: { children: ReactNode }) {
       advanceConversation,
       submitVote,
       submitOutsiderGuess,
-        submitDuelGuess,
-        submitMafiaNightAction: async () => undefined,
-        beginMafiaVoting: async () => undefined,
+      markDuelReadyToVote,
+      submitDuelGuess,
+      submitMafiaNightAction: async () => undefined,
+      beginMafiaVoting: async () => undefined,
       submitMafiaVote: async () => undefined,
       skipOutsiderGuess,
       startNextRound,
@@ -490,6 +510,7 @@ export function DemoGameProvider({ children }: { children: ReactNode }) {
       startGame,
       startNextRound,
       submitOutsiderGuess,
+      markDuelReadyToVote,
       submitDuelGuess,
       submitVote,
     ],

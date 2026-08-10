@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react';
-import { Alert, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Alert, Pressable, StyleSheet, Text, View } from 'react-native';
 
 import { ActionButton } from '../components/action-button';
 import { ErrorBanner } from '../components/error-banner';
@@ -17,12 +17,13 @@ export function DuelGameScreen({ onLeave }: { onLeave: () => void }) {
     isWorking,
     error,
     clearError,
+    markDuelReadyToVote,
     submitDuelGuess,
     startNextRound,
     leaveRoom,
   } = useGame();
   const [voiceError, setVoiceError] = useState<string | null>(null);
-  const [guessText, setGuessText] = useState('');
+  const [selectedChoiceName, setSelectedChoiceName] = useState<string | null>(null);
   const handleVoiceError = useCallback((message: string) => {
     setVoiceError(message);
   }, []);
@@ -82,44 +83,72 @@ export function DuelGameScreen({ onLeave }: { onLeave: () => void }) {
         </Text>
       </View>
 
-      {duel.phase === 'duel_guessing' && !duel.myGuessName ? (
-        <View style={styles.guessSection}>
-          <Text style={styles.sectionTitle}>ما الصورة التي ظهرت لخصمك؟</Text>
+      {duel.phase === 'duel_guessing' && !duel.myReadyToVote ? (
+        <View style={styles.readyCard}>
+          <Text style={styles.readyEmoji}>🤝</Text>
+          <Text style={styles.sectionTitle}>انتهيت من الأسئلة؟</Text>
           <Text style={styles.sectionHint}>
-            اسأله بالمايك ثم اكتب الاسم الذي تعتقد أنه ظهر له.
+            عندما يصبح فريقك جاهزًا اضغط «فلنصوّت». لن تظهر الخيارات حتى يوافق جميع اللاعبين.
           </Text>
-          <View style={styles.guessForm}>
-            <TextInput
-              accessibilityLabel="اسم تخمينك"
-              editable={!isWorking}
-              maxLength={120}
-              onChangeText={setGuessText}
-              placeholder="اكتب الاسم هنا"
-              placeholderTextColor={colors.textDim}
-              returnKeyType="done"
-              style={styles.guessInput}
-              textAlign="right"
-              value={guessText}
-            />
-            <ActionButton
-              disabled={!guessText.trim()}
-              label="إرسال التخمين النهائي"
-              loading={isWorking}
-              onPress={() =>
-                void submitDuelGuess(guessText).catch(() => undefined)
-              }
-            />
+          <View style={styles.readyProgress}>
+            <Text style={styles.readyCount}>{duel.readyToVoteCount}/{duel.totalPlayerCount}</Text>
+            <Text style={styles.readyLabel}>جاهزون للتصويت</Text>
           </View>
+          <ActionButton
+            label="فلنصوّت"
+            loading={isWorking}
+            onPress={() => void markDuelReadyToVote().catch(() => undefined)}
+          />
         </View>
       ) : null}
 
-      {duel.phase === 'duel_guessing' && duel.myGuessName ? (
+      {duel.phase === 'duel_guessing' && duel.myReadyToVote ? (
         <View style={styles.waitingCard}>
           <Text style={styles.waitingEmoji}>⏳</Text>
-          <Text style={styles.waitingTitle}>تم إرسال تخمينك</Text>
+          <Text style={styles.waitingTitle}>أنت جاهز للتصويت</Text>
           <Text style={styles.waitingText}>
-            اخترت: {duel.myGuessName}{'\n'}بانتظار بقية الفريقين…
+            {duel.readyToVoteCount}/{duel.totalPlayerCount} جاهزون{`\n`}ستظهر بطاقات الشخصيات للجميع في اللحظة نفسها.
           </Text>
+        </View>
+      ) : null}
+
+      {duel.phase === 'duel_voting' && !duel.myGuessName ? (
+        <View style={styles.voteSection}>
+          <Text style={styles.voteEyebrow}>التصويت سري</Text>
+          <Text style={styles.sectionTitle}>اختر شخصية خصمك</Text>
+          <Text style={styles.sectionHint}>اضغط البطاقة التي تعتقد أنها ظهرت للفريق المقابل، ثم أكّد صوتك.</Text>
+          <View style={styles.choiceGrid}>
+            {duel.voteChoices.map((choice) => {
+              const selected = choice.name === selectedChoiceName;
+              return (
+                <Pressable
+                  accessibilityRole="radio"
+                  accessibilityState={{ checked: selected }}
+                  key={choice.name}
+                  onPress={() => setSelectedChoiceName(choice.name)}
+                  style={[styles.choiceCard, selected && styles.choiceCardSelected]}
+                >
+                  <RemoteArtwork imageUrl={choice.imageUrl} label={choice.name} size={128} />
+                  <Text numberOfLines={2} style={styles.choiceName}>{choice.name}</Text>
+                  {selected ? <View style={styles.choiceCheck}><Text style={styles.choiceCheckText}>✓</Text></View> : null}
+                </Pressable>
+              );
+            })}
+          </View>
+          <ActionButton
+            disabled={!selectedChoiceName}
+            label="تأكيد التصويت"
+            loading={isWorking}
+            onPress={() => selectedChoiceName ? void submitDuelGuess(selectedChoiceName).catch(() => undefined) : undefined}
+          />
+        </View>
+      ) : null}
+
+      {duel.phase === 'duel_voting' && duel.myGuessName ? (
+        <View style={styles.waitingCard}>
+          <Text style={styles.waitingEmoji}>🗳️</Text>
+          <Text style={styles.waitingTitle}>سُجّل صوتك</Text>
+          <Text style={styles.waitingText}>اخترت: {duel.myGuessName}{`\n`}بانتظار أصوات بقية اللاعبين…</Text>
         </View>
       ) : null}
 
@@ -251,6 +280,77 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     paddingHorizontal: 16,
   },
+  readyCard: {
+    alignItems: 'stretch',
+    borderRadius: radii.lg,
+    borderWidth: 1,
+    borderColor: colors.secondary,
+    backgroundColor: colors.surface,
+    padding: 18,
+    marginTop: 18,
+    gap: 12,
+  },
+  readyEmoji: { fontSize: 38, textAlign: 'center' },
+  readyProgress: {
+    alignItems: 'center',
+    borderRadius: radii.md,
+    backgroundColor: colors.backgroundElevated,
+    padding: 12,
+  },
+  readyCount: { color: colors.secondary, fontSize: 25, fontWeight: '900' },
+  readyLabel: { color: colors.textMuted, fontSize: 11, marginTop: 2 },
+  voteSection: { marginTop: 20, gap: 12 },
+  voteEyebrow: {
+    alignSelf: 'flex-end',
+    color: colors.warning,
+    fontSize: 11,
+    fontWeight: '900',
+    borderRadius: radii.pill,
+    borderWidth: 1,
+    borderColor: colors.warning,
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+  },
+  choiceGrid: {
+    flexDirection: 'row-reverse',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+    rowGap: 12,
+  },
+  choiceCard: {
+    width: '48%',
+    alignItems: 'center',
+    borderRadius: radii.lg,
+    borderWidth: 2,
+    borderColor: colors.border,
+    backgroundColor: colors.surface,
+    padding: 8,
+    position: 'relative',
+  },
+  choiceCardSelected: {
+    borderColor: colors.warning,
+    backgroundColor: '#3B2D63',
+  },
+  choiceName: {
+    minHeight: 38,
+    color: colors.text,
+    fontSize: 14,
+    fontWeight: '900',
+    textAlign: 'center',
+    marginTop: 8,
+  },
+  choiceCheck: {
+    position: 'absolute',
+    top: 5,
+    right: 5,
+    width: 26,
+    height: 26,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 13,
+    backgroundColor: colors.warning,
+  },
+  choiceCheckText: { color: colors.background, fontSize: 16, fontWeight: '900' },
   waitingCard: {
     alignItems: 'center',
     borderRadius: radii.lg,
