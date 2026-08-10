@@ -487,6 +487,7 @@ export function DemoGameProvider({ children }: { children: ReactNode }) {
       skipOutsiderGuess,
       startNextRound,
       leaveRoom,
+      refreshVoiceAccess: () => undefined,
       clearError: () => setError(null),
     }),
     [

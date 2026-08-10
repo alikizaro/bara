@@ -7,7 +7,6 @@ import { ActionButton } from '../components/action-button';
 import { ErrorBanner } from '../components/error-banner';
 import { PlayerAvatar } from '../components/player-avatar';
 import { ScreenShell } from '../components/screen-shell';
-import { LiveAudioRoom } from '../features/voice/live-audio-room';
 import { animeCollections, categories } from '../domain/game';
 import { canHostStart } from '../domain/game-policy';
 import { useGame } from '../state/game-context';
@@ -17,7 +16,6 @@ export function LobbyScreen({ onLeave }: { onLeave: () => void }) {
   const {
     profile,
     room,
-    voiceAccess,
     isWorking,
     error,
     clearError,
@@ -27,7 +25,6 @@ export function LobbyScreen({ onLeave }: { onLeave: () => void }) {
     leaveRoom,
   } = useGame();
   const [copied, setCopied] = useState(false);
-  const [voiceError, setVoiceError] = useState<string | null>(null);
 
   if (!profile || !room) {
     return (
@@ -64,9 +61,7 @@ export function LobbyScreen({ onLeave }: { onLeave: () => void }) {
   };
 
   return (
-    <ScreenShell
-      floating={<LiveAudioRoom access={voiceAccess} canSpeak onError={setVoiceError} />}
-    >
+    <ScreenShell>
       <View style={styles.topBar}>
         <Pressable
           accessibilityLabel="مغادرة الغرفة"
@@ -240,9 +235,8 @@ export function LobbyScreen({ onLeave }: { onLeave: () => void }) {
       </View>
 
       <ErrorBanner
-        message={voiceError ?? error}
+        message={error}
         onDismiss={() => {
-          setVoiceError(null);
           clearError();
         }}
       />

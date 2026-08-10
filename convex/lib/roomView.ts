@@ -1,5 +1,6 @@
 import type { Id } from '../_generated/dataModel';
 import type { MutationCtx, QueryCtx } from '../_generated/server';
+import { MAX_PLAYERS } from './roomPolicy';
 
 type ReaderCtx =
   | Pick<QueryCtx, 'db' | 'storage'>
@@ -15,7 +16,7 @@ export async function loadActiveRoomPlayers(
     .withIndex('by_room_id_and_is_active', (q) =>
       q.eq('roomId', roomId).eq('isActive', true),
     )
-    .take(10);
+    .take(MAX_PLAYERS);
 
   memberships.sort((left, right) => left.joinedAt - right.joinedAt);
 

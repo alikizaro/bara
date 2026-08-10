@@ -4,7 +4,7 @@ import { animeCollections } from '../data/catalog/catalog';
 const ROOM_ALPHABET = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
 
 export const MIN_PLAYERS = 3;
-export const MAX_PLAYERS = 10;
+export const MAX_PLAYERS = 20;
 
 export function validateRoomOptions(options: {
   mode?: 'classic' | 'duel' | 'mafia';
@@ -26,7 +26,7 @@ export function validateRoomOptions(options: {
       options.maxPlayers < MIN_PLAYERS ||
       options.maxPlayers > MAX_PLAYERS)
   ) {
-    throw new Error('عدد اللاعبين يجب أن يكون بين 3 و10');
+    throw new Error('عدد اللاعبين يجب أن يكون بين 3 و20');
   }
   if (options.mode === 'classic' && (options.outsiderCount ?? 1) === 2 && options.maxPlayers < 5) {
     throw new Error('وضع شخصين برا السالفة يحتاج 5 لاعبين على الأقل');

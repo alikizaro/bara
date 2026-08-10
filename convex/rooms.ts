@@ -185,11 +185,7 @@ export const join = mutation({
         q.eq('roomId', room._id).eq('playerId', player._id),
       )
       .unique();
-    if (existingMembership) {
-      await ctx.db.patch(existingMembership._id, {
-        isActive: true,
-        isReady: player._id === room.hostPlayerId,
-      });
+    if (existingMembership?.isActive) {
       return { roomId: room._id, code: room.code };
     }
 
@@ -201,6 +197,14 @@ export const join = mutation({
       .take(room.maxPlayers);
     if (activeMembers.length >= room.maxPlayers) {
       throw new Error('الغرفة ممتلئة');
+    }
+
+    if (existingMembership) {
+      await ctx.db.patch(existingMembership._id, {
+        isActive: true,
+        isReady: player._id === room.hostPlayerId,
+      });
+      return { roomId: room._id, code: room.code };
     }
 
     await ctx.db.insert('roomMembers', {

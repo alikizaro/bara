@@ -4,6 +4,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import { ScreenShell } from './src/components/screen-shell';
 import { AppUpdatePrompt } from './src/components/app-update-prompt';
+import { PersistentVoiceRoom } from './src/features/voice/persistent-voice-room';
 import type { GameId } from './src/domain/game-catalog';
 import type { RoomSettings } from './src/domain/game';
 import { useAndroidBack } from './src/hooks/use-android-back';
@@ -30,6 +31,7 @@ export default function App() {
     <SafeAreaProvider>
       <GameBackendProvider>
         <AppNavigator />
+        <PersistentVoiceRoom />
         <AppUpdatePrompt />
       </GameBackendProvider>
     </SafeAreaProvider>

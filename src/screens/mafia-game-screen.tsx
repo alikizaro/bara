@@ -1,4 +1,3 @@
-import { useCallback, useState } from 'react';
 import { Alert, Pressable, StyleSheet, Text, View } from 'react-native';
 
 import { ActionButton } from '../components/action-button';
@@ -6,7 +5,6 @@ import { ErrorBanner } from '../components/error-banner';
 import { PlayerAvatar } from '../components/player-avatar';
 import { ScreenShell } from '../components/screen-shell';
 import type { MafiaRole } from '../domain/game';
-import { LiveAudioRoom } from '../features/voice/live-audio-room';
 import { useGame } from '../state/game-context';
 import { colors, radii } from '../theme/tokens';
 
@@ -18,9 +16,7 @@ const roleCopy: Record<MafiaRole, { title: string; emoji: string; description: s
 };
 
 export function MafiaGameScreen({ onLeave }: { onLeave: () => void }) {
-  const { profile, mafia, voiceAccess, submitMafiaNightAction, beginMafiaVoting, submitMafiaVote, startNextRound, leaveRoom, isWorking, error, clearError } = useGame();
-  const [voiceError, setVoiceError] = useState<string | null>(null);
-  const handleVoiceError = useCallback((message: string) => setVoiceError(message || null), []);
+  const { profile, mafia, submitMafiaNightAction, beginMafiaVoting, submitMafiaVote, startNextRound, leaveRoom, isWorking, error, clearError } = useGame();
   if (!profile || !mafia) return <ScreenShell><View style={styles.loading}><Text style={styles.muted}>جارٍ توزيع الأدوار…</Text></View></ScreenShell>;
   const me = mafia.players.find((player) => player.id === profile.id);
   const role = roleCopy[mafia.role];
@@ -30,7 +26,7 @@ export function MafiaGameScreen({ onLeave }: { onLeave: () => void }) {
   ]);
 
   return (
-    <ScreenShell floating={<LiveAudioRoom access={voiceAccess} canSpeak={mafia.phase === 'mafia_discussion'} onError={handleVoiceError} />}>
+    <ScreenShell>
       <View style={styles.topBar}>
         <Pressable onPress={exit} style={styles.exit}><Text style={styles.exitText}>خروج</Text></Pressable>
         <View style={styles.heading}><Text style={styles.title}>المافيا · الجولة {mafia.roundNumber}</Text><Text style={styles.muted}>{phaseName(mafia.phase)}</Text></View>
@@ -104,7 +100,7 @@ export function MafiaGameScreen({ onLeave }: { onLeave: () => void }) {
           {me?.isHost ? <ActionButton label="جولة مافيا جديدة" loading={isWorking} onPress={() => void startNextRound()} /> : <Text style={styles.wait}>بانتظار المضيف للجولة التالية</Text>}
         </View>
       ) : null}
-      <ErrorBanner message={voiceError ?? error} onDismiss={() => { setVoiceError(null); clearError(); }} />
+      <ErrorBanner message={error} onDismiss={clearError} />
     </ScreenShell>
   );
 }

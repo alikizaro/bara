@@ -8,6 +8,7 @@ export interface LiveAudioRoomProps {
   access: VoiceAccess | null;
   canSpeak: boolean;
   onError: (message: string) => void;
+  onDisconnected: () => void;
 }
 
 export function LiveAudioRoom(props: LiveAudioRoomProps) {

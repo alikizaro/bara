@@ -6,6 +6,7 @@ import { mutation, query } from './_generated/server';
 import { requireActiveMembership, requirePlayer, requireRoomHost } from './lib/identity';
 import { createMafiaRound } from './lib/mafiaRounds';
 import { loadActiveRoomPlayers } from './lib/roomView';
+import { MAX_PLAYERS } from './lib/roomPolicy';
 import { mafiaRoleValidator } from './validators';
 
 const playerValidator = v.object({
@@ -65,7 +66,7 @@ export const getMyView = query({
     )) return null;
     const phase: 'mafia_night' | 'mafia_discussion' | 'mafia_voting' | 'mafia_results' = round.phase;
     const players = await loadActiveRoomPlayers(ctx, room._id, room.hostPlayerId);
-    const votes = await ctx.db.query('votes').withIndex('by_round_id', (q) => q.eq('roundId', round._id)).take(10);
+    const votes = await ctx.db.query('votes').withIndex('by_round_id', (q) => q.eq('roundId', round._id)).take(MAX_PLAYERS);
     const eliminated = round.phase === 'mafia_results' ? topVoted(votes) : null;
     const eliminatedIds = new Set(round.mafiaEliminatedPlayerIds ?? []);
     const finding = (round.mafiaDetectiveFindings ?? []).find((item) => item.playerId === player._id);
@@ -160,8 +161,8 @@ export const submitVote = mutation({
     const oldVote = await ctx.db.query('votes').withIndex('by_round_id_and_voter_player_id', (q) => q.eq('roundId', round._id).eq('voterPlayerId', player._id)).unique();
     if (oldVote) throw new Error('صوّت بالفعل');
     await ctx.db.insert('votes', { roundId: round._id, voterPlayerId: player._id, targetPlayerId: args.targetPlayerId, createdAt: Date.now() });
-    const members = await ctx.db.query('roomMembers').withIndex('by_room_id_and_is_active', (q) => q.eq('roomId', room._id).eq('isActive', true)).take(10);
-    const votes = await ctx.db.query('votes').withIndex('by_round_id', (q) => q.eq('roundId', round._id)).take(10);
+    const members = await ctx.db.query('roomMembers').withIndex('by_room_id_and_is_active', (q) => q.eq('roomId', room._id).eq('isActive', true)).take(MAX_PLAYERS);
+    const votes = await ctx.db.query('votes').withIndex('by_round_id', (q) => q.eq('roundId', round._id)).take(MAX_PLAYERS);
     const aliveMemberIds = members.map((member) => member.playerId).filter((playerId) => !eliminatedIds.has(playerId));
     const complete = votes.length >= aliveMemberIds.length;
     if (complete) {
@@ -183,7 +184,7 @@ export const startNextRound = mutation({
     const room = await requireRoomHost(ctx, args.roomId, player._id);
     const previous = room.activeRoundId ? await ctx.db.get(room.activeRoundId) : null;
     if (room.mode !== 'mafia' || previous?.phase !== 'mafia_results') throw new Error('انتظر نتيجة الجولة أولًا');
-    const members = await ctx.db.query('roomMembers').withIndex('by_room_id_and_is_active', (q) => q.eq('roomId', room._id).eq('isActive', true)).take(10);
+    const members = await ctx.db.query('roomMembers').withIndex('by_room_id_and_is_active', (q) => q.eq('roomId', room._id).eq('isActive', true)).take(MAX_PLAYERS);
     const roundId = await createMafiaRound(ctx, room, members);
     await ctx.db.patch(room._id, { activeRoundId: roundId, currentRoundNumber: room.currentRoundNumber + 1, status: 'playing' });
     return { roundId };

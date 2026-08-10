@@ -1,4 +1,3 @@
-import { useCallback, useState } from 'react';
 import { Alert, Pressable, StyleSheet, Text, View } from 'react-native';
 
 import { ErrorBanner } from '../components/error-banner';
@@ -8,7 +7,6 @@ import { QuestionStage } from '../features/game/question-stage';
 import { ResultsPanel } from '../features/game/results-panel';
 import { SecretRolePanel } from '../features/game/secret-role-panel';
 import { VotingPanel } from '../features/game/voting-panel';
-import { LiveAudioRoom } from '../features/voice/live-audio-room';
 import type { GameView } from '../domain/game';
 import { useGame } from '../state/game-context';
 import { colors, radii } from '../theme/tokens';
@@ -46,11 +44,6 @@ export function GameScreen({ onLeave }: { onLeave: () => void }) {
     startNextRound,
     leaveRoom,
   } = useGame();
-  const [voiceError, setVoiceError] = useState<string | null>(null);
-  const handleVoiceError = useCallback((message: string) => {
-    setVoiceError(message);
-  }, []);
-
   if (!profile || !game) {
     return (
       <ScreenShell>
@@ -63,12 +56,6 @@ export function GameScreen({ onLeave }: { onLeave: () => void }) {
 
   const questionPhase =
     game.phase === 'automatic_questions' || game.phase === 'free_questions';
-  const canSpeak =
-    questionPhase &&
-    Boolean(game.currentAnswererId) &&
-    (profile.id === game.currentQuestionerId ||
-      profile.id === game.currentAnswererId);
-
   const exit = () => {
     Alert.alert(
       'مغادرة الغرفة؟',
@@ -87,9 +74,7 @@ export function GameScreen({ onLeave }: { onLeave: () => void }) {
   };
 
   return (
-    <ScreenShell
-      floating={<LiveAudioRoom access={voiceAccess} canSpeak={canSpeak} onError={handleVoiceError} />}
-    >
+    <ScreenShell>
       <View style={styles.topBar}>
         <Pressable
           accessibilityRole="button"
@@ -157,9 +142,8 @@ export function GameScreen({ onLeave }: { onLeave: () => void }) {
       ) : null}
 
       <ErrorBanner
-        message={voiceError ?? error}
+        message={error}
         onDismiss={() => {
-          setVoiceError(null);
           clearError();
         }}
       />

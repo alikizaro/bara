@@ -1,11 +1,10 @@
-import { useCallback, useState } from 'react';
+import { useState } from 'react';
 import { Alert, Pressable, StyleSheet, Text, View } from 'react-native';
 
 import { ActionButton } from '../components/action-button';
 import { ErrorBanner } from '../components/error-banner';
 import { RemoteArtwork } from '../components/remote-artwork';
 import { ScreenShell } from '../components/screen-shell';
-import { LiveAudioRoom } from '../features/voice/live-audio-room';
 import { useGame } from '../state/game-context';
 import { colors, radii } from '../theme/tokens';
 
@@ -13,7 +12,6 @@ export function DuelGameScreen({ onLeave }: { onLeave: () => void }) {
   const {
     profile,
     duel,
-    voiceAccess,
     isWorking,
     error,
     clearError,
@@ -22,11 +20,7 @@ export function DuelGameScreen({ onLeave }: { onLeave: () => void }) {
     startNextRound,
     leaveRoom,
   } = useGame();
-  const [voiceError, setVoiceError] = useState<string | null>(null);
   const [selectedChoiceName, setSelectedChoiceName] = useState<string | null>(null);
-  const handleVoiceError = useCallback((message: string) => {
-    setVoiceError(message);
-  }, []);
 
   if (!profile || !duel) {
     return (
@@ -51,9 +45,7 @@ export function DuelGameScreen({ onLeave }: { onLeave: () => void }) {
   };
 
   return (
-    <ScreenShell
-      floating={<LiveAudioRoom access={voiceAccess} canSpeak={duel.phase === 'duel_guessing'} onError={handleVoiceError} />}
-    >
+    <ScreenShell>
       <View style={styles.topBar}>
         <Pressable accessibilityRole="button" onPress={exit} style={styles.exitButton}>
           <Text style={styles.exitText}>خروج</Text>
@@ -199,9 +191,8 @@ export function DuelGameScreen({ onLeave }: { onLeave: () => void }) {
       ) : null}
 
       <ErrorBanner
-        message={voiceError ?? error}
+        message={error}
         onDismiss={() => {
-          setVoiceError(null);
           clearError();
         }}
       />

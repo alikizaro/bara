@@ -7,7 +7,7 @@ import { ErrorBanner } from '../components/error-banner';
 import { ScreenShell } from '../components/screen-shell';
 import { Stepper } from '../components/stepper';
 import { defaultRoomSettings, type GameMode, type RoomSettings } from '../domain/game';
-import { validateRoomSettings } from '../domain/game-policy';
+import { MAX_PLAYERS, validateRoomSettings } from '../domain/game-policy';
 import { useGame } from '../state/game-context';
 import { colors, radii } from '../theme/tokens';
 
@@ -61,7 +61,7 @@ export function CreateRoomScreen({
         <Stepper
           hint="الحد المتاح داخل الغرفة"
           label="عدد اللاعبين"
-          maximum={10}
+          maximum={MAX_PLAYERS}
           minimum={settings.outsiderCount === 2 ? 5 : 3}
           onChange={(maxPlayers) =>
             setSettings((current) => ({ ...current, maxPlayers }))
@@ -101,10 +101,24 @@ export function CreateRoomScreen({
           </Text>
         </View>
       ) : (
-        <View style={styles.duelNote}>
-          <Text style={styles.duelNoteTitle}>🌙 أدوار سرية وتصويت جماعي</Text>
-          <Text style={styles.duelNoteText}>يجتمع {settings.maxPlayers} لاعبين، يتناقشون بالصوت ثم يصوّتون لكشف المافيا.</Text>
-        </View>
+        <>
+          <View style={styles.mafiaPlayers}>
+            <Stepper
+              hint="الحد المتاح داخل غرفة المافيا"
+              label="عدد اللاعبين"
+              maximum={MAX_PLAYERS}
+              minimum={5}
+              onChange={(maxPlayers) =>
+                setSettings((current) => ({ ...current, maxPlayers }))
+              }
+              value={settings.maxPlayers}
+            />
+          </View>
+          <View style={styles.duelNote}>
+            <Text style={styles.duelNoteTitle}>🌙 أدوار سرية وتصويت جماعي</Text>
+            <Text style={styles.duelNoteText}>يجتمع {settings.maxPlayers} لاعبين، يتناقشون بالصوت ثم يصوّتون لكشف المافيا.</Text>
+          </View>
+        </>
       )}
 
       <ErrorBanner
@@ -159,6 +173,9 @@ const styles = StyleSheet.create({
     borderColor: colors.secondary,
     backgroundColor: '#123A42',
     padding: 16,
+    marginTop: 22,
+  },
+  mafiaPlayers: {
     marginTop: 22,
   },
   duelNoteTitle: {

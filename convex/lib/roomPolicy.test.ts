@@ -6,6 +6,7 @@ import {
   nextFreeTurn,
   pickDistinctPair,
   pickOrderedPair,
+  validateRoomOptions,
 } from './roomPolicy';
 
 describe('room backend policy', () => {
@@ -65,5 +66,22 @@ describe('room backend policy', () => {
       { playerIndex: 1, questionIndex: 2 },
       { playerIndex: 2, questionIndex: 2 },
     ]);
+  });
+
+  it('accepts twenty players but rejects twenty-one', () => {
+    const options = {
+      mode: 'classic' as const,
+      category: 'animals' as const,
+      collection: null,
+      maxPlayers: 20,
+      automaticQuestions: 3,
+      freeQuestionsPerPlayer: 1,
+      outsiderCount: 1,
+      teamSize: 1,
+    };
+    expect(() => validateRoomOptions(options)).not.toThrow();
+    expect(() => validateRoomOptions({ ...options, maxPlayers: 21 })).toThrow(
+      'عدد اللاعبين يجب أن يكون بين 3 و20',
+    );
   });
 });

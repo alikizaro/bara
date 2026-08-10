@@ -45,6 +45,7 @@ export interface GameContextValue {
   skipOutsiderGuess: () => Promise<void>;
   startNextRound: () => Promise<void>;
   leaveRoom: () => Promise<void>;
+  refreshVoiceAccess: () => void;
   clearError: () => void;
 }
 

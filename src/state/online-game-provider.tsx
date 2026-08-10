@@ -73,6 +73,7 @@ export function OnlineGameProvider({ children }: { children: ReactNode }) {
   const [roomId, setRoomId] = useState<Id<'rooms'> | null>(null);
   const [profile, setProfile] = useState<PlayerProfile | null>(null);
   const [voiceAccess, setVoiceAccess] = useState<VoiceAccess | null>(null);
+  const [voiceRetry, setVoiceRetry] = useState(0);
   const [isHydrating, setIsHydrating] = useState(true);
   const [isWorking, setIsWorking] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -152,13 +153,14 @@ export function OnlineGameProvider({ children }: { children: ReactNode }) {
     if (
       !installationId ||
       !roomId ||
-      !roomQuery ||
+      !roomQuery?.status ||
       roomQuery.status === 'finished' ||
       voiceAccess
     ) {
       return;
     }
     let active = true;
+    let retryTimer: ReturnType<typeof setTimeout> | undefined;
     void issueVoiceToken({ installationId, roomId })
       .then((access: VoiceAccess) => {
         if (active) {
@@ -169,17 +171,27 @@ export function OnlineGameProvider({ children }: { children: ReactNode }) {
         if (active) {
           setError(readableError(nextError));
         }
+        retryTimer = setTimeout(() => {
+          if (active) setVoiceRetry((current) => current + 1);
+        }, 3_000);
       });
     return () => {
       active = false;
+      if (retryTimer) clearTimeout(retryTimer);
     };
   }, [
     installationId,
     issueVoiceToken,
     roomId,
-    roomQuery,
+    roomQuery?.status,
+    voiceRetry,
     voiceAccess,
   ]);
+
+  const refreshVoiceAccess = useCallback(() => {
+    setVoiceAccess(null);
+    setVoiceRetry((current) => current + 1);
+  }, []);
 
   const saveDisplayName = useCallback(
     async (displayName: string) => {
@@ -572,6 +584,7 @@ export function OnlineGameProvider({ children }: { children: ReactNode }) {
       skipOutsiderGuess,
       startNextRound,
       leaveRoom,
+      refreshVoiceAccess,
       clearError: () => setError(null),
     }),
     [
@@ -587,6 +600,7 @@ export function OnlineGameProvider({ children }: { children: ReactNode }) {
       joinRoom,
       leaveRoom,
       profile,
+      refreshVoiceAccess,
       roomQuery,
       saveDisplayName,
       updateProfile,

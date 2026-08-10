@@ -8,7 +8,7 @@ import {
 } from '@livekit/react-native';
 import { ConnectionState, Track, type RemoteParticipant } from 'livekit-client';
 import { useEffect, useRef, useState } from 'react';
-import { PermissionsAndroid, Platform, Pressable, StyleSheet, Text, View } from 'react-native';
+import { AppState, PermissionsAndroid, Platform, Pressable, StyleSheet, Text, View } from 'react-native';
 
 import type { LiveAudioRoomProps } from './live-audio-room';
 import { colors, radii } from '../../theme/tokens';
@@ -17,6 +17,7 @@ export default function NativeLiveAudioRoom({
   access,
   canSpeak,
   onError,
+  onDisconnected,
 }: LiveAudioRoomProps) {
   const [microphoneAllowed, setMicrophoneAllowed] = useState<boolean | null>(
     Platform.OS === 'android' ? null : true,
@@ -28,8 +29,11 @@ export default function NativeLiveAudioRoom({
   }, [onError]);
 
   useEffect(() => {
-    void (async () => {
-      try {
+    let active = true;
+    let audioOperation = Promise.resolve();
+    const startAudio = () => {
+      audioOperation = audioOperation.then(async () => {
+        if (!active) return;
         await AudioSession.configureAudio({
           android: {
             preferredOutputList: ['bluetooth', 'headset', 'speaker', 'earpiece'],
@@ -38,14 +42,23 @@ export default function NativeLiveAudioRoom({
           ios: { defaultOutput: 'speaker' },
         });
         await AudioSession.startAudioSession();
-      } catch (error) {
+      }).catch((error) => {
+        if (!active) return;
         errorHandler.current(
           error instanceof Error ? error.message : 'تعذر تشغيل جلسة الصوت',
         );
-      }
-    })();
+      });
+    };
+
+    startAudio();
+    const appStateSubscription = AppState.addEventListener('change', (state) => {
+      if (state === 'active') startAudio();
+    });
+
     return () => {
-      void AudioSession.stopAudioSession();
+      active = false;
+      appStateSubscription.remove();
+      void audioOperation.finally(() => AudioSession.stopAudioSession());
     };
   }, []);
 
@@ -74,13 +87,19 @@ export default function NativeLiveAudioRoom({
 
   return (
     <LiveKitRoom
+      key={access.token}
       serverUrl={access.serverUrl}
       token={access.token}
       connect
       audio={microphoneAllowed && canSpeak}
       video={false}
       onConnected={() => errorHandler.current('')}
+      onDisconnected={() => {
+        errorHandler.current('انقطع الصوت، جارٍ إعادة الاتصال…');
+        onDisconnected();
+      }}
       onError={(error) => errorHandler.current(error.message)}
+      onMediaDeviceFailure={() => errorHandler.current('تعذر الوصول إلى المايكروفون أو مخرج الصوت')}
     >
       <VoiceControls canSpeak={canSpeak && microphoneAllowed} onError={onError} />
     </LiveKitRoom>
@@ -108,13 +127,14 @@ function VoiceControls({
   }, [canSpeak, connectionState, localParticipant, microphoneEnabled, onError]);
 
   useEffect(() => {
-    void AudioSession.setDefaultRemoteAudioTrackVolume(speakerEnabled ? 1 : 0);
+    void AudioSession.setDefaultRemoteAudioTrackVolume(speakerEnabled ? 1 : 0)
+      .catch((error) => onError(error.message));
     for (const track of audioTracks) {
       if (!track.participant.isLocal) {
         (track.participant as RemoteParticipant).setVolume(speakerEnabled ? 1 : 0);
       }
     }
-  }, [audioTracks, speakerEnabled]);
+  }, [audioTracks, onError, speakerEnabled]);
 
   const connected = connectionState === ConnectionState.Connected;
   const micIsOn = connected && canSpeak && microphoneEnabled;

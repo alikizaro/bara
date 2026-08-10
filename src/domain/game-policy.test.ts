@@ -76,4 +76,16 @@ describe('game policy', () => {
       { isHost: false, isReady: true },
     ], 'duel', 4)).toBe(false);
   });
+
+  it('accepts twenty players but rejects twenty-one', () => {
+    const settings: RoomSettings = {
+      mode: 'classic', category: 'animals', collection: null,
+      maxPlayers: 20, automaticQuestions: 3, freeQuestionsPerPlayer: 1,
+      outsiderCount: 1, teamSize: 1,
+    };
+    expect(validateRoomSettings(settings)).toBeNull();
+    expect(validateRoomSettings({ ...settings, maxPlayers: 21 })).toBe(
+      'عدد اللاعبين يجب أن يكون بين 3 و20',
+    );
+  });
 });

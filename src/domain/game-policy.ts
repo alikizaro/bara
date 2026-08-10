@@ -2,7 +2,7 @@ import type { RoomSettings } from './game';
 
 export const ROOM_CODE_LENGTH = 6;
 export const MIN_PLAYERS = 3;
-export const MAX_PLAYERS = 10;
+export const MAX_PLAYERS = 20;
 
 export function normalizeRoomCode(value: string): string {
   return value
@@ -33,7 +33,7 @@ export function validateRoomSettings(settings: RoomSettings): string | null {
       settings.maxPlayers < MIN_PLAYERS ||
       settings.maxPlayers > MAX_PLAYERS)
   ) {
-    return 'عدد اللاعبين يجب أن يكون بين 3 و10';
+    return 'عدد اللاعبين يجب أن يكون بين 3 و20';
   }
   if (settings.mode === 'classic' && settings.outsiderCount === 2 && settings.maxPlayers < 5) {
     return 'وضع شخصين برا السالفة يحتاج 5 لاعبين على الأقل';
