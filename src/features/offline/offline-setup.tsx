@@ -10,18 +10,19 @@ import { offlineStyles as s } from './offline-styles';
 
 export interface OfflineSettings { names: string[]; category: CategoryId; collection: string; questions: number }
 
-export function OfflineSetup({ settings, setSettings, onStart }: { settings: OfflineSettings; setSettings: (settings: OfflineSettings) => void; onStart: (settings: OfflineSettings) => void }) {
+export function OfflineSetup({ settings, setSettings, onStart, character = false }: { settings: OfflineSettings; setSettings: (settings: OfflineSettings) => void; onStart: (settings: OfflineSettings) => void; character?: boolean }) {
+  const minimum = character ? 2 : 3;
   const [error, setError] = useState<string | null>(null);
   const changeNames = (names: string[]) => { setSettings({ ...settings, names }); setError(null); };
   return <View style={s.stack}>
     <Text style={s.title}>جمّع اللمة… ومرّر الهاتف 📱</Text>
-    <Text style={s.hint}>من 3 إلى 20 لاعبًا، بجهاز واحد وبدون إنترنت. لاعب واحد برا السالفة والبقية يعرفون نفس الكلمة.</Text>
+    <Text style={s.hint}>{character ? 'من 2 إلى 20 لاعبًا. لكل لاعب شخصية سرية يعرفها، ويحاول تخمين شخصية اللاعب التالي. لا يوجد أحد برا السالفة.' : 'من 3 إلى 20 لاعبًا، بجهاز واحد وبدون إنترنت. لاعب واحد برا السالفة والبقية يعرفون نفس الكلمة.'}</Text>
     <Text style={s.text}>أسماء المشاركين ({settings.names.length}/20)</Text>
     {settings.names.map((name, index) => <View key={index} style={s.row}>
       <TextInput accessibilityLabel={`اسم اللاعب ${index + 1}`} placeholder={`اللاعب ${index + 1}`} placeholderTextColor={colors.textDim} style={s.input} value={name} maxLength={24} autoCorrect={false}
         onChangeText={(value) => changeNames(settings.names.map((old, i) => i === index ? value : old))} />
-      <Pressable accessibilityRole="button" accessibilityLabel={`حذف اللاعب ${index + 1}`} disabled={settings.names.length <= 3} style={s.remove} onPress={() => changeNames(settings.names.filter((_, i) => i !== index))}>
-        <Text style={[s.removeText, settings.names.length <= 3 && { opacity: 0.25 }]}>×</Text>
+      <Pressable accessibilityRole="button" accessibilityLabel={`حذف اللاعب ${index + 1}`} disabled={settings.names.length <= minimum} style={s.remove} onPress={() => changeNames(settings.names.filter((_, i) => i !== index))}>
+        <Text style={[s.removeText, settings.names.length <= minimum && { opacity: 0.25 }]}>×</Text>
       </Pressable>
     </View>)}
     <ActionButton label="＋ إضافة لاعب" variant="ghost" disabled={settings.names.length >= 20} onPress={() => changeNames([...settings.names, ''])} />
@@ -32,11 +33,11 @@ export function OfflineSetup({ settings, setSettings, onStart }: { settings: Off
     {settings.category === 'anime' && <View style={s.chips}>{animeCollections.map((item) => <Pressable key={item.id} accessibilityRole="button" accessibilityState={{ selected: settings.collection === item.id }} style={[s.chip, settings.collection === item.id && s.selected]} onPress={() => setSettings({ ...settings, collection: item.id })}>
       <Text style={s.text}>{item.label}</Text>
     </Pressable>)}</View>}
-    <Stepper label="أسئلة لكل لاعب" hint="سؤال لكل شخص بالتناوب، ثم نعيد الدور" value={settings.questions} minimum={1} maximum={10} onChange={(questions) => setSettings({ ...settings, questions })} />
-    <Text style={s.hint}>كل لاعب يشاهد سرّه وحده ثم يخفيه. اسألوا بصوتكم وجهًا لوجه دون ذكر الكلمة. بعد الأسئلة، مرّروا الهاتف للتصويت السري، ثم يخمّن برا السالفة من 4 خيارات.</Text>
+    {!character && <Stepper label="أسئلة لكل لاعب" hint="سؤال لكل شخص بالتناوب، ثم نعيد الدور" value={settings.questions} minimum={1} maximum={10} onChange={(questions) => setSettings({ ...settings, questions })} />}
+    <Text style={s.hint}>{character ? 'مرّروا الهاتف ليحفظ كل لاعب شخصيته وحده. اسألوا وجهًا لوجه دون حد للأسئلة. بعد موافقة الجميع على «فلنصوّت»، تظهر 4 خيارات لكل لاعب لتخمين شخصية خصمه. نقطة لكل تخمين صحيح.' : 'كل لاعب يشاهد سرّه وحده ثم يخفيه. اسألوا بصوتكم وجهًا لوجه دون ذكر الكلمة. بعد الأسئلة، مرّروا الهاتف للتصويت السري، ثم يخمّن برا السالفة من 4 خيارات.'}</Text>
     <ErrorBanner message={error} onDismiss={() => setError(null)} />
     <ActionButton label="وزّع الأدوار السرية" onPress={() => {
-      const validation = validateOfflineNames(settings.names);
+      const validation = validateOfflineNames(settings.names, minimum);
       if (validation) { setError(validation); return; }
       onStart({ ...settings, names: settings.names.map((name) => name.trim()) });
     }} />

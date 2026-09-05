@@ -9,6 +9,7 @@ import { colors } from '../theme/tokens';
 
 interface GameModeActions {
   onOffline: () => void;
+  onOfflineCharacter: () => void;
   onCreate: (preset: Partial<RoomSettings>) => void;
   onJoin: () => void;
 }
@@ -42,6 +43,7 @@ export function GameModesScreen({
           </>
         ) : game === 'character' ? (
           <>
+            <ModeCard title="بجهاز واحد · أوفلاين" description="شخصيات سرية وأسئلة مفتوحة؛ من لاعبين إلى 20 بدون إنترنت" emoji="📱" onPress={actions.onOfflineCharacter} />
             <ModeCard title="1 ضد 1" description="لكل لاعب شخصية، اسأل وخمّن شخصية خصمك" emoji="⚔️" onPress={() => actions.onCreate({ mode: 'duel', teamSize: 1, maxPlayers: 2 })} />
             <ModeCard title="2 ضد 2" description="فريقان يتعاونان للوصول إلى الإجابة" emoji="👥" onPress={() => actions.onCreate({ mode: 'duel', teamSize: 2, maxPlayers: 4 })} />
             <ModeCard title="3 ضد 3" description="مواجهة جماعية بأسئلة صوتية مفتوحة" emoji="👨‍👩‍👧" onPress={() => actions.onCreate({ mode: 'duel', teamSize: 3, maxPlayers: 6 })} />

@@ -5,6 +5,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { ScreenShell } from './src/components/screen-shell';
 import { ActionButton } from './src/components/action-button';
 import { OfflineGameScreen } from './src/screens/offline-game-screen';
+import { OfflineCharacterScreen } from './src/screens/offline-character-screen';
 import { AppUpdatePrompt } from './src/components/app-update-prompt';
 import { PersistentVoiceRoom } from './src/features/voice/persistent-voice-room';
 import type { GameId } from './src/domain/game-catalog';
@@ -29,11 +30,11 @@ I18nManager.allowRTL(true);
 I18nManager.swapLeftAndRightInRTL(true);
 
 export default function App() {
-  const [offline, setOffline] = useState(false);
+  const [offline, setOffline] = useState<'outsider' | 'character' | null>(null);
   return (
     <SafeAreaProvider>
-      {offline ? <OfflineGameScreen onExit={() => setOffline(false)} /> : <GameBackendProvider>
-        <AppNavigator onOffline={() => setOffline(true)} />
+      {offline === 'character' ? <OfflineCharacterScreen onExit={() => setOffline(null)} /> : offline === 'outsider' ? <OfflineGameScreen onExit={() => setOffline(null)} /> : <GameBackendProvider>
+        <AppNavigator onOffline={() => setOffline('outsider')} onOfflineCharacter={() => setOffline('character')} />
         <PersistentVoiceRoom />
         <AppUpdatePrompt />
       </GameBackendProvider>}
@@ -41,7 +42,7 @@ export default function App() {
   );
 }
 
-function AppNavigator({ onOffline }: { onOffline: () => void }) {
+function AppNavigator({ onOffline, onOfflineCharacter }: { onOffline: () => void; onOfflineCharacter: () => void }) {
   const { isHydrating, profile, room, game, duel, mafia, leaveRoom } = useGame();
   const [screen, setScreen] = useState<NavigationScreen>('home');
   const [selectedGame, setSelectedGame] = useState<GameId>('outsider');
@@ -83,13 +84,14 @@ function AppNavigator({ onOffline }: { onOffline: () => void }) {
           <Text style={styles.loadingTitle}>لَمّة</Text>
           <Text style={styles.loadingHint}>جارٍ تجهيز اللعبة…</Text>
           <ActionButton label="برا السالفة — بجهاز واحد بدون إنترنت" variant="ghost" onPress={onOffline} />
+          <ActionButton label="احزر الشخصية — بجهاز واحد بدون إنترنت" variant="ghost" onPress={onOfflineCharacter} />
         </View>
       </ScreenShell>
     );
   }
 
   if (!profile) {
-    return <WelcomeScreen onOffline={onOffline} />;
+    return <WelcomeScreen onOffline={onOffline} onOfflineCharacter={onOfflineCharacter} />;
   }
 
   if (room?.settings.mode === 'duel' && (duel || room.status === 'playing')) {
@@ -149,6 +151,7 @@ function AppNavigator({ onOffline }: { onOffline: () => void }) {
         onBack={() => setScreen('home')}
         actions={{
           onOffline,
+          onOfflineCharacter,
           onCreate: (preset) => {
             setRoomPreset(preset);
             setScreen('create');

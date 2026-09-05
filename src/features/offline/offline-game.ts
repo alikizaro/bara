@@ -16,14 +16,14 @@ export type OfflineAction =
   | { type: 'vote'; target: number }
   | { type: 'guess'; word: string | null };
 
-export function validateOfflineNames(names: string[]): string | null {
-  if (names.length < 3 || names.length > 20) return 'أضف من 3 إلى 20 لاعبًا';
+export function validateOfflineNames(names: string[], minimum = 3): string | null {
+  if (names.length < minimum || names.length > 20) return `أضف من ${minimum} إلى 20 لاعبًا`;
   if (names.some((name) => !name.trim() || name.trim().length > 24)) return 'اكتب اسم كل لاعب (حتى 24 حرفًا)';
   if (new Set(names.map((name) => name.trim().toLocaleLowerCase())).size !== names.length) return 'الأسماء متكررة؛ ميّز كل لاعب باسم مختلف';
   return null;
 }
 
-function shuffled<T>(values: T[], random: () => number): T[] {
+export function shuffled<T>(values: T[], random: () => number): T[] {
   const result = [...values];
   for (let i = result.length - 1; i > 0; i--) {
     const j = Math.floor(random() * (i + 1));
