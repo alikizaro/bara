@@ -11,7 +11,7 @@ import {
 import { useGame } from '../state/game-context';
 import { colors, radii, shadows } from '../theme/tokens';
 
-export function WelcomeScreen() {
+export function WelcomeScreen({ onOffline }: { onOffline: () => void }) {
   const { saveDisplayName, isWorking, error, clearError, mode } = useGame();
   const [displayName, setDisplayName] = useState('');
   const [localError, setLocalError] = useState<string | null>(null);
@@ -72,6 +72,7 @@ export function WelcomeScreen() {
         />
       </View>
 
+      <ActionButton label="📱 برا السالفة — بجهاز واحد بدون إنترنت" variant="ghost" onPress={onOffline} />
       <View style={styles.privacyRow}>
         <Text style={styles.privacyText}>
           {mode === 'online'

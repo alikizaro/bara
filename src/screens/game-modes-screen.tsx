@@ -8,6 +8,7 @@ import type { RoomSettings } from '../domain/game';
 import { colors } from '../theme/tokens';
 
 interface GameModeActions {
+  onOffline: () => void;
   onCreate: (preset: Partial<RoomSettings>) => void;
   onJoin: () => void;
 }
@@ -34,6 +35,7 @@ export function GameModesScreen({
       <View style={styles.list}>
         {game === 'outsider' ? (
           <>
+            <ModeCard title="بجهاز واحد · أوفلاين" description="اكتبوا أسماءكم ومرّروا الهاتف؛ بدون حساب أو إنترنت" emoji="📱" onPress={actions.onOffline} />
             <ModeCard title="شخص واحد برا السالفة" description="الوضع الأصلي؛ لاعب واحد لا يعرف الموضوع" emoji="1️⃣" onPress={() => actions.onCreate({ mode: 'classic', outsiderCount: 1 })} />
             <ModeCard title="شخصان برا السالفة" description="متخفيان يحاولان النجاة من التصويت" emoji="2️⃣" onPress={() => actions.onCreate({ mode: 'classic', outsiderCount: 2, maxPlayers: 6 })} />
             <ModeCard title="غرفة خاصة" description="أنشئ غرفة وشارك الرمز مع أصدقائك" emoji="🔐" onPress={() => actions.onCreate({ mode: 'classic', outsiderCount: 1 })} />
