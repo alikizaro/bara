@@ -1,9 +1,23 @@
 import { describe, expect, it } from 'vitest';
 import { characterOpponent, characterPoints, characterReducer, createCharacterRound } from './offline-character';
 import { offlineWords } from './offline-catalog';
+import { getPlayableCatalogItems } from '../../../convex/data/catalog/catalog';
+import { categories, animeCollections } from '../../domain/game';
 
 describe('offline character guessing', () => {
   const words = offlineWords('animals', 'all-anime');
+  it('supports full groups in every image-backed category and anime pack without a server', () => {
+    const selections = [...categories.map((item) => ({ category: item.id, collection: 'all-anime' })),
+      ...animeCollections.map((item) => ({ category: 'anime' as const, collection: item.id }))];
+    for (const selection of selections) {
+      const items = getPlayableCatalogItems(selection.category, selection.collection);
+      const round = createCharacterRound(Array.from({ length: 20 }, (_, i) => `لاعب ${i}`), items.map((item) => item.name));
+      expect(round.secrets).toHaveLength(20);
+      for (const name of [...round.secrets, ...round.choices.flat()]) {
+        expect(items.find((item) => item.name === name)?.imageUrl).toMatch(/^https:\/\//);
+      }
+    }
+  });
   it.each([2, 3, 20])('completes a %i-player round without showing choices until everyone agrees', (count) => {
     let round = createCharacterRound(Array.from({ length: count }, (_, i) => `لاعب ${i}`), words);
     expect(new Set(round.secrets).size).toBe(count);

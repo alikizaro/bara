@@ -1,9 +1,9 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Alert, AppState, Text, View } from 'react-native';
 import { BackHeader } from '../components/back-header';
 import { ScreenShell } from '../components/screen-shell';
 import { ActionButton } from '../components/action-button';
-import { offlineWords } from '../features/offline/offline-catalog';
+import { getPlayableCatalogItems } from '../../convex/data/catalog/catalog';
 import { characterReducer, characterPoints, createCharacterRound, type CharacterAction, type CharacterRound } from '../features/offline/offline-character';
 import { OfflineCharacterPanel } from '../features/offline/offline-character-panel';
 import { OfflineSetup, type OfflineSettings } from '../features/offline/offline-setup';
@@ -16,6 +16,7 @@ export function OfflineCharacterScreen({ onExit }: { onExit: () => void }) {
   const [number, setNumber] = useState(1);
   const [scores, setScores] = useState<number[]>([]);
   const [covered, setCovered] = useState(AppState.currentState !== 'active');
+  const artwork = useMemo(() => new Map(getPlayableCatalogItems(settings.category, settings.collection).map((item) => [item.name, item.imageUrl])), [settings.category, settings.collection]);
   const dispatch = (action: CharacterAction) => setRound((current) => current ? characterReducer(current, action) : current);
   const reset = () => { setRound(null); setScores([]); setNumber(1); };
 
@@ -42,7 +43,7 @@ export function OfflineCharacterScreen({ onExit }: { onExit: () => void }) {
 
   function start(next: OfflineSettings, replay = false) {
     try {
-      const nextRound = createCharacterRound(next.names, offlineWords(next.category, next.collection));
+      const nextRound = createCharacterRound(next.names, getPlayableCatalogItems(next.category, next.collection).map((item) => item.name));
       if (replay && round) {
         setScores(characterPoints(round).map((point, i) => (scores[i] ?? 0) + point));
         setNumber(number + 1);
@@ -55,7 +56,7 @@ export function OfflineCharacterScreen({ onExit }: { onExit: () => void }) {
     {covered ? <View style={s.card}>
       <Text style={s.title}>اللعبة متوقفة مؤقتًا 🔒</Text><Text style={s.hint}>تأكد أن الهاتف مع اللاعب الصحيح.</Text>
       <ActionButton label="متابعة اللعب" onPress={() => setCovered(false)} />
-    </View> : round ? <OfflineCharacterPanel round={round} dispatch={dispatch} number={number} scores={scores} onReplay={() => start(settings, true)} onSetup={reset} />
+    </View> : round ? <OfflineCharacterPanel round={round} artwork={artwork} dispatch={dispatch} number={number} scores={scores} onReplay={() => start(settings, true)} onSetup={reset} />
       : <OfflineSetup character settings={settings} setSettings={setSettings} onStart={start} />}
   </ScreenShell>;
 }
